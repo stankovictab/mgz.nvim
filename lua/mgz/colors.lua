@@ -1,3 +1,6 @@
+-- The second file
+-- I think it's just to map logical names to weird names
+
 local named_colors = require("mgz.named_colors")
 
 local dark_colors = {
