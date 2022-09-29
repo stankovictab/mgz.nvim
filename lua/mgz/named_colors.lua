@@ -13,7 +13,7 @@ local mgz = {
 	white = "#ffffff", -- mgz6 in palette, ???
 	teal = "#ff6176", -- mgz7 in palette, methods of objects, lualine outer (visual mode)
 	off_blue = "#ffffff", -- mgz8 in palette, WHOLE BUNCHA SHIT
-	glacier = "#1275f5", -- mgz9 in palette, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
+	glacier = "#ffffff", -- mgz9 in palette, ifs, elses, {}=, all the brackets, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
 	blue = "#8edfff", -- mgz10 in palette, object fields
 	red = "#ff3333", -- mgz11 in palette, lsp errors - #ff3854
 	orange = "#00ff00", -- mgz12 in palette, ???

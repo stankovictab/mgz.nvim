@@ -1,3 +1,5 @@
+-- The third file
+
 local mgz = require("mgz.colors")
 
 local theme = {}
