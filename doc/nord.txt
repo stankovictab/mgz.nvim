@@ -1,5 +1,13 @@
 dont look at this pls
 
+
+
+
+
+
+
+
+
 ================================================================================
 
 nord is a colorscheme for NeoVim written in Lua with built in support

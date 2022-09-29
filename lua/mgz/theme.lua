@@ -1,4 +1,5 @@
 -- The third file
+-- This is the most important config, it's the one that actually sets the colors to specific elements
 
 local mgz = require("mgz.colors")
 
@@ -6,6 +7,7 @@ local theme = {}
 
 theme.loadSyntax = function()
 	-- Syntax highlight groups
+
 	local syntax = {
 		Type = { fg = mgz.mgz9_gui }, -- int, long, char, etc.
 		StorageClass = { fg = mgz.mgz9_gui }, -- static, register, volatile, etc.
