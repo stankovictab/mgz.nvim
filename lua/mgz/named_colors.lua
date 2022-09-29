@@ -5,21 +5,23 @@ local mgz = {
 	-- black = "#000000", -- mgz0 in palette
 	black = "NONE", -- mgz0 in palette, background
 	dark_gray = "#111111", -- mgz1 in palette, current line highlight, scrollbar, lualine middle
-	gray = "#0a0C5E", -- mgz2 in palette, lualine inner
+	gray = "#1b1b1b", -- mgz2 in palette, lualine inner and selection (visual mode) background
 	light_gray = "#fC56fA", -- mgz3 in palette
 	light_gray_bright = "#333333", -- out of palette, line numbers
 	darkest_white = "#1babff", -- mgz4 in palette, console in console.log()
 	darker_white = "#05f9ff", -- mgz5 in palette
 	white = "#ffffff", -- mgz6 in palette
-	teal = "#00ff00", -- mgz7 in palette
-	off_blue = "#ffff22", -- mgz8 in palette
+	teal = "#ff6176", -- mgz7 in palette, methods of objects
+	off_blue = "#ffffff", -- mgz8 in palette, WHOLE BUNCHA SHIT
 	glacier = "#658595", -- mgz9 in palette, comment
 	blue = "#5E81AC", -- mgz10 in palette
-	red = "#ff6100", -- mgz11 in palette
+	red = "#ff6176", -- mgz11 in palette, lsp errors - #ff3854
 	orange = "#D08770", -- mgz12 in palette
 	yellow = "#EBCB8B", -- mgz13 in palette
 	green = "#58F5AB", -- mgz14 in palette, string
-	purple = "#B48EAD", -- mgz15 in palette
+	purple = "#58F5AB", -- mgz15 in palette, numbers
 	none = "NONE",
 }
 return mgz
+
+-- #ff765e

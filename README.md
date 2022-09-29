@@ -7,7 +7,7 @@ TODO: Add image
 The theme is also available for vscode.
 TODO: Add link
 
-
+Updating is a breeze, plugsync sees the changes immediately
 
 
 
