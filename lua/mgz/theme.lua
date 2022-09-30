@@ -1,7 +1,6 @@
 local mgz = {
 	-- Colors need to be in '#rrggbb', not '#rgb'
 	-- #ff765e is a nice color
-	-- TODO: Maybe use col_black as none, for transparent background
 
 	col_black = "#000000", -- background
 	col_verydarkgray = "#111111", -- current line highlight, scrollbar, lualine middle
@@ -125,7 +124,7 @@ theme.loadEditor = function()
 		ErrorMsg = { fg = mgz.none },
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
-		IncSearch = { fg = mgz.col_huh, bg = mgz.col_lightblue },
+		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- CHANGED -- Search with /
 		LineNr = { fg = mgz.col_bluishgray },
 		CursorLineNr = { fg = mgz.col_blue },
 		MatchParen = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
@@ -139,7 +138,7 @@ theme.loadEditor = function()
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
-		Search = { fg = mgz.col_lightblue, bg = mgz.col_huh, style = "reverse" },
+		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "reverse" }, -- CHANGED -- Search with /
 		SpecialKey = { fg = mgz.col_white },
 		SpellBad = { fg = mgz.col_red, bg = mgz.none, style = "italic,undercurl" },
 		SpellCap = { fg = mgz.col_pink, bg = mgz.none, style = "italic,undercurl" },
