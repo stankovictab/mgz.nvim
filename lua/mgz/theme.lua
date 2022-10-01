@@ -293,7 +293,7 @@ theme.loadTreeSitter = function()
 
 	local treesitter = {
 		TSAnnotation = { fg = mgz.col_stronggreen }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		TSConstructor = { fg = mgz.col_green }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstructor = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = mgz.col_purple }, -- For constants
 		TSFloat = { fg = mgz.col_yellow }, -- For floats
 		TSNumber = { fg = mgz.col_teal }, -- For all number
@@ -341,7 +341,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSFuncBuiltin = { fg = mgz.col_orange }
 		-- Namespaces and property accessors
 		treesitter.TSNamespace = { fg = mgz.col_blue } -- For identifiers referring to modules and namespaces.
-		treesitter.TSField = { fg = mgz.col_blue } -- For fields in literals
+		treesitter.TSField = { fg = mgz.col_lightblue } -- For fields in literals
 		treesitter.TSProperty = { fg = mgz.col_lightblue } -- Same as `TSField`
 		-- Language keywords
 		treesitter.TSKeyword = { fg = mgz.col_darkblue } -- For keywords that don't fall in other categories.
@@ -514,7 +514,7 @@ theme.loadPlugins = function()
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
-		NvimTreeFolderName = { fg = mgz.col_blue },
+		NvimTreeFolderName = { fg = mgz.col_blue, style = "bold" },
 		NvimTreeEmptyFolderName = { fg = mgz.col_dimwhite },
 		NvimTreeFolderIcon = { fg = mgz.col_blue },
 		NvimTreeIndentMarker = { fg = mgz.col_dimwhite },
