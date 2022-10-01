@@ -239,12 +239,10 @@ theme.loadEditor = function()
 
 	--Set transparent background
 	if vim.g.mgz_disable_background then
-		-- TODO: MONKE?
-		editor.Normal = { fg = mgz.col_red, bg = mgz.none } -- normal text and background color
+		editor.Normal = { fg = mgz.col_white, bg = mgz.none } -- normal text and background color
 		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.none }
 	else
-		-- TODO: MONKE?
-		editor.Normal = { fg = mgz.col_red, bg = mgz.col_black } -- normal text and background color
+		editor.Normal = { fg = mgz.col_white, bg = mgz.col_black } -- normal text and background color
 		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.col_black }
 	end
 
@@ -322,7 +320,7 @@ theme.loadTreeSitter = function()
 		TSTag = { fg = mgz.col_blue }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = mgz.col_yellow }, -- Tag delimiter like `<` `>` `/`
 		-- TODO: MONKE?
-		TSText = { fg = mgz.col_green }, -- For strings considecol_red text in a markup language.
+		TSText = { fg = mgz.col_dimcyan }, -- For strings considered text in a markup language.
 		TSTextReference = { fg = mgz.col_yellow }, -- TODO:
 		TSEmphasis = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis.
 		TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline.
@@ -406,25 +404,25 @@ theme.loadLSP = function()
 	-- Lsp highlight groups
 
 	local lsp = {
-		LspDiagnosticsDefaultError = { fg = mgz.col_red }, -- used for "Error" diagnostic virtual text
+		LspDiagnosticsDefaultError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- used for "Error" diagnostic virtual text
 		LspDiagnosticsSignError = { fg = mgz.col_red }, -- used for "Error" diagnostic signs in sign column
 		LspDiagnosticsFloatingError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- used for "Error" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextError = { fg = mgz.col_red }, -- Virtual text "Error"
+		LspDiagnosticsVirtualTextError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- Virtual text "Error"
 		LspDiagnosticsUnderlineError = { style = "undercurl", sp = mgz.col_red }, -- used to underline "Error" diagnostics.
-		LspDiagnosticsDefaultWarning = { fg = mgz.col_yellow }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsDefaultWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- used for "Warning" diagnostic signs in sign column
 		LspDiagnosticsSignWarning = { fg = mgz.col_yellow }, -- used for "Warning" diagnostic signs in sign column
 		LspDiagnosticsFloatingWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- used for "Warning" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextWarning = { fg = mgz.col_yellow }, -- Virtual text "Warning"
+		LspDiagnosticsVirtualTextWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- Virtual text "Warning"
 		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = mgz.col_yellow }, -- used to underline "Warning" diagnostics.
-		LspDiagnosticsDefaultInformation = { fg = mgz.col_lightblue }, -- used for "Information" diagnostic virtual text
+		LspDiagnosticsDefaultInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- used for "Information" diagnostic virtual text
 		LspDiagnosticsSignInformation = { fg = mgz.col_lightblue }, -- used for "Information" diagnostic signs in sign column
 		LspDiagnosticsFloatingInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- used for "Information" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextInformation = { fg = mgz.col_lightblue }, -- Virtual text "Information"
+		LspDiagnosticsVirtualTextInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- Virtual text "Information"
 		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Information" diagnostics.
 		LspDiagnosticsDefaultHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- used for "Hint" diagnostic virtual text
 		LspDiagnosticsSignHint = { fg = mgz.col_cyan }, -- used for "Hint" diagnostic signs in sign column
 		LspDiagnosticsFloatingHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = mgz.col_cyan }, -- Virtual text "Hint"
+		LspDiagnosticsVirtualTextHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- Virtual text "Hint"
 		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Hint" diagnostics.
 		LspReferenceText = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "text" references
 		LspReferenceRead = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "read" references
