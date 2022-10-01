@@ -104,7 +104,7 @@ theme.loadSyntax = function()
 		syntax.Function = { fg = mgz.col_orange } -- normal function names
 		syntax.Identifier = { fg = mgz.col_white } -- any variable name
 		syntax.Keyword = { fg = mgz.col_darkblue } -- normal for, do, while, etc.
-		syntax.Repeat = { fg = mgz.col_white } -- normal any other keyword
+		syntax.Repeat = { fg = mgz.col_purple } -- normal any other keyword
 		syntax.String = { fg = mgz.col_teal } -- any string
 	else
 		syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- italic comments
@@ -112,7 +112,7 @@ theme.loadSyntax = function()
 		syntax.Function = { fg = mgz.col_orange, bg = mgz.none, style = "italic" } -- italic funtion names
 		syntax.Identifier = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- any variable name
 		syntax.Keyword = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- italic for, do, while, etc.
-		syntax.Repeat = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- italic any other keyword
+		syntax.Repeat = { fg = mgz.col_purple, bg = mgz.none, style = "italic" } -- italic any other keyword
 		syntax.String = { fg = mgz.col_teal, bg = mgz.none, style = "italic" } -- any string
 	end
 
@@ -121,9 +121,10 @@ end
 
 theme.loadEditor = function()
 	-- Editor highlight groups
+	-- This is the most important group, literally NeoVim colors
 
 	local editor = {
-		-- TODO: I think these are the colors for popup windows like :LspInfo and :Mason
+		-- These are the colors for popup windows like :LspInfo and :Mason
 		NormalFloat = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
 		FloatBorder = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
@@ -136,9 +137,9 @@ theme.loadEditor = function()
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
-		LineNr = { fg = mgz.col_bluishgray },
+		LineNr = { fg = mgz.col_darkgray }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue },
-		MatchParen = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
+		MatchParen = { fg = mgz.col_pink, bg = mgz.none, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
@@ -307,26 +308,25 @@ theme.loadTreeSitter = function()
 		TSException = { fg = mgz.col_yellow }, -- For exception related keywords.
 		TSFuncMacro = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		TSInclude = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSLabel = { fg = mgz.col_yellow }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSLabel = { fg = mgz.col_lightblue }, -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
 		TSOperator = { fg = mgz.col_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = mgz.col_lightblue }, -- For parameters of a function.
 		TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function.
 		TSPunctDelimiter = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
 		TSPunctBracket = { fg = mgz.col_white }, -- For brackets and parens.
-		TSPunctSpecial = { fg = mgz.col_orange }, -- For special punctutation that does not fall in the catagories before.
+		TSPunctSpecial = { fg = mgz.col_purple }, -- For special punctutation that does not fall in the catagories before. Example is # in # H1 in .md
 		TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms.
 		TSType = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
 		TSTypeBuiltin = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
 		TSTag = { fg = mgz.col_blue }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = mgz.col_yellow }, -- Tag delimiter like `<` `>` `/`
-		-- TODO: MONKE?
-		TSText = { fg = mgz.col_dimcyan }, -- For strings considered text in a markup language.
-		TSTextReference = { fg = mgz.col_yellow }, -- TODO:
+		TSTagDelimiter = { fg = mgz.col_white }, -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
+		TSText = { fg = mgz.col_white }, -- For strings considered text in a markup language. Example is normal text in HTML
+		TSTextReference = { fg = mgz.col_green }, -- References like image alt names in markdown (text inside of [])
 		TSEmphasis = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis.
 		TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline.
 		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
 		TSLiteral = { fg = mgz.col_white }, -- Literal text.
-		TSURI = { fg = mgz.col_teal }, -- Any URI like a link or email.
+		TSURI = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
 		TSAnnotation = { fg = mgz.col_red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 	}
 
@@ -348,7 +348,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSKeywordFunction = { fg = mgz.col_orange }
 		treesitter.TSKeywordReturn = { fg = mgz.col_orange }
 		treesitter.TSKeywordOperator = { fg = mgz.col_green } -- A keyword operator is like new in new Object()
-		treesitter.TSRepeat = { fg = mgz.col_white } -- For keywords related to loops.
+		treesitter.TSRepeat = { fg = mgz.col_purple } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = mgz.col_teal } -- For strings.
 		treesitter.TSStringRegex = { fg = mgz.col_pink } -- For regexes.
@@ -372,7 +372,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSKeywordFunction = { fg = mgz.col_orange, style = "italic" }
 		treesitter.TSKeywordReturn = { fg = mgz.col_orange, style = "italic" }
 		treesitter.TSKeywordOperator = { fg = mgz.col_green, style = "italic" }
-		treesitter.TSRepeat = { fg = mgz.col_white, style = "italic" } -- For keywords related to loops.
+		treesitter.TSRepeat = { fg = mgz.col_purple, style = "italic" } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = mgz.col_teal, style = "italic" } -- For strings.
 		treesitter.TSStringRegex = { fg = mgz.col_pink, style = "italic" } -- For regexes.
@@ -513,11 +513,11 @@ theme.loadPlugins = function()
 		NvimTreeGitNew = { fg = mgz.col_teal },
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
-		NvimTreeSpecialFile = { fg = mgz.col_white, style = "underline" },
-		NvimTreeFolderName = { fg = mgz.col_lightblue },
-		NvimTreeEmptyFolderName = { fg = mgz.col_dimblack },
+		NvimTreeSpecialFile = { fg = mgz.col_orange },
+		NvimTreeFolderName = { fg = mgz.col_blue },
+		NvimTreeEmptyFolderName = { fg = mgz.col_dimwhite },
 		NvimTreeFolderIcon = { fg = mgz.col_blue },
-		NvimTreeIndentMarker = { fg = mgz.col_dimblack },
+		NvimTreeIndentMarker = { fg = mgz.col_dimwhite },
 		LspDiagnosticsError = { fg = mgz.col_red },
 		LspDiagnosticsWarning = { fg = mgz.col_yellow },
 		LspDiagnosticsInformation = { fg = mgz.col_lightblue },
