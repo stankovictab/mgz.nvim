@@ -7,7 +7,7 @@ local mgz = {
 	col_darkgray = "#1b1b1b", -- lualine inner and selection (visual mode) background
 	col_gray = "#333333", -- vertical lines on tabs
 	col_bluishgray = "#658595", -- comments, line numbers
-	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, WHOLE BUNCHA SHIT
+	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
 	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
 	col_termcursor = "#ffffff", -- lualine file type, toggleterm block cursor
 	col_huh = "#ffffff", -- ???
@@ -17,7 +17,7 @@ local mgz = {
 	col_lightblue = "#8edfff", -- object fields
 	col_red = "#ff3333", -- lsp errors - #ff3854
 	col_stronggreen = "#00ff00", -- ??? very rarely used
-	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color
+	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color, import from
 	col_teal = "#58F5AB", -- string
 	col_yellow = "#f4da58", -- numbers
 	col_liminal = "#2adede", -- constants, booleans
@@ -50,7 +50,7 @@ theme.loadSyntax = function()
 		Structure = { fg = mgz.col_white }, -- struct, union, enum, etc.
 		Constant = { fg = mgz.col_blue }, -- any constant
 		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
-		Number = { fg = mgz.col_yellow }, -- a number constant: 5
+		Number = { fg = mgz.col_teal }, -- a number constant: 5
 		Boolean = { fg = mgz.col_liminal }, -- a boolean constant: TRUE, false
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
 		Statement = { fg = mgz.col_white }, -- any statement
@@ -58,7 +58,7 @@ theme.loadSyntax = function()
 		Operator = { fg = mgz.col_white }, -- sizeof", "+", "*", etc.
 		Exception = { fg = mgz.col_white }, -- try, catch, throw
 		PreProc = { fg = mgz.col_white }, -- generic Preprocessor
-		Include = { fg = mgz.col_white }, -- preprocessor #include
+		Include = { fg = mgz.col_purple }, -- preprocessor #include, also import and from
 		Define = { fg = mgz.col_white }, -- preprocessor #define
 		Macro = { fg = mgz.col_white }, -- same as Define
 		Typedef = { fg = mgz.col_white }, -- A typedef
@@ -286,7 +286,7 @@ theme.loadTreeSitter = function()
 		TSConstructor = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = mgz.col_purple }, -- For constants
 		TSFloat = { fg = mgz.col_yellow }, -- For floats
-		TSNumber = { fg = mgz.col_yellow }, -- For all number
+		TSNumber = { fg = mgz.col_teal }, -- For all number
 
 		TSAttribute = { fg = mgz.col_yellow }, -- (unstable) TODO: docs
 		TSVariable = { fg = mgz.col_lightblue }, -- Any variable name that does not have another highlight.
@@ -297,17 +297,17 @@ theme.loadTreeSitter = function()
 		TSError = { fg = mgz.col_red }, -- For syntax/parser errors.
 		TSException = { fg = mgz.col_yellow }, -- For exception related keywords.
 		TSFuncMacro = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { fg = mgz.col_white }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSInclude = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSLabel = { fg = mgz.col_yellow }, -- For labels: `label:` in C and `:label:` in Lua.
 		TSOperator = { fg = mgz.col_white }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = mgz.col_lightblue }, -- For parameters of a function.
 		TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function.
-		TSPunctDelimiter = { fg = mgz.col_orange }, -- For delimiters ie: `.`
-		TSPunctBracket = { fg = mgz.col_orange }, -- For brackets and parens.
+		TSPunctDelimiter = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
+		TSPunctBracket = { fg = mgz.col_white }, -- For brackets and parens.
 		TSPunctSpecial = { fg = mgz.col_orange }, -- For special punctutation that does not fall in the catagories before.
 		TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms.
-		TSType = { fg = mgz.col_white }, -- For types.
-		TSTypeBuiltin = { fg = mgz.col_white }, -- For builtin types.
+		TSType = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
+		TSTypeBuiltin = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
 		TSTag = { fg = mgz.col_blue }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = mgz.col_yellow }, -- Tag delimiter like `<` `>` `/`
 		TSText = { fg = mgz.col_blue }, -- For strings considecol_red text in a markup language.
@@ -570,7 +570,7 @@ theme.loadPlugins = function()
 		-- nvim-dap-ui
 		DapUIVariable = { fg = mgz.col_blue },
 		DapUIScope = { fg = mgz.col_orange },
-		DapUIType = { fg = mgz.col_white },
+		DapUIType = { fg = mgz.col_blue },
 		DapUIValue = { fg = mgz.col_blue },
 		DapUIModifiedValue = { fg = mgz.col_orange },
 		DapUIDecoration = { fg = mgz.col_orange },
@@ -699,7 +699,7 @@ theme.loadPlugins = function()
         AerialModuleIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialNamespaceIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialNullIcon = { fg = mgz.col_white },
-        AerialNumberIcon = { fg = mgz.col_yellow },
+        AerialNumberIcon = { fg = mgz.col_teal },
         AerialObjectIcon = { fg = mgz.col_white },
         AerialOperatorIcon = { fg = mgz.col_white },
         AerialPackageIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
@@ -726,7 +726,7 @@ theme.loadPlugins = function()
         AerialModule = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialNamespace = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialNull = { fg = mgz.col_white },
-        AerialNumber = { fg = mgz.col_yellow },
+        AerialNumber = { fg = mgz.col_teal },
         AerialObject = { fg = mgz.col_white },
         AerialOperator = { fg = mgz.col_white },
         AerialPackage = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
