@@ -115,8 +115,9 @@ theme.loadEditor = function()
 	-- Editor highlight groups
 
 	local editor = {
-		NormalFloat = { fg = mgz.col_blue, bg = mgz.float }, -- normal text and background color
-		FloatBorder = { fg = mgz.col_blue, bg = mgz.float }, -- normal text and background color
+		-- TODO: MONKE
+		NormalFloat = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
+		FloatBorder = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
 		ColorColumn = { fg = mgz.none, bg = mgz.col_verydarkgray }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_verydarkgray }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
@@ -492,10 +493,10 @@ theme.loadPlugins = function()
 		-- Telescope
 		TelescopePromptBorder = { fg = mgz.col_orange },
 		TelescopeResultsBorder = { fg = mgz.col_white },
-		TelescopePreviewBorder = { fg = mgz.col_teal },
-		TelescopeSelectionCaret = { fg = mgz.col_white },
-		TelescopeSelection = { fg = mgz.col_white },
-		TelescopeMatching = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" },
+		TelescopePreviewBorder = { fg = mgz.col_white },
+		TelescopeSelectionCaret = { fg = mgz.col_teal },
+		TelescopeSelection = { fg = mgz.col_white, bg = mgz.col_verydarkgray },
+		TelescopeMatching = { fg = mgz.col_orange, style = "bold" },
 
 		-- NvimTree
 		NvimTreeRootFolder = { fg = mgz.col_pink, style = "bold" },
