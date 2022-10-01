@@ -16,7 +16,7 @@ local mgz = {
 	col_white = "#ffffff", -- ifs, elses, {}=, all the brackets, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
 	col_lightblue = "#8edfff", -- object fields
 	col_red = "#ff3333", -- lsp errors - #ff3854
-	col_stronggreen = "#00ff00", -- ??? very rarely used
+	col_green = "#8DF94E", -- ??? very rarely used
 	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color, import from
 	col_teal = "#58F5AB", -- string
 	col_yellow = "#f4da58", -- numbers
@@ -283,14 +283,14 @@ theme.loadTreeSitter = function()
 
 	local treesitter = {
 		TSAnnotation = { fg = mgz.col_stronggreen }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		TSConstructor = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstructor = { fg = mgz.col_green }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = mgz.col_purple }, -- For constants
 		TSFloat = { fg = mgz.col_yellow }, -- For floats
 		TSNumber = { fg = mgz.col_teal }, -- For all number
 
 		TSAttribute = { fg = mgz.col_yellow }, -- (unstable) TODO: docs
-		TSVariable = { fg = mgz.col_lightblue }, -- Any variable name that does not have another highlight.
-		TSVariableBuiltin = { fg = mgz.col_lightblue },
+		TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
+		TSVariableBuiltin = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
 		TSBoolean = { fg = mgz.col_liminal }, -- For booleans.
 		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
@@ -337,7 +337,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSKeyword = { fg = mgz.col_darkblue } -- For keywords that don't fall in other categories.
 		treesitter.TSKeywordFunction = { fg = mgz.col_orange }
 		treesitter.TSKeywordReturn = { fg = mgz.col_orange }
-		treesitter.TSKeywordOperator = { fg = mgz.col_orange }
+		treesitter.TSKeywordOperator = { fg = mgz.col_green } -- A keyword operator is like new in new Object()
 		treesitter.TSRepeat = { fg = mgz.col_white } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = mgz.col_teal } -- For strings.
@@ -361,7 +361,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSKeyword = { fg = mgz.col_white, style = "italic" } -- For keywords that don't fall in other categories.
 		treesitter.TSKeywordFunction = { fg = mgz.col_orange, style = "italic" }
 		treesitter.TSKeywordReturn = { fg = mgz.col_orange, style = "italic" }
-		treesitter.TSKeywordOperator = { fg = mgz.col_orange, style = "italic" }
+		treesitter.TSKeywordOperator = { fg = mgz.col_green, style = "italic" }
 		treesitter.TSRepeat = { fg = mgz.col_white, style = "italic" } -- For keywords related to loops.
 		-- Strings
 		treesitter.TSString = { fg = mgz.col_teal, style = "italic" } -- For strings.
@@ -686,7 +686,7 @@ theme.loadPlugins = function()
         AerialBooleanIcon = { fg = mgz.col_liminal },
         AerialClassIcon = { fg = mgz.col_white },
         AerialConstansIcon = { fg = mgz.col_purple },
-        AerialConstructorIcon = { fg = mgz.col_white },
+        AerialConstructorIcon = { fg = mgz.col_green },
         AerialEnumIcon = { fg = mgz.col_white },
         AerialEnumMemberIcon = { fg = mgz.col_blue },
         AerialEventIcon = { fg = mgz.col_white },
@@ -713,7 +713,7 @@ theme.loadPlugins = function()
         AerialBoolean = { fg = mgz.col_liminal },
         AerialClass = { fg = mgz.col_white },
         AerialConstans = { fg = mgz.col_purple },
-        AerialConstructor = { fg = mgz.col_white },
+        AerialConstructor = { fg = mgz.col_green },
         AerialEnum = { fg = mgz.col_white },
         AerialEnumMember = { fg = mgz.col_blue },
         AerialEvent = { fg = mgz.col_white },
