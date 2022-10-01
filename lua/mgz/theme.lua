@@ -55,7 +55,7 @@ theme.loadSyntax = function()
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
 		Statement = { fg = mgz.col_white }, -- any statement
 		Label = { fg = mgz.col_white }, -- case, default, etc.
-		Operator = { fg = mgz.col_white }, -- sizeof", "+", "*", etc.
+		Operator = { fg = mgz.col_yellow }, -- sizeof", "+", "*", etc.
 		Exception = { fg = mgz.col_white }, -- try, catch, throw
 		PreProc = { fg = mgz.col_white }, -- generic Preprocessor
 		Include = { fg = mgz.col_purple }, -- preprocessor #include, also import and from
@@ -92,7 +92,7 @@ theme.loadSyntax = function()
 	-- Italic check
 	if vim.g.mgz_italic == false then
 		syntax.Comment = { fg = mgz.col_bluishgray } -- normal comments
-		syntax.Conditional = { fg = mgz.col_white } -- normal if, then, else, endif, switch, etc.
+		syntax.Conditional = { fg = mgz.col_purple } -- normal if, then, else, endif, switch, etc.
 		syntax.Function = { fg = mgz.col_orange } -- normal function names
 		syntax.Identifier = { fg = mgz.col_white } -- any variable name
 		syntax.Keyword = { fg = mgz.col_darkblue } -- normal for, do, while, etc.
@@ -100,7 +100,7 @@ theme.loadSyntax = function()
 		syntax.String = { fg = mgz.col_teal } -- any string
 	else
 		syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- italic comments
-		syntax.Conditional = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
+		syntax.Conditional = { fg = mgz.col_purple, bg = mgz.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
 		syntax.Function = { fg = mgz.col_orange, bg = mgz.none, style = "italic" } -- italic funtion names
 		syntax.Identifier = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- any variable name
 		syntax.Keyword = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- italic for, do, while, etc.
@@ -299,7 +299,7 @@ theme.loadTreeSitter = function()
 		TSFuncMacro = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
 		TSInclude = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
 		TSLabel = { fg = mgz.col_yellow }, -- For labels: `label:` in C and `:label:` in Lua.
-		TSOperator = { fg = mgz.col_white }, -- For any operator: `+`, but also `->` and `*` in C.
+		TSOperator = { fg = mgz.col_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
 		TSParameter = { fg = mgz.col_lightblue }, -- For parameters of a function.
 		TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function.
 		TSPunctDelimiter = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
@@ -324,7 +324,7 @@ theme.loadTreeSitter = function()
 		-- Comments
 		treesitter.TSComment = { fg = mgz.col_bluishgray }
 		-- Conditionals
-		treesitter.TSConditional = { fg = mgz.col_white } -- For keywords related to conditionnals.
+		treesitter.TSConditional = { fg = mgz.col_purple } -- For keywords related to conditionnals.
 		-- Function names
 		treesitter.TSFunction = { fg = mgz.col_orange } -- For fuction (calls and definitions).
 		treesitter.TSMethod = { fg = mgz.col_pink } -- For method calls and definitions.
@@ -348,7 +348,7 @@ theme.loadTreeSitter = function()
 		-- Comments
 		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" }
 		-- Conditionals
-		treesitter.TSConditional = { fg = mgz.col_white, style = "italic" } -- For keywords related to conditionnals.
+		treesitter.TSConditional = { fg = mgz.col_purple, style = "italic" } -- For keywords related to conditionnals.
 		-- Function names
 		treesitter.TSFunction = { fg = mgz.col_orange, style = "italic" } -- For fuction (calls and definitions).
 		treesitter.TSMethod = { fg = mgz.col_pink, style = "italic" } -- For method calls and definitions.
@@ -701,7 +701,7 @@ theme.loadPlugins = function()
         AerialNullIcon = { fg = mgz.col_white },
         AerialNumberIcon = { fg = mgz.col_teal },
         AerialObjectIcon = { fg = mgz.col_white },
-        AerialOperatorIcon = { fg = mgz.col_white },
+        AerialOperatorIcon = { fg = mgz.col_yellow },
         AerialPackageIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialPropertyIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
         AerialStringIcon = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
@@ -728,7 +728,7 @@ theme.loadPlugins = function()
         AerialNull = { fg = mgz.col_white },
         AerialNumber = { fg = mgz.col_teal },
         AerialObject = { fg = mgz.col_white },
-        AerialOperator = { fg = mgz.col_white },
+        AerialOperator = { fg = mgz.col_yellow },
         AerialPackage = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
         AerialProperty = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
         AerialString = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
