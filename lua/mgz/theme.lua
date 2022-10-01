@@ -84,17 +84,17 @@ theme.loadSyntax = function()
 		Conceal = { fg = mgz.none, bg = mgz.col_black },
 
 		htmlLink = { fg = mgz.col_teal, style = "underline" },
-		htmlH1 = { fg = mgz.col_orange, style = "bold" },
-		htmlH2 = { fg = mgz.col_red, style = "bold" },
-		htmlH3 = { fg = mgz.col_teal, style = "bold" },
-		htmlH4 = { fg = mgz.col_yellow, style = "bold" },
-		htmlH5 = { fg = mgz.col_white, style = "bold" },
-		markdownH1 = { fg = mgz.col_orange, style = "bold" },
-		markdownH2 = { fg = mgz.col_red, style = "bold" },
-		markdownH3 = { fg = mgz.col_teal, style = "bold" },
-		markdownH1Delimiter = { fg = mgz.col_orange },
-		markdownH2Delimiter = { fg = mgz.col_red },
-		markdownH3Delimiter = { fg = mgz.col_teal },
+		htmlH1 = { fg = mgz.col_lightblue, style = "bold" },
+		htmlH2 = { fg = mgz.col_lightblue, style = "bold" },
+		htmlH3 = { fg = mgz.col_lightblue, style = "bold" },
+		htmlH4 = { fg = mgz.col_lightblue, style = "bold" },
+		htmlH5 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH3 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH1Delimiter = { fg = mgz.col_purple },
+		markdownH2Delimiter = { fg = mgz.col_purple },
+		markdownH3Delimiter = { fg = mgz.col_purple },
 	}
 
 	-- Italic check
@@ -123,9 +123,9 @@ theme.loadEditor = function()
 	-- Editor highlight groups
 
 	local editor = {
-		-- TODO: ???
-		NormalFloat = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
-		FloatBorder = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
+		-- TODO: I think these are the colors for popup windows like :LspInfo and :Mason
+		NormalFloat = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
+		FloatBorder = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
