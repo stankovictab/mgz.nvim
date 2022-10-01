@@ -3,9 +3,7 @@ local mgz = {
 	-- #ff765e is a nice color
 
 	col_black = "#000000", -- background
-	col_verydarkgray = "#131313", -- current line highlight, scrollbar, lualine inbetween
 	col_darkgray = "#1b1b1b", -- lualine inner and selection (visual mode) background
-	col_gray = "#333333", -- vertical lines on tabs
 	col_bluishgray = "#658595", -- comments, line numbers
 	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
 	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
@@ -15,19 +13,29 @@ local mgz = {
 	col_orange = "#ff8630", -- function names, WHOLE BUNCHA SHIT - #df6f3f
 	col_white = "#ffffff", -- ifs, elses, {}=, all the brackets, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
 	col_lightblue = "#8edfff", -- object fields
-	col_red = "#ff3333", -- lsp errors - #ff3854
+	col_red = "#F44336", -- lsp errors - #ff3854
 	col_green = "#8DF94E", -- ??? very rarely used
 	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color, import from
 	col_teal = "#58F5AB", -- string
 	col_yellow = "#f4da58", -- numbers
-	col_liminal = "#2adede", -- constants, booleans
+	col_cyan = "#2adede", -- liminal color - constants, booleans
+
+	col_dimblack = "#141414", -- current line highlight, scrollbar, lualine inbetween
+	col_dimred = "#31100D",
+	col_dimgreen = "#11230E",
+	col_dimyellow = "#1E1200"
+	col_dimblue = "#041824",
+	col_dimmagenta = "#281641",
+	col_dimcyan = "#0A3535",
+	col_dimwhite = "#333333", -- vertical lines on tabs
+
 	none = "NONE",
 }
 
 -- Enable contrast sidebars, floating windows and popup menus
 if vim.g.mgz_contrast then
-	mgz.sidebar = mgz.col_verydarkgray
-	mgz.float = mgz.col_verydarkgray
+	mgz.sidebar = mgz.col_dimblack
+	mgz.float = mgz.col_dimblack
 else
 	mgz.sidebar = mgz.col_black
 	mgz.float = mgz.col_black
@@ -36,7 +44,7 @@ end
 if vim.g.mgz_cursorline_transparent then
 	mgz.cursorlinefg = mgz.col_black
 else
-	mgz.cursorlinefg = mgz.col_verydarkgray
+	mgz.cursorlinefg = mgz.col_dimblack
 end
 
 local theme = {}
@@ -51,7 +59,7 @@ theme.loadSyntax = function()
 		Constant = { fg = mgz.col_blue }, -- any constant
 		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
 		Number = { fg = mgz.col_teal }, -- a number constant: 5
-		Boolean = { fg = mgz.col_liminal }, -- a boolean constant: TRUE, false
+		Boolean = { fg = mgz.col_cyan }, -- a boolean constant: TRUE, false
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
 		Statement = { fg = mgz.col_white }, -- any statement
 		Label = { fg = mgz.col_white }, -- case, default, etc.
@@ -70,7 +78,7 @@ theme.loadSyntax = function()
 		SpecialComment = { fg = mgz.col_orange }, -- special things inside a comment
 		Debug = { fg = mgz.col_red }, -- debugging statements
 		Underlined = { fg = mgz.col_teal, bg = mgz.none, style = "underline" }, -- text that stands out, HTML links
-		Ignore = { fg = mgz.col_verydarkgray }, -- left blank, hidden
+		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
 		Todo = { fg = mgz.col_purple, bg = mgz.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Conceal = { fg = mgz.none, bg = mgz.col_black },
@@ -115,15 +123,15 @@ theme.loadEditor = function()
 	-- Editor highlight groups
 
 	local editor = {
-		-- TODO: MONKE
+		-- TODO: ???
 		NormalFloat = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
 		FloatBorder = { fg = mgz.col_red, bg = mgz.float }, -- normal text and background color
-		ColorColumn = { fg = mgz.none, bg = mgz.col_verydarkgray }, --  used for the columns set with 'colorcolumn'
-		Conceal = { fg = mgz.col_verydarkgray }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
+		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = mgz.col_termcursor, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
-		EndOfBuffer = { fg = mgz.col_verydarkgray },
+		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.none },
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
@@ -133,7 +141,7 @@ theme.loadEditor = function()
 		MatchParen = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
-		NonText = { fg = mgz.col_verydarkgray },
+		NonText = { fg = mgz.col_dimblack },
 		Pmenu = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		PmenuSel = { fg = mgz.col_blue, bg = mgz.col_lightblue },
 		PmenuSbar = { fg = mgz.col_blue, bg = mgz.col_darkgray },
@@ -148,12 +156,12 @@ theme.loadEditor = function()
 		SpellLocal = { fg = mgz.col_orange, bg = mgz.none, style = "italic,undercurl" },
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
 		StatusLine = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		TabLineFill = { fg = mgz.col_blue, bg = mgz.none },
-		TablineSel = { fg = mgz.col_verydarkgray, bg = mgz.col_white },
-		Tabline = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
+		Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
@@ -161,7 +169,7 @@ theme.loadEditor = function()
 		WildMenu = { fg = mgz.col_stronggreen, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
-		ToolbarLine = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		ToolbarLine = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		ToolbarButton = { fg = mgz.col_blue, bg = mgz.none, style = "bold" },
 		NormalMode = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		InsertMode = { fg = mgz.col_teal, bg = mgz.none, style = "reverse" },
@@ -183,18 +191,18 @@ theme.loadEditor = function()
 		-- Barbar
 		BufferTabpageFill = { bg = mgz.col_black },
 
-		BufferCurrent = { bg = mgz.col_verydarkgray },
-		BufferCurrentMod = { bg = mgz.col_verydarkgray, fg = mgz.col_yellow },
-		BufferCurrentIcon = { bg = mgz.col_verydarkgray },
-		BufferCurrentSign = { bg = mgz.col_verydarkgray },
-		BufferCurrentIndex = { bg = mgz.col_verydarkgray },
-		BufferCurrentTarget = { bg = mgz.col_verydarkgray, fg = mgz.col_red },
+		BufferCurrent = { bg = mgz.col_dimblack },
+		BufferCurrentMod = { bg = mgz.col_dimblack, fg = mgz.col_yellow },
+		BufferCurrentIcon = { bg = mgz.col_dimblack },
+		BufferCurrentSign = { bg = mgz.col_dimblack },
+		BufferCurrentIndex = { bg = mgz.col_dimblack },
+		BufferCurrentTarget = { bg = mgz.col_dimblack, fg = mgz.col_red },
 
-		BufferInactive = { bg = mgz.col_black, fg = mgz.col_gray },
+		BufferInactive = { bg = mgz.col_black, fg = mgz.col_dimwhite },
 		BufferInactiveMod = { bg = mgz.col_black, fg = mgz.col_yellow },
-		BufferInactiveIcon = { bg = mgz.col_black , fg = mgz.col_gray },
-		BufferInactiveSign = { bg = mgz.col_black , fg = mgz.col_gray },
-		BufferInactiveIndex = { bg = mgz.col_black , fg = mgz.col_gray },
+		BufferInactiveIcon = { bg = mgz.col_black , fg = mgz.col_dimwhite },
+		BufferInactiveSign = { bg = mgz.col_black , fg = mgz.col_dimwhite },
+		BufferInactiveIndex = { bg = mgz.col_black , fg = mgz.col_dimwhite },
 		BufferInactiveTarget = { bg = mgz.col_black, fg = mgz.col_red },
 
 		BufferVisible = { bg = mgz.col_darkgray },
@@ -205,9 +213,9 @@ theme.loadEditor = function()
 		BufferVisibleTarget = { bg = mgz.col_darkgray, fg = mgz.col_red },
 
 		-- nvim-notify
-		NotifyDEBUGBorder = { fg = mgz.col_gray },
-		NotifyDEBUGIcon = { fg = mgz.col_gray },
-		NotifyDEBUGTitle = { fg = mgz.col_gray },
+		NotifyDEBUGBorder = { fg = mgz.col_dimwhite },
+		NotifyDEBUGIcon = { fg = mgz.col_dimwhite },
+		NotifyDEBUGTitle = { fg = mgz.col_dimwhite },
 		NotifyERRORBorder = { fg = mgz.col_red },
 		NotifyERRORIcon = { fg = mgz.col_red },
 		NotifyERRORTitle = { fg = mgz.col_red },
@@ -231,10 +239,12 @@ theme.loadEditor = function()
 
 	--Set transparent background
 	if vim.g.mgz_disable_background then
-		editor.Normal = { fg = mgz.col_blue, bg = mgz.none } -- normal text and background color
+		-- TODO: MONKE?
+		editor.Normal = { fg = mgz.col_red, bg = mgz.none } -- normal text and background color
 		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.none }
 	else
-		editor.Normal = { fg = mgz.col_blue, bg = mgz.col_black } -- normal text and background color
+		-- TODO: MONKE?
+		editor.Normal = { fg = mgz.col_red, bg = mgz.col_black } -- normal text and background color
 		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.col_black }
 	end
 
@@ -246,10 +256,10 @@ theme.loadEditor = function()
 	end
 
 	if vim.g.mgz_uniform_diff_background then
-		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_verydarkgray } -- diff mode: Added line
-		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_verydarkgray } --  diff mode: Changed line
-		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_verydarkgray } -- diff mode: Deleted line
-		editor.DiffText = { fg = mgz.col_yellow, bg = mgz.col_verydarkgray } -- diff mode: Changed text within a changed line
+		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack } -- diff mode: Added line
+		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack } --  diff mode: Changed line
+		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack } -- diff mode: Deleted line
+		editor.DiffText = { fg = mgz.col_yellow, bg = mgz.col_dimblack } -- diff mode: Changed text within a changed line
 	else
 		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.none, style = "reverse" } -- diff mode: Added line
 		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.none, style = "reverse" } --  diff mode: Changed line
@@ -261,7 +271,7 @@ theme.loadEditor = function()
 end
 
 theme.loadTerminal = function()
-	vim.g.terminal_color_0 = mgz.col_verydarkgray
+	vim.g.terminal_color_0 = mgz.col_dimblack
 	vim.g.terminal_color_1 = mgz.col_red
 	vim.g.terminal_color_2 = mgz.col_teal
 	vim.g.terminal_color_3 = mgz.col_purple
@@ -269,7 +279,7 @@ theme.loadTerminal = function()
 	vim.g.terminal_color_5 = mgz.col_yellow
 	vim.g.terminal_color_6 = mgz.col_orange
 	vim.g.terminal_color_7 = mgz.col_termcursor
-	vim.g.terminal_color_8 = mgz.col_gray
+	vim.g.terminal_color_8 = mgz.col_dimwhite
 	vim.g.terminal_color_9 = mgz.col_red
 	vim.g.terminal_color_10 = mgz.col_teal
 	vim.g.terminal_color_11 = mgz.col_purple
@@ -292,7 +302,7 @@ theme.loadTreeSitter = function()
 		TSAttribute = { fg = mgz.col_yellow }, -- (unstable) TODO: docs
 		TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
 		TSVariableBuiltin = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
-		TSBoolean = { fg = mgz.col_liminal }, -- For booleans.
+		TSBoolean = { fg = mgz.col_cyan }, -- For booleans.
 		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = mgz.col_red }, -- For syntax/parser errors.
@@ -311,8 +321,9 @@ theme.loadTreeSitter = function()
 		TSTypeBuiltin = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
 		TSTag = { fg = mgz.col_blue }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = mgz.col_yellow }, -- Tag delimiter like `<` `>` `/`
-		TSText = { fg = mgz.col_blue }, -- For strings considecol_red text in a markup language.
-		TSTextReference = { fg = mgz.col_yellow }, -- FIXME
+		-- TODO: MONKE?
+		TSText = { fg = mgz.col_green }, -- For strings considecol_red text in a markup language.
+		TSTextReference = { fg = mgz.col_yellow }, -- TODO:
 		TSEmphasis = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis.
 		TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline.
 		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
@@ -410,14 +421,14 @@ theme.loadLSP = function()
 		LspDiagnosticsFloatingInformation = { fg = mgz.col_lightblue }, -- used for "Information" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextInformation = { fg = mgz.col_lightblue }, -- Virtual text "Information"
 		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Information" diagnostics.
-		LspDiagnosticsDefaultHint = { fg = mgz.col_white }, -- used for "Hint" diagnostic virtual text
-		LspDiagnosticsSignHint = { fg = mgz.col_white }, -- used for "Hint" diagnostic signs in sign column
-		LspDiagnosticsFloatingHint = { fg = mgz.col_white }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = mgz.col_white }, -- Virtual text "Hint"
+		LspDiagnosticsDefaultHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- used for "Hint" diagnostic virtual text
+		LspDiagnosticsSignHint = { fg = mgz.col_cyan }, -- used for "Hint" diagnostic signs in sign column
+		LspDiagnosticsFloatingHint = { fg = mgz.col_cyan }, -- used for "Hint" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextHint = { fg = mgz.col_cyan }, -- Virtual text "Hint"
 		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Hint" diagnostics.
-		LspReferenceText = { fg = mgz.col_blue, bg = mgz.col_verydarkgray }, -- used for highlighting "text" references
-		LspReferenceRead = { fg = mgz.col_blue, bg = mgz.col_verydarkgray }, -- used for highlighting "read" references
-		LspReferenceWrite = { fg = mgz.col_blue, bg = mgz.col_verydarkgray }, -- used for highlighting "write" references
+		LspReferenceText = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "text" references
+		LspReferenceRead = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "read" references
+		LspReferenceWrite = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "write" references
 
 		DiagnosticError = { link = "LspDiagnosticsDefaultError" },
 		DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
@@ -461,15 +472,15 @@ theme.loadPlugins = function()
 		diffOldFile = { fg = mgz.yelow },
 		diffNewFile = { fg = mgz.col_stronggreen },
 		diffFile = { fg = mgz.col_pink },
-		diffLine = { fg = mgz.col_gray },
+		diffLine = { fg = mgz.col_dimwhite },
 		diffIndexLine = { fg = mgz.col_white },
 
 		-- Neogit
 		NeogitBranch = { fg = mgz.col_lightblue },
 		NeogitRemote = { fg = mgz.col_white },
 		NeogitHunkHeader = { fg = mgz.col_orange },
-		NeogitHunkHeaderHighlight = { fg = mgz.col_orange, bg = mgz.col_verydarkgray },
-		NeogitDiffContextHighlight = { bg = mgz.col_verydarkgray },
+		NeogitHunkHeaderHighlight = { fg = mgz.col_orange, bg = mgz.col_dimblack },
+		NeogitDiffContextHighlight = { bg = mgz.col_dimblack },
 		NeogitDiffDeleteHighlight = { fg = mgz.col_red, style = "reverse" },
 		NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
@@ -495,7 +506,7 @@ theme.loadPlugins = function()
 		TelescopeResultsBorder = { fg = mgz.col_white },
 		TelescopePreviewBorder = { fg = mgz.col_white },
 		TelescopeSelectionCaret = { fg = mgz.col_teal },
-		TelescopeSelection = { fg = mgz.col_white, bg = mgz.col_verydarkgray },
+		TelescopeSelection = { fg = mgz.col_white, bg = mgz.col_dimblack },
 		TelescopeMatching = { fg = mgz.col_orange, style = "bold" },
 
 		-- NvimTree
@@ -506,9 +517,9 @@ theme.loadPlugins = function()
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_white, style = "underline" },
 		NvimTreeFolderName = { fg = mgz.col_lightblue },
-		NvimTreeEmptyFolderName = { fg = mgz.col_verydarkgray },
+		NvimTreeEmptyFolderName = { fg = mgz.col_dimblack },
 		NvimTreeFolderIcon = { fg = mgz.col_blue },
-		NvimTreeIndentMarker = { fg = mgz.col_verydarkgray },
+		NvimTreeIndentMarker = { fg = mgz.col_dimblack },
 		LspDiagnosticsError = { fg = mgz.col_red },
 		LspDiagnosticsWarning = { fg = mgz.col_yellow },
 		LspDiagnosticsInformation = { fg = mgz.col_lightblue },
@@ -547,7 +558,7 @@ theme.loadPlugins = function()
 
 		-- Sneak
 		Sneak = { fg = mgz.col_black, bg = mgz.col_blue },
-		SneakScope = { bg = mgz.col_verydarkgray },
+		SneakScope = { bg = mgz.col_dimblack },
 
 		-- Cmp
 		CmpItemKind = { fg = mgz.col_yellow },
@@ -557,12 +568,12 @@ theme.loadPlugins = function()
 		CmpItemMenu = { fg = mgz.col_teal },
 
 		-- Indent Blankline
-		IndentBlanklineChar = { fg = mgz.col_gray },
+		IndentBlanklineChar = { fg = mgz.col_dimwhite },
 		IndentBlanklineContextChar = { fg = mgz.col_lightblue },
 
 		-- Illuminate
-		illuminatedWord = { bg = mgz.col_gray },
-		illuminatedCurWord = { bg = mgz.col_gray },
+		illuminatedWord = { bg = mgz.col_dimwhite },
+		illuminatedCurWord = { bg = mgz.col_dimwhite },
 
 		-- nvim-dap
 		DapBreakpoint = { fg = mgz.col_teal },
@@ -593,7 +604,7 @@ theme.loadPlugins = function()
 		HopNextKey = { fg = mgz.col_blue, style = "bold" },
 		HopNextKey1 = { fg = mgz.col_orange, style = "bold" },
 		HopNextKey2 = { fg = mgz.col_blue },
-		HopUnmatched = { fg = mgz.col_gray },
+		HopUnmatched = { fg = mgz.col_dimwhite },
 
 		-- Fern
 		FernBranchText = { fg = mgz.col_bluishgray },
@@ -616,22 +627,22 @@ theme.loadPlugins = function()
 		LightspeedShortcutOverlapped = { fg = mgz.col_lightblue, style = "bold,underline" },
 		LightspeedMaskedChar = { fg = mgz.col_blue, bg = mgz.col_darkgray, style = "bold" },
 		LightspeedGreyWash = { fg = mgz.col_bluishgray },
-		LightspeedUnlabeledMatch = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		LightspeedUnlabeledMatch = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		LightspeedOneCharMatch = { fg = mgz.col_orange, style = "bold,reverse" },
 		LightspeedUniqueChar = { style = "bold,underline" },
 
 		-- copilot
-		CopilotLabel = { fg = mgz.col_gray, bg = mgz.none },
+		CopilotLabel = { fg = mgz.col_dimwhite, bg = mgz.none },
 
 		-- Statusline
-		StatusLineDull = { fg = mgz.col_gray, bg = mgz.col_verydarkgray },
+		StatusLineDull = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack },
 		StatusLineAccent = { fg = mgz.col_black, bg = mgz.col_purple },
 
 		-- mini.nvim
 		MiniCompletionActiveParameter = { style = "underline" },
 
-		MiniCursorword = { bg = mgz.col_gray },
-		MiniCursorwordCurrent = { bg = mgz.col_gray },
+		MiniCursorword = { bg = mgz.col_dimwhite },
+		MiniCursorwordCurrent = { bg = mgz.col_dimwhite },
 
 		MiniIndentscopeSymbol = { fg = mgz.col_lightblue },
 		MiniIndentscopePrefix = { style = "nocombine" }, -- Make it invisible
@@ -652,21 +663,21 @@ theme.loadPlugins = function()
 
 		MiniStatuslineDevinfo = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		MiniStatuslineFileinfo = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		MiniStatuslineFilename = { fg = mgz.col_blue, bg = mgz.col_verydarkgray },
+		MiniStatuslineFilename = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		MiniStatuslineInactive = { fg = mgz.col_blue, bg = mgz.col_black, style = "bold" },
 		MiniStatuslineModeCommand = { fg = mgz.col_black, bg = mgz.col_yellow, style = "bold" },
-		MiniStatuslineModeInsert = { fg = mgz.col_verydarkgray, bg = mgz.col_blue, style = "bold" },
-		MiniStatuslineModeNormal = { fg = mgz.col_verydarkgray, bg = mgz.col_white, style = "bold" },
+		MiniStatuslineModeInsert = { fg = mgz.col_dimblack, bg = mgz.col_blue, style = "bold" },
+		MiniStatuslineModeNormal = { fg = mgz.col_dimblack, bg = mgz.col_white, style = "bold" },
 		MiniStatuslineModeOther = { fg = mgz.col_black, bg = mgz.col_purple, style = "bold" },
 		MiniStatuslineModeReplace = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" },
 		MiniStatuslineModeVisual = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" },
 
 		MiniSurround = { link = "IncSearch" },
 
-		MiniTablineCurrent = { bg = mgz.col_verydarkgray },
+		MiniTablineCurrent = { bg = mgz.col_dimblack },
 		MiniTablineFill = { link = "TabLineFill" },
-		MiniTablineHidden = { bg = mgz.col_black, fg = mgz.col_gray },
-		MiniTablineModifiedCurrent = { bg = mgz.col_verydarkgray, fg = mgz.col_yellow },
+		MiniTablineHidden = { bg = mgz.col_black, fg = mgz.col_dimwhite },
+		MiniTablineModifiedCurrent = { bg = mgz.col_dimblack, fg = mgz.col_yellow },
 		MiniTablineModifiedHidden = { bg = mgz.col_black, fg = mgz.col_yellow },
 		MiniTablineModifiedVisible = { bg = mgz.col_darkgray, fg = mgz.col_yellow },
 		MiniTablineTabpagesection = { fg = mgz.col_lightblue, bg = mgz.col_huh, style = "reverse,bold" },
@@ -684,7 +695,7 @@ theme.loadPlugins = function()
         AerialLineNC = {bg = mgz.col_darkgray},
         
         AerialArrayIcon = { fg = mgz.col_purple },
-        AerialBooleanIcon = { fg = mgz.col_liminal },
+        AerialBooleanIcon = { fg = mgz.col_cyan },
         AerialClassIcon = { fg = mgz.col_white },
         AerialConstansIcon = { fg = mgz.col_purple },
         AerialConstructorIcon = { fg = mgz.col_green },
@@ -711,7 +722,7 @@ theme.loadPlugins = function()
         AerialVariableIcon = {fg = mgz.col_blue, style = "bold"},
 
         AerialArray = { fg = mgz.col_purple },
-        AerialBoolean = { fg = mgz.col_liminal },
+        AerialBoolean = { fg = mgz.col_cyan },
         AerialClass = { fg = mgz.col_white },
         AerialConstans = { fg = mgz.col_purple },
         AerialConstructor = { fg = mgz.col_green },
