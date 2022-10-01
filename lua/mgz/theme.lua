@@ -8,6 +8,7 @@ local mgz = {
 	col_gray = "#333333", -- vertical lines on tabs
 	col_bluishgray = "#658595", -- comments, line numbers
 	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, WHOLE BUNCHA SHIT
+	col_darkblue = "#4e79f0" -- storage, keywords (like let, const, interface)
 	col_termcursor = "#ffffff", -- lualine file type, toggleterm block cursor
 	col_huh = "#ffffff", -- ???
 	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
@@ -19,6 +20,7 @@ local mgz = {
 	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color
 	col_teal = "#58F5AB", -- string
 	col_yellow = "#f4da58", -- numbers
+	col_liminal = "#2adede", -- constants, booleans
 	none = "NONE",
 }
 
@@ -49,7 +51,7 @@ theme.loadSyntax = function()
 		Constant = { fg = mgz.col_blue }, -- any constant
 		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
 		Number = { fg = mgz.col_yellow }, -- a number constant: 5
-		Boolean = { fg = mgz.col_white }, -- a boolean constant: TRUE, false
+		Boolean = { fg = mgz.col_liminal }, -- a boolean constant: TRUE, false
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
 		Statement = { fg = mgz.col_white }, -- any statement
 		Label = { fg = mgz.col_white }, -- case, default, etc.
@@ -87,13 +89,13 @@ theme.loadSyntax = function()
 		markdownH3Delimiter = { fg = mgz.col_teal },
 	}
 
-	-- Italic comments
+	-- Italic check
 	if vim.g.mgz_italic == false then
 		syntax.Comment = { fg = mgz.col_bluishgray } -- normal comments
 		syntax.Conditional = { fg = mgz.col_white } -- normal if, then, else, endif, switch, etc.
 		syntax.Function = { fg = mgz.col_orange } -- normal function names
 		syntax.Identifier = { fg = mgz.col_white } -- any variable name
-		syntax.Keyword = { fg = mgz.col_white } -- normal for, do, while, etc.
+		syntax.Keyword = { fg = mgz.col_darkblue } -- normal for, do, while, etc.
 		syntax.Repeat = { fg = mgz.col_white } -- normal any other keyword
 		syntax.String = { fg = mgz.col_teal } -- any string
 	else
@@ -124,7 +126,7 @@ theme.loadEditor = function()
 		ErrorMsg = { fg = mgz.none },
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
-		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- CHANGED -- Search with /
+		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
 		LineNr = { fg = mgz.col_bluishgray },
 		CursorLineNr = { fg = mgz.col_blue },
 		MatchParen = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
@@ -138,7 +140,7 @@ theme.loadEditor = function()
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
-		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "reverse" }, -- CHANGED -- Search with /
+		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "reverse" }, -- Search with ???
 		SpecialKey = { fg = mgz.col_white },
 		SpellBad = { fg = mgz.col_red, bg = mgz.none, style = "italic,undercurl" },
 		SpellCap = { fg = mgz.col_pink, bg = mgz.none, style = "italic,undercurl" },
@@ -287,9 +289,9 @@ theme.loadTreeSitter = function()
 		TSNumber = { fg = mgz.col_yellow }, -- For all number
 
 		TSAttribute = { fg = mgz.col_yellow }, -- (unstable) TODO: docs
-		TSVariable = { fg = mgz.col_blue, style = "bold" }, -- Any variable name that does not have another highlight.
-		TSVariableBuiltin = { fg = mgz.col_blue, style = "bold" },
-		TSBoolean = { fg = mgz.col_white, style = "bold" }, -- For booleans.
+		TSVariable = { fg = mgz.col_lightblue }, -- Any variable name that does not have another highlight.
+		TSVariableBuiltin = { fg = mgz.col_lightblue },
+		TSBoolean = { fg = mgz.col_liminal }, -- For booleans.
 		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
 		TSError = { fg = mgz.col_red }, -- For syntax/parser errors.
@@ -332,7 +334,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSField = { fg = mgz.col_blue } -- For fields in literals
 		treesitter.TSProperty = { fg = mgz.col_lightblue } -- Same as `TSField`
 		-- Language keywords
-		treesitter.TSKeyword = { fg = mgz.col_white } -- For keywords that don't fall in other categories.
+		treesitter.TSKeyword = { fg = mgz.col_darkblue } -- For keywords that don't fall in other categories.
 		treesitter.TSKeywordFunction = { fg = mgz.col_orange }
 		treesitter.TSKeywordReturn = { fg = mgz.col_orange }
 		treesitter.TSKeywordOperator = { fg = mgz.col_orange }
@@ -681,7 +683,7 @@ theme.loadPlugins = function()
         AerialLineNC = {bg = mgz.col_darkgray},
         
         AerialArrayIcon = { fg = mgz.col_purple },
-        AerialBooleanIcon = { fg = mgz.col_white, style = "bold" },
+        AerialBooleanIcon = { fg = mgz.col_liminal },
         AerialClassIcon = { fg = mgz.col_white },
         AerialConstansIcon = { fg = mgz.col_purple },
         AerialConstructorIcon = { fg = mgz.col_white },
@@ -708,7 +710,7 @@ theme.loadPlugins = function()
         AerialVariableIcon = {fg = mgz.col_blue, style = "bold"},
 
         AerialArray = { fg = mgz.col_purple },
-        AerialBoolean = { fg = mgz.col_white, style = "bold" },
+        AerialBoolean = { fg = mgz.col_liminal },
         AerialClass = { fg = mgz.col_white },
         AerialConstans = { fg = mgz.col_purple },
         AerialConstructor = { fg = mgz.col_white },
