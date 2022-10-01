@@ -3,7 +3,7 @@ local mgz = {
 	-- #ff765e is a nice color
 
 	col_black = "#000000", -- background
-	col_verydarkgray = "#111111", -- current line highlight, scrollbar, lualine middle
+	col_verydarkgray = "#131313", -- current line highlight, scrollbar, lualine inbetween
 	col_darkgray = "#1b1b1b", -- lualine inner and selection (visual mode) background
 	col_gray = "#333333", -- vertical lines on tabs
 	col_bluishgray = "#658595", -- comments, line numbers
@@ -12,7 +12,7 @@ local mgz = {
 	col_termcursor = "#ffffff", -- lualine file type, toggleterm block cursor
 	col_huh = "#ffffff", -- ???
 	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
-	col_orange = "#df6f3f", -- function names, WHOLE BUNCHA SHIT
+	col_orange = "#ff8630", -- function names, WHOLE BUNCHA SHIT - #df6f3f
 	col_white = "#ffffff", -- ifs, elses, {}=, all the brackets, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
 	col_lightblue = "#8edfff", -- object fields
 	col_red = "#ff3333", -- lsp errors - #ff3854
@@ -315,7 +315,7 @@ theme.loadTreeSitter = function()
 		TSEmphasis = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis.
 		TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline.
 		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		TSLiteral = { fg = mgz.col_blue }, -- Literal text.
+		TSLiteral = { fg = mgz.col_white }, -- Literal text.
 		TSURI = { fg = mgz.col_teal }, -- Any URI like a link or email.
 		TSAnnotation = { fg = mgz.col_red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 	}
@@ -495,7 +495,7 @@ theme.loadPlugins = function()
 		TelescopePreviewBorder = { fg = mgz.col_teal },
 		TelescopeSelectionCaret = { fg = mgz.col_white },
 		TelescopeSelection = { fg = mgz.col_white },
-		TelescopeMatching = { fg = mgz.col_orange },
+		TelescopeMatching = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" },
 
 		-- NvimTree
 		NvimTreeRootFolder = { fg = mgz.col_pink, style = "bold" },
