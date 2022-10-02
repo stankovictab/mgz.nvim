@@ -10,8 +10,8 @@ local mgz = {
 	col_termcursor = "#ffffff", -- lualine file type, toggleterm block cursor
 	col_huh = "#ffffff", -- ???
 	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
-	col_orange = "#ff8630", -- function names, WHOLE BUNCHA SHIT - #df6f3f
-	col_white = "#ffffff", -- ifs, elses, {}=, all the brackets, lualine outer (normal mode), WHOLE BUNCHA SHIT - #658595
+	col_orange = "#ff8630", -- search
+	col_white = "#ffffff",
 	col_lightblue = "#8edfff", -- object fields
 	col_red = "#F44336", -- lsp errors - #ff3854
 	col_green = "#8DF94E", -- ??? very rarely used
@@ -336,17 +336,18 @@ theme.loadTreeSitter = function()
 		-- Conditionals
 		treesitter.TSConditional = { fg = mgz.col_purple } -- For keywords related to conditionnals.
 		-- Function names
-		treesitter.TSFunction = { fg = mgz.col_orange } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = mgz.col_pink } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = mgz.col_orange }
-		-- Namespaces and property accessors
+		treesitter.TSFunction = { fg = mgz.col_pink } -- For fuction (calls and definitions)
+		treesitter.TSFunctionCall = { fg = mgz.col_red } -- There is a difference
+		treesitter.TSMethod = { fg = mgz.col_pink } -- For method calls and definitions
+		treesitter.TSFuncBuiltin = { fg = mgz.col_yellow }
+		-- Builtin functions, like print() in Python
 		treesitter.TSNamespace = { fg = mgz.col_blue } -- For identifiers referring to modules and namespaces.
 		treesitter.TSField = { fg = mgz.col_lightblue } -- For fields in literals
 		treesitter.TSProperty = { fg = mgz.col_lightblue } -- Same as `TSField`
 		-- Language keywords
 		treesitter.TSKeyword = { fg = mgz.col_darkblue } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = mgz.col_orange }
-		treesitter.TSKeywordReturn = { fg = mgz.col_orange }
+		treesitter.TSKeywordFunction = { fg = mgz.col_darkblue } -- def in Python
+		treesitter.TSKeywordReturn = { fg = mgz.col_purple } -- return in Python
 		treesitter.TSKeywordOperator = { fg = mgz.col_green } -- A keyword operator is like new in new Object()
 		treesitter.TSRepeat = { fg = mgz.col_purple } -- For keywords related to loops.
 		-- Strings
