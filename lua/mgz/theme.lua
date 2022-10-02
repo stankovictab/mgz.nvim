@@ -137,7 +137,7 @@ theme.loadEditor = function()
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
-		LineNr = { fg = mgz.col_darkgray }, -- Line numbers
+		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue },
 		MatchParen = { fg = mgz.col_pink, bg = mgz.none, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
@@ -508,6 +508,7 @@ theme.loadPlugins = function()
 		TelescopeMatching = { fg = mgz.col_orange, style = "bold" },
 
 		-- NvimTree
+		-- For NvimTreeNormal, go down to the end of this file
 		NvimTreeRootFolder = { fg = mgz.col_pink, style = "bold" },
 		NvimTreeGitDirty = { fg = mgz.col_yellow },
 		NvimTreeGitNew = { fg = mgz.col_teal },
@@ -515,9 +516,9 @@ theme.loadPlugins = function()
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
 		NvimTreeFolderName = { fg = mgz.col_blue, style = "bold" },
-		NvimTreeEmptyFolderName = { fg = mgz.col_dimwhite },
+		NvimTreeEmptyFolderName = { fg = mgz.col_bluishgray, style = "bold" },
 		NvimTreeFolderIcon = { fg = mgz.col_blue },
-		NvimTreeIndentMarker = { fg = mgz.col_dimwhite },
+		NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
 		LspDiagnosticsError = { fg = mgz.col_red },
 		LspDiagnosticsWarning = { fg = mgz.col_yellow },
 		LspDiagnosticsInformation = { fg = mgz.col_lightblue },
@@ -559,6 +560,7 @@ theme.loadPlugins = function()
 		SneakScope = { bg = mgz.col_dimblack },
 
 		-- Cmp
+		-- TODO:
 		CmpItemKind = { fg = mgz.col_yellow },
 		CmpItemAbbrMatch = { fg = mgz.col_termcursor, style = "bold" },
 		CmpItemAbbrMatchFuzzy = { fg = mgz.col_termcursor, style = "bold" },
@@ -750,15 +752,15 @@ theme.loadPlugins = function()
 
 	-- Disable nvim-tree background
 	if vim.g.mgz_disable_background then
-		plugins.NvimTreeNormal = { fg = mgz.col_blue, bg = mgz.none }
+		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.none }
 	else
-		plugins.NvimTreeNormal = { fg = mgz.col_blue, bg = mgz.sidebar }
+		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.sidebar }
 	end
 
 	if vim.g.mgz_enable_sidebar_background then
-		plugins.NvimTreeNormal = { fg = mgz.col_blue, bg = mgz.sidebar }
+		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.sidebar }
 	else
-		plugins.NvimTreeNormal = { fg = mgz.col_blue, bg = mgz.none }
+		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.none }
 	end
 
 	return plugins
