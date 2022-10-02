@@ -1,3 +1,5 @@
+-- To see highlight groups that are missing, do :hi and tab over to see all groups
+
 local mgz = {
 	-- Colors need to be in '#rrggbb', not '#rgb'
 	-- #ff765e is a nice color
@@ -80,7 +82,7 @@ theme.loadSyntax = function()
 		Underlined = { fg = mgz.col_teal, bg = mgz.none, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
-		Todo = { fg = mgz.col_purple, bg = mgz.none, style = "bold,italic" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Conceal = { fg = mgz.none, bg = mgz.col_black },
 
 		htmlLink = { fg = mgz.col_teal, style = "underline" },
@@ -139,7 +141,7 @@ theme.loadEditor = function()
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue },
-		MatchParen = { fg = mgz.col_pink, bg = mgz.none, style = "bold" }, -- Matched parenthesis
+		MatchParen = { fg = mgz.col_pink, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
@@ -258,12 +260,12 @@ theme.loadEditor = function()
 		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack } -- diff mode: Added line
 		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack } --  diff mode: Changed line
 		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack } -- diff mode: Deleted line
-		editor.DiffText = { fg = mgz.col_yellow, bg = mgz.col_dimblack } -- diff mode: Changed text within a changed line
+		editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack } -- diff mode: Changed text within a changed line
 	else
 		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.none, style = "reverse" } -- diff mode: Added line
 		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.none, style = "reverse" } --  diff mode: Changed line
 		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.none, style = "reverse" } -- diff mode: Deleted line
-		editor.DiffText = { fg = mgz.col_yellow, bg = mgz.none, style = "reverse" } -- diff mode: Changed text within a changed line
+		editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.none, style = "reverse" } -- diff mode: Changed text within a changed line
 	end
 
 	return editor
@@ -337,7 +339,7 @@ theme.loadTreeSitter = function()
 		treesitter.TSConditional = { fg = mgz.col_purple } -- For keywords related to conditionnals.
 		-- Function names
 		treesitter.TSFunction = { fg = mgz.col_pink } -- For fuction (calls and definitions)
-		treesitter.TSFunctionCall = { fg = mgz.col_red } -- There is a difference
+		treesitter.TSFunctionCall = { fg = mgz.col_pink } -- There is a difference
 		treesitter.TSMethod = { fg = mgz.col_pink } -- For method calls and definitions
 		treesitter.TSFuncBuiltin = { fg = mgz.col_yellow }
 		-- Builtin functions, like print() in Python
@@ -467,8 +469,8 @@ theme.loadPlugins = function()
 		-- Diff
 		diffAdded = { fg = mgz.col_teal },
 		diffRemoved = { fg = mgz.col_red },
-		diffChanged = { fg = mgz.col_yellow },
-		diffOldFile = { fg = mgz.yelow },
+		diffChanged = { fg = mgz.col_lightblue },
+		diffOldFile = { fg = mgz.col_yellow },
 		diffNewFile = { fg = mgz.col_stronggreen },
 		diffFile = { fg = mgz.col_pink },
 		diffLine = { fg = mgz.col_dimwhite },
@@ -485,16 +487,16 @@ theme.loadPlugins = function()
 
 		-- GitGutter
 		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = mgz.col_yellow }, -- diff mode: Changed line |diff.txt|
+		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
 		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
 
 		-- GitSigns
 		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
 		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
 		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = mgz.col_yellow }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeNr = { fg = mgz.col_yellow }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeLn = { fg = mgz.col_yellow }, -- diff mode: Changed line |diff.txt|
+		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
