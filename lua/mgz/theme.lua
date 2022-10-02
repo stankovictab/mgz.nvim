@@ -274,20 +274,20 @@ end
 theme.loadTerminal = function()
 	vim.g.terminal_color_0 = mgz.col_dimblack
 	vim.g.terminal_color_1 = mgz.col_red
-	vim.g.terminal_color_2 = mgz.col_teal
-	vim.g.terminal_color_3 = mgz.col_purple
-	vim.g.terminal_color_4 = mgz.col_white
-	vim.g.terminal_color_5 = mgz.col_yellow
-	vim.g.terminal_color_6 = mgz.col_orange
-	vim.g.terminal_color_7 = mgz.col_termcursor
+	vim.g.terminal_color_2 = mgz.col_green
+	vim.g.terminal_color_3 = mgz.col_orange
+	vim.g.terminal_color_4 = mgz.col_blue
+	vim.g.terminal_color_5 = mgz.col_purple
+	vim.g.terminal_color_6 = mgz.col_cyan
+	vim.g.terminal_color_7 = mgz.col_white
 	vim.g.terminal_color_8 = mgz.col_dimwhite
-	vim.g.terminal_color_9 = mgz.col_red
+	vim.g.terminal_color_9 = mgz.col_pink
 	vim.g.terminal_color_10 = mgz.col_teal
-	vim.g.terminal_color_11 = mgz.col_purple
-	vim.g.terminal_color_12 = mgz.col_white
-	vim.g.terminal_color_13 = mgz.col_yellow
-	vim.g.terminal_color_14 = mgz.col_pink
-	vim.g.terminal_color_15 = mgz.col_huh
+	vim.g.terminal_color_11 = mgz.col_yellow
+	vim.g.terminal_color_12 = mgz.col_darkblue
+	vim.g.terminal_color_13 = mgz.col_purple
+	vim.g.terminal_color_14 = mgz.col_dimcyan
+	vim.g.terminal_color_15 = mgz.col_dimwhite
 end
 
 theme.loadTreeSitter = function()
