@@ -9,11 +9,9 @@ local mgz = {
 	col_bluishgray = "#658595", -- comments, line numbers
 	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
 	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
-	col_termcursor = "#ffffff", -- lualine file type, toggleterm block cursor
-	col_huh = "#ffffff", -- ???
+	col_white = "#ffffff", -- lualine file type, toggleterm block cursor
 	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
 	col_orange = "#ff8630", -- search
-	col_white = "#ffffff",
 	col_lightblue = "#8edfff", -- object fields
 	col_red = "#F44336", -- lsp errors
 	col_green = "#8DF94E",
@@ -76,7 +74,7 @@ theme.loadSyntax = function()
 		Special = { fg = mgz.col_blue }, -- any special symbol
 		SpecialChar = { fg = mgz.col_purple }, -- special character in a constant
 		Tag = { fg = mgz.col_blue }, -- you can use CTRL-] on this
-		Delimiter = { fg = mgz.col_huh }, -- character that needs attention like , or .
+		Delimiter = { fg = mgz.col_white }, -- character that needs attention like , or .
 		SpecialComment = { fg = mgz.col_orange }, -- special things inside a comment
 		Debug = { fg = mgz.col_red }, -- debugging statements
 		Underlined = { fg = mgz.col_teal, bg = mgz.none, style = "underline" }, -- text that stands out, HTML links
@@ -132,7 +130,7 @@ theme.loadEditor = function()
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
-		CursorIM = { fg = mgz.col_termcursor, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
+		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.none },
@@ -170,7 +168,7 @@ theme.loadEditor = function()
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
-		WarningMsg = { fg = mgz.col_red }, -- TODO: Overrides FIXME and XXX fg?
+		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg?
 		WildMenu = { fg = mgz.col_stronggreen, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
@@ -331,7 +329,6 @@ theme.loadTreeSitter = function()
 		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
 		TSLiteral = { fg = mgz.col_white }, -- Literal text.
 		TSURI = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
-		TSAnnotation = { fg = mgz.col_red }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 	}
 
 	if vim.g.mgz_italic == false then
@@ -566,10 +563,35 @@ theme.loadPlugins = function()
 
 		-- Cmp
 		-- TODO:
-		CmpItemKind = { fg = mgz.col_yellow },
-		CmpItemAbbrMatch = { fg = mgz.col_termcursor, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = mgz.col_termcursor, style = "bold" },
-		CmpItemAbbr = { fg = mgz.col_blue },
+		CmpItemKind = { fg = mgz.col_green }, -- Source of the completion, generic color (shouldn't be seen), whether it comes from text, lsp, path
+		CmpItemKindTypeParameter = {  },
+		CmpItemKindConstructor = {  },
+		CmpItemKindEnumMember = {  },
+		CmpItemKindReference = {  },
+		CmpItemKindInterface = {  },
+		CmpItemKindVariable = { fg = mgz.col_blue },
+		CmpItemKindProperty = {  },
+		CmpItemKindOperator = {  },
+		CmpItemKindFunction = { fg = mgz.col_purple }, -- Functions
+		CmpItemKindConstant = {  },
+		CmpItemKindSnippet = { fg = mgz.col_yellow }, -- Snippets
+		CmpItemKindKeyword = {  },
+		CmpItemKindStruct = {  },
+		CmpItemKindModule = {  },
+		CmpItemKindMethod = {  },
+		CmpItemKindFolder = {  },
+		CmpItemKindValue = {  },
+		CmpItemKindField = { fg = mgz.col_lightblue }, -- Fields
+		CmpItemKindEvent = {  },
+		CmpItemKindColor = {  },
+		CmpItemKindClass = {  },
+		CmpItemKindUnit = {  },
+		CmpItemKindText = { fg = mgz.col_dimwhite },
+		CmpItemKindFile = {  },
+		CmpItemKindEnum = {  },
+		CmpItemAbbrMatch = { fg = mgz.col_yellow, style = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = mgz.col_pink, style = "bold" },
+		CmpItemAbbr = { fg = mgz.col_green }, -- ?
 		CmpItemMenu = { fg = mgz.col_teal },
 
 		-- Indent Blankline
@@ -685,7 +707,7 @@ theme.loadPlugins = function()
 		MiniTablineModifiedCurrent = { bg = mgz.col_dimblack, fg = mgz.col_yellow },
 		MiniTablineModifiedHidden = { bg = mgz.col_black, fg = mgz.col_yellow },
 		MiniTablineModifiedVisible = { bg = mgz.col_darkgray, fg = mgz.col_yellow },
-		MiniTablineTabpagesection = { fg = mgz.col_lightblue, bg = mgz.col_huh, style = "reverse,bold" },
+		MiniTablineTabpagesection = { fg = mgz.col_lightblue, bg = mgz.col_white, style = "reverse,bold" },
 		MiniTablineVisible = { bg = mgz.col_darkgray },
 
 		MiniTestEmphasis = { style = "bold" },
@@ -698,7 +720,6 @@ theme.loadPlugins = function()
         -- Aerail
         AerialLine = {bg = mgz.col_darkgray},
         AerialLineNC = {bg = mgz.col_darkgray},
-        
         AerialArrayIcon = { fg = mgz.col_purple },
         AerialBooleanIcon = { fg = mgz.col_cyan },
         AerialClassIcon = { fg = mgz.col_white },
@@ -753,9 +774,8 @@ theme.loadPlugins = function()
         AerialTypeParameter = { fg = mgz.col_lightblue },
         AerialVariable = {fg = mgz.col_blue, style = "bold"},
 	}
-	-- Options:
 
-	-- Disable nvim-tree background
+	-- Options:
 	if vim.g.mgz_disable_background then
 		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.none }
 	else
