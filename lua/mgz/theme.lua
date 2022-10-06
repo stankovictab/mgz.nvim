@@ -51,9 +51,16 @@ end
 local theme = {}
 
 theme.loadSyntax = function()
-	-- Syntax highlight groups
+	-- Syntax highlight groups (without TreeShitter)
 
 	local syntax = {
+		Comment = { fg = mgz.col_bluishgray }, -- normal comments
+		Conditional = { fg = mgz.col_purple }, -- normal if, then, else, endif, switch, etc.
+		Function = { fg = mgz.col_orange }, -- normal function names
+		Identifier = { fg = mgz.col_white }, -- any variable name
+		Keyword = { fg = mgz.col_darkblue }, -- normal for, do, while, etc.
+		Repeat = { fg = mgz.col_purple }, -- normal any other keyword
+		String = { fg = mgz.col_teal }, -- any string
 		Type = { fg = mgz.col_blue }, -- int, long, char, etc.
 		StorageClass = { fg = mgz.col_white }, -- static, register, volatile, etc.
 		Structure = { fg = mgz.col_white }, -- struct, union, enum, etc.
@@ -99,15 +106,7 @@ theme.loadSyntax = function()
 	}
 
 	-- Italic check
-	if vim.g.mgz_italic == false then
-		syntax.Comment = { fg = mgz.col_bluishgray } -- normal comments
-		syntax.Conditional = { fg = mgz.col_purple } -- normal if, then, else, endif, switch, etc.
-		syntax.Function = { fg = mgz.col_orange } -- normal function names
-		syntax.Identifier = { fg = mgz.col_white } -- any variable name
-		syntax.Keyword = { fg = mgz.col_darkblue } -- normal for, do, while, etc.
-		syntax.Repeat = { fg = mgz.col_purple } -- normal any other keyword
-		syntax.String = { fg = mgz.col_teal } -- any string
-	else
+	if vim.g.mgz_italic == true then
 		syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- italic comments
 		syntax.Conditional = { fg = mgz.col_purple, bg = mgz.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
 		syntax.Function = { fg = mgz.col_orange, bg = mgz.none, style = "italic" } -- italic funtion names
@@ -330,57 +329,28 @@ theme.loadTreeSitter = function()
 		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
 		TSLiteral = { fg = mgz.col_white }, -- Literal text.
 		TSURI = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
+		TSComment = { fg = mgz.col_bluishgray }, -- Comments
+		TSConditional = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
+		TSFunction = { fg = mgz.col_pink }, -- For fuction calls and definitions
+		TSFunctionCall = { fg = mgz.col_pink }, -- There is a difference
+		TSMethod = { fg = mgz.col_pink }, -- For method calls and definitions
+		TSFuncBuiltin = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
+		TSNamespace = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
+		TSField = { fg = mgz.col_lightblue }, -- For fields in literals
+		TSProperty = { fg = mgz.col_lightblue }, -- Same as `TSField`
+		TSKeyword = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
+		TSKeywordFunction = { fg = mgz.col_darkblue }, -- def in Python
+		TSKeywordReturn = { fg = mgz.col_purple }, -- return in Python
+		TSKeywordOperator = { fg = mgz.col_green }, -- A keyword operator is like new in new Object()
+		TSRepeat = { fg = mgz.col_purple }, -- For keywords related to loops.
+		TSString = { fg = mgz.col_teal }, -- For strings.
+		TSStringRegex = { fg = mgz.col_pink }, -- For regexes.
+		TSStringEscape = { fg = mgz.col_yellow }, -- For escape characters within a string.
+		TSCharacter = { fg = mgz.col_teal } -- For characters.
 	}
 
-	if vim.g.mgz_italic == false then
-		-- Comments
-		treesitter.TSComment = { fg = mgz.col_bluishgray }
-		-- Conditionals
-		treesitter.TSConditional = { fg = mgz.col_purple } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = mgz.col_pink } -- For fuction (calls and definitions)
-		treesitter.TSFunctionCall = { fg = mgz.col_pink } -- There is a difference
-		treesitter.TSMethod = { fg = mgz.col_pink } -- For method calls and definitions
-		treesitter.TSFuncBuiltin = { fg = mgz.col_yellow }
-		-- Builtin functions, like print() in Python
-		treesitter.TSNamespace = { fg = mgz.col_blue } -- For identifiers referring to modules and namespaces.
-		treesitter.TSField = { fg = mgz.col_lightblue } -- For fields in literals
-		treesitter.TSProperty = { fg = mgz.col_lightblue } -- Same as `TSField`
-		-- Language keywords
-		treesitter.TSKeyword = { fg = mgz.col_darkblue } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = mgz.col_darkblue } -- def in Python
-		treesitter.TSKeywordReturn = { fg = mgz.col_purple } -- return in Python
-		treesitter.TSKeywordOperator = { fg = mgz.col_green } -- A keyword operator is like new in new Object()
-		treesitter.TSRepeat = { fg = mgz.col_purple } -- For keywords related to loops.
-		-- Strings
-		treesitter.TSString = { fg = mgz.col_teal } -- For strings.
-		treesitter.TSStringRegex = { fg = mgz.col_pink } -- For regexes.
-		treesitter.TSStringEscape = { fg = mgz.col_yellow } -- For escape characters within a string.
-		treesitter.TSCharacter = { fg = mgz.col_teal } -- For characters.
-	else
-		-- Comments
-		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" }
-		-- Conditionals
-		treesitter.TSConditional = { fg = mgz.col_purple, style = "italic" } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = mgz.col_orange, style = "italic" } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = mgz.col_pink, style = "italic" } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = mgz.col_orange, style = "italic" }
-		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = mgz.col_blue, style = "italic" } -- For identifiers referring to modules and namespaces.
-		treesitter.TSField = { fg = mgz.col_blue, style = "italic" } -- For fields.
-		treesitter.TSProperty = { fg = mgz.col_lightblue, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
-		-- Language keywords
-		treesitter.TSKeyword = { fg = mgz.col_white, style = "italic" } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = mgz.col_orange, style = "italic" }
-		treesitter.TSKeywordReturn = { fg = mgz.col_orange, style = "italic" }
-		treesitter.TSKeywordOperator = { fg = mgz.col_green, style = "italic" }
-		treesitter.TSRepeat = { fg = mgz.col_purple, style = "italic" } -- For keywords related to loops.
-		-- Strings
-		treesitter.TSString = { fg = mgz.col_teal, style = "italic" } -- For strings.
-		treesitter.TSStringRegex = { fg = mgz.col_pink, style = "italic" } -- For regexes.
-		treesitter.TSStringEscape = { fg = mgz.col_yellow, style = "italic" } -- For escape characters within a string.
-		treesitter.TSCharacter = { fg = mgz.col_teal, style = "italic" } -- For characters.
+	if vim.g.mgz_italic == true then
+		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" } -- Comments
 	end
 
 	return treesitter
