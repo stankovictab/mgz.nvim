@@ -41,36 +41,36 @@ local mgz = {}
 -- TODO: but what's y??
 -- Shift + R is replace mode
 
--- Is it style = "bold" or gui = "bold"?
+-- It's gui = "bold", not style = "bold"
 
 mgz.normal = {
-	a = { fg = colors.col_white, bg = colors.col_black, style = "bold" },
-	b = { fg = colors.col_white, bg = colors.none },
-	c = { fg = colors.col_white, bg = colors.col_dimblack },
+	a = { fg = colors.col_black, bg = colors.col_cyan, gui = "bold" },
+	b = { fg = colors.col_white, bg = colors.col_black },
+	c = { fg = colors.col_white, bg = colors.col_black },
 }
 
 mgz.insert = {
-	a = { fg = colors.mgz1_gui, bg = colors.col_purple, style = "bold" },
-	b = { fg = colors.col_purple, bg = colors.mgz2_gui },
-	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_purple, gui = "bold" },
+	b = { fg = colors.col_purple, bg = colors.col_black },
+	y = {  fg = colors.col_white, bg = colors.col_black },
 }
 
 mgz.visual = {
-	a = { fg = colors.col_black, bg = colors.col_pink, style = "bold"  },
-	b = { fg = colors.col_pink, bg = colors.mgz2_gui },
-	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold"  },
+	b = { fg = colors.col_pink, bg = colors.col_black },
+	y = {  fg = colors.col_white, bg = colors.col_black },
 }
 
 mgz.replace = {
-	a = { fg = colors.col_black, bg = colors.col_orange, style = "bold"  },
-	b = { fg = colors.col_orange, bg = colors.mgz2_gui },
-	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold"  },
+	b = { fg = colors.col_orange, bg = colors.col_black },
+	y = {  fg = colors.col_white, bg = colors.col_black },
 }
 
 mgz.command = {
-	a = { fg = colors.mgz0_gui, bg = colors.mgz15_gui, gui = "bold" },
-	b = { fg = colors.mgz4_gui, bg = colors.mgz2_gui },
-	y = { fg = colors.mgz5_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_green, gui = "bold" },
+	b = { fg = colors.col_green, bg = colors.col_black },
+	y = { fg = colors.col_white, bg = colors.col_black },
 }
 
 mgz.inactive = {
@@ -78,5 +78,7 @@ mgz.inactive = {
 	b = { fg = colors.mgz4_gui, bg = colors.mgz0_gui },
 	c = { fg = colors.mgz4_gui, bg = colors.mgz1_gui },
 }
+
+-- mgz.terminal = {} ???
 
 return mgz

@@ -169,7 +169,7 @@ theme.loadEditor = function()
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
 		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg for some reason
-		WildMenu = { fg = mgz.col_stronggreen, bg = mgz.none, style = "bold" },
+		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
 		ToolbarLine = { fg = mgz.col_blue, bg = mgz.col_dimblack },
@@ -294,7 +294,7 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		TSAnnotation = { fg = mgz.col_stronggreen }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
+		TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
 		TSConstructor = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		TSConstant = { fg = mgz.col_purple }, -- For constants
 		TSFloat = { fg = mgz.col_yellow }, -- For floats
@@ -433,7 +433,7 @@ theme.loadPlugins = function()
 
 		-- Lualine
 		lualine_a_normal = { fg = mgz.col_pink, bg = mgz.col_white },
-		lualine_a_insert = { fg = mgz.col_stronggreen, bg = mgz.col_red },
+		lualine_a_insert = { fg = mgz.col_green, bg = mgz.col_red },
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
@@ -445,7 +445,7 @@ theme.loadPlugins = function()
 		diffRemoved = { fg = mgz.col_red },
 		diffChanged = { fg = mgz.col_lightblue },
 		diffOldFile = { fg = mgz.col_yellow },
-		diffNewFile = { fg = mgz.col_stronggreen },
+		diffNewFile = { fg = mgz.col_green },
 		diffFile = { fg = mgz.col_pink },
 		diffLine = { fg = mgz.col_dimwhite },
 		diffIndexLine = { fg = mgz.col_white },
@@ -652,7 +652,7 @@ theme.loadPlugins = function()
 
 		MiniJump = { fg = mgz.col_black, bg = mgz.col_blue },
 
-		MiniJump2dSpot = { fg = mgz.col_stronggreen, style = "bold,nocombine" },
+		MiniJump2dSpot = { fg = mgz.col_green, style = "bold,nocombine" },
 
 		MiniStarterCurrent = { style = "nocombine" },
 		MiniStarterFooter = { fg = mgz.col_teal, style = "italic" },
