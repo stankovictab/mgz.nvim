@@ -431,6 +431,9 @@ theme.loadPlugins = function()
 
 	local plugins = {
 
+		-- Lualine
+		lualine_a_normal = { fg = mgz.col_pink, bg = mgz.col_white },
+
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
 		LspTroubleCount = { fg = mgz.col_white, bg = mgz.col_lightblue },
