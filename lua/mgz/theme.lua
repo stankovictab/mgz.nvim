@@ -140,16 +140,16 @@ theme.loadEditor = function()
 		FoldColumn = { fg = mgz.col_pink },
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
-		CursorLineNr = { fg = mgz.col_blue },
-		MatchParen = { fg = mgz.col_pink, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
+		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
+		MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
 		-- Pmenu is the popup menu when tabbing in command mode, for example
-		Pmenu = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack }, -- Normal element
-		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite }, -- Selected element
-		PmenuSbar = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack }, -- Sidebar
-		PmenuThumb = { fg = mgz.col_pink, bg = mgz.col_orange }, -- ?
+		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Normal element
+		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
+		PmenuSbar = { fg = mgz.col_pink, bg = mgz.col_orange }, -- ?
+		PmenuThumb = { fg = mgz.col_pink, bg = mgz.col_dimwhite }, -- Scroll color, fg isn't applied anywhere
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
@@ -159,7 +159,8 @@ theme.loadEditor = function()
 		SpellCap = { fg = mgz.col_pink, bg = mgz.none, style = "italic,undercurl" },
 		SpellLocal = { fg = mgz.col_orange, bg = mgz.none, style = "italic,undercurl" },
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
-		StatusLine = { fg = mgz.col_blue, bg = mgz.col_darkgray },
+		-- Status line without lualine (I think?)
+		StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray },
 		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
