@@ -562,31 +562,30 @@ theme.loadPlugins = function()
 		Sneak = { fg = mgz.col_black, bg = mgz.col_blue },
 		SneakScope = { bg = mgz.col_dimblack },
 
-		-- Cmp
-		-- TODO:
-		CmpItemKind = { fg = mgz.col_gray }, -- Source of the completion, generic color (shouldn't be seen), whether it comes from text, lsp, path
+		-- Cmp (completion engine plugin)
+		CmpItemKind = { fg = mgz.col_gray }, -- Completion source, general color (shouldn't be seen if others done correctly)
 		CmpItemKindTypeParameter = {  },
 		CmpItemKindConstructor = {  },
 		CmpItemKindEnumMember = {  },
 		CmpItemKindReference = {  },
 		CmpItemKindInterface = {  },
 		CmpItemKindVariable = { fg = mgz.col_blue },
-		CmpItemKindProperty = {  },
+		CmpItemKindProperty = { fg = mgz.col_purple },
 		CmpItemKindOperator = {  },
-		CmpItemKindFunction = { fg = mgz.col_purple },
-		CmpItemKindConstant = {  },
-		CmpItemKindSnippet = {  },
+		CmpItemKindFunction = { fg = mgz.col_pink }, -- Different from method
+		CmpItemKindConstant = { fg = mgz.col_teal },
+		CmpItemKindSnippet = { fg = mgz.col_yellow },
 		CmpItemKindKeyword = { fg = mgz.col_purple },
 		CmpItemKindType = {  },
 		CmpItemKindStruct = {  },
-		CmpItemKindModule = {  },
-		CmpItemKindMethod = {  },
+		CmpItemKindModule = { fg = mgz.col_orange },
+		CmpItemKindMethod = { fg = mgz.col_pink }, -- Different from function
 		CmpItemKindFolder = {  },
 		CmpItemKindValue = {  },
 		CmpItemKindField = { fg = mgz.col_lightblue },
 		CmpItemKindEvent = {  },
 		CmpItemKindColor = {  },
-		CmpItemKindClass = {  },
+		CmpItemKindClass = { fg = mgz.col_teal },
 		CmpItemKindUnit = {  },
 		CmpItemKindText = { fg = mgz.col_white },
 		CmpItemKindFile = {  },
