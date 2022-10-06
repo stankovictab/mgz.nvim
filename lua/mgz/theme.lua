@@ -168,7 +168,7 @@ theme.loadEditor = function()
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
-		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg?
+		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg for some reason
 		WildMenu = { fg = mgz.col_stronggreen, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
@@ -300,7 +300,7 @@ theme.loadTreeSitter = function()
 		TSFloat = { fg = mgz.col_yellow }, -- For floats
 		TSNumber = { fg = mgz.col_teal }, -- For all number
 
-		TSAttribute = { fg = mgz.col_yellow }, -- (unstable) TODO: docs
+		TSAttribute = { fg = mgz.col_yellow }, -- ?
 		TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
 		TSVariableBuiltin = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
 		TSBoolean = { fg = mgz.col_cyan }, -- For booleans.
@@ -456,29 +456,30 @@ theme.loadPlugins = function()
 		NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
 		-- GitGutter
-		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
+		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line 
+		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
+		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line 
 
 		-- GitSigns
-		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line 
+		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line 
+		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line 
+		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
+		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
+		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
+		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line 
+		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line 
+		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line 
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Telescope
-		TelescopePromptBorder = { fg = mgz.col_orange },
+		TelescopePromptBorder = { fg = mgz.col_teal },
 		TelescopeResultsBorder = { fg = mgz.col_white },
 		TelescopePreviewBorder = { fg = mgz.col_white },
-		TelescopeSelectionCaret = { fg = mgz.col_teal },
+		TelescopeSelectionCaret = { fg = mgz.col_teal, style = "bold" },
 		TelescopeSelection = { fg = mgz.col_white, bg = mgz.col_dimblack },
 		TelescopeMatching = { fg = mgz.col_orange, style = "bold" },
+		TelescopePromptCounter = { fg = mgz.col_gray },
 
 		-- NvimTree
 		-- For NvimTreeNormal, go down to the end of this file
