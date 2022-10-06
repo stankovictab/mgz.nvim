@@ -145,10 +145,11 @@ theme.loadEditor = function()
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
-		Pmenu = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		PmenuSel = { fg = mgz.col_blue, bg = mgz.col_lightblue },
-		PmenuSbar = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		PmenuThumb = { fg = mgz.col_blue, bg = mgz.col_blue },
+		-- Pmenu is the popup menu when tabbing in command mode, for example
+		Pmenu = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack }, -- Normal element
+		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite }, -- Selected element
+		PmenuSbar = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack }, -- Sidebar
+		PmenuThumb = { fg = mgz.col_pink, bg = mgz.col_orange }, -- ?
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
