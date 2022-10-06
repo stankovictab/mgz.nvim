@@ -37,34 +37,40 @@ local colors = {
 
 local mgz = {}
 
+-- a is the first section, b is the second, c is the third (inner, middle, spanning) section
+-- TODO: but what's y??
+-- Shift + R is replace mode
+
+-- Is it style = "bold" or gui = "bold"?
+
 mgz.normal = {
-	a = { fg = colors.col_black, bg = colors.col_white },
+	a = { fg = colors.col_white, bg = colors.col_black, style = "bold" },
 	b = { fg = colors.col_white, bg = colors.none },
-	c = { fg = colors.col_white, bg = colors.col_dimwhite },
+	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.insert = {
-	a = { fg = colors.mgz1_gui, bg = colors.mgz4_gui },
-	b = { fg = colors.mgz6_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.mgz1_gui, bg = colors.col_purple, style = "bold" },
+	b = { fg = colors.col_purple, bg = colors.mgz2_gui },
 	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
 }
 
 mgz.visual = {
-	a = { fg = colors.mgz0_gui, bg = colors.mgz7_gui },
-	b = { fg = colors.mgz4_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_pink, style = "bold"  },
+	b = { fg = colors.col_pink, bg = colors.mgz2_gui },
 	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
 }
 
 mgz.replace = {
-	a = { fg = colors.mgz0_gui, bg = colors.mgz11_gui },
-	b = { fg = colors.mgz4_gui, bg = colors.mgz2_gui },
+	a = { fg = colors.col_black, bg = colors.col_orange, style = "bold"  },
+	b = { fg = colors.col_orange, bg = colors.mgz2_gui },
 	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
 }
 
 mgz.command = {
 	a = { fg = colors.mgz0_gui, bg = colors.mgz15_gui, gui = "bold" },
 	b = { fg = colors.mgz4_gui, bg = colors.mgz2_gui },
-	y = {  fg = colors.mgz5_gui, bg = colors.mgz2_gui },
+	y = { fg = colors.mgz5_gui, bg = colors.mgz2_gui },
 }
 
 mgz.inactive = {

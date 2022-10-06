@@ -4,8 +4,10 @@ local mgz = {
 	-- Colors need to be in '#rrggbb', not '#rgb'
 	-- #ff765e is a nice color
 
-	col_black = "#000000", -- background
-	col_darkgray = "#1b1b1b", -- lualine inner and selection (visual mode) background
+	none = "NONE",
+
+	col_black = "#000000",
+	col_darkgray = "#1b1b1b", -- selection (visual mode) background
 	col_bluishgray = "#658595", -- comments, line numbers
 	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
 	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
@@ -28,9 +30,7 @@ local mgz = {
 	col_dimblue = "#041824",
 	col_dimmagenta = "#281641",
 	col_dimcyan = "#0A3535",
-	col_dimwhite = "#333333", -- vertical lines on tabs
-
-	none = "NONE",
+	col_dimwhite = "#333333",
 }
 
 -- Enable contrast sidebars, floating windows and popup menus
@@ -572,7 +572,7 @@ theme.loadPlugins = function()
 
 		-- Indent Blankline
 		IndentBlanklineChar = { fg = mgz.col_dimwhite },
-		IndentBlanklineContextChar = { fg = mgz.col_lightblue },
+		IndentBlanklineContextChar = { fg = mgz.col_gray },
 
 		-- Illuminate
 		illuminatedWord = { bg = mgz.col_dimwhite },
