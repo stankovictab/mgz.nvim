@@ -433,6 +433,7 @@ theme.loadPlugins = function()
 
 		-- Lualine
 		lualine_a_normal = { fg = mgz.col_pink, bg = mgz.col_white },
+		lualine_a_insert = { fg = mgz.col_stronggreen, bg = mgz.col_red },
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
