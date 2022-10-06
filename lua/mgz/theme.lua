@@ -10,6 +10,7 @@ local mgz = {
 	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
 	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
 	col_white = "#ffffff", -- lualine file type, toggleterm block cursor
+	col_gray = "#bbbbbb",
 	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
 	col_orange = "#ff8630", -- search
 	col_lightblue = "#8edfff", -- object fields
@@ -563,7 +564,7 @@ theme.loadPlugins = function()
 
 		-- Cmp
 		-- TODO:
-		CmpItemKind = { fg = mgz.col_green }, -- Source of the completion, generic color (shouldn't be seen), whether it comes from text, lsp, path
+		CmpItemKind = { fg = mgz.col_gray }, -- Source of the completion, generic color (shouldn't be seen), whether it comes from text, lsp, path
 		CmpItemKindTypeParameter = {  },
 		CmpItemKindConstructor = {  },
 		CmpItemKindEnumMember = {  },
@@ -572,27 +573,28 @@ theme.loadPlugins = function()
 		CmpItemKindVariable = { fg = mgz.col_blue },
 		CmpItemKindProperty = {  },
 		CmpItemKindOperator = {  },
-		CmpItemKindFunction = { fg = mgz.col_purple }, -- Functions
+		CmpItemKindFunction = { fg = mgz.col_purple },
 		CmpItemKindConstant = {  },
-		CmpItemKindSnippet = { fg = mgz.col_yellow }, -- Snippets
-		CmpItemKindKeyword = {  },
+		CmpItemKindSnippet = {  },
+		CmpItemKindKeyword = { fg = mgz.col_purple },
+		CmpItemKindType = {  },
 		CmpItemKindStruct = {  },
 		CmpItemKindModule = {  },
 		CmpItemKindMethod = {  },
 		CmpItemKindFolder = {  },
 		CmpItemKindValue = {  },
-		CmpItemKindField = { fg = mgz.col_lightblue }, -- Fields
+		CmpItemKindField = { fg = mgz.col_lightblue },
 		CmpItemKindEvent = {  },
 		CmpItemKindColor = {  },
 		CmpItemKindClass = {  },
 		CmpItemKindUnit = {  },
-		CmpItemKindText = { fg = mgz.col_dimwhite },
+		CmpItemKindText = { fg = mgz.col_white },
 		CmpItemKindFile = {  },
-		CmpItemKindEnum = {  },
-		CmpItemAbbrMatch = { fg = mgz.col_yellow, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = mgz.col_pink, style = "bold" },
-		CmpItemAbbr = { fg = mgz.col_green }, -- ?
-		CmpItemMenu = { fg = mgz.col_teal },
+		CmpItemKindEnum = { fg = mgz.col_orange },
+		CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" }, -- Literal match for completion item
+		CmpItemAbbrMatchFuzzy = { fg = mgz.col_orange, style = "bold" }, -- Fuzzy found match for completion item
+		CmpItemAbbr = { fg = mgz.col_gray }, -- Text of completion item
+		CmpItemMenu = { fg = mgz.col_teal }, -- ???
 
 		-- Indent Blankline
 		IndentBlanklineChar = { fg = mgz.col_dimwhite },
