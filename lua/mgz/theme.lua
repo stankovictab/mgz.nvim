@@ -15,11 +15,11 @@ local mgz = {
 	col_orange = "#ff8630", -- search
 	col_white = "#ffffff",
 	col_lightblue = "#8edfff", -- object fields
-	col_red = "#F44336", -- lsp errors - #ff3854
-	col_green = "#8DF94E", -- ??? very rarely used
-	col_purple = "#a25dfc", -- !DOCTYPE html, TODO color, import from
+	col_red = "#F44336", -- lsp errors
+	col_green = "#8DF94E",
+	col_purple = "#a25dfc", -- !DOCTYPE html, import from
 	col_teal = "#58F5AB", -- string
-	col_yellow = "#f4da58", -- numbers
+	col_yellow = "#f4da58", -- numbers, builtin functions
 	col_cyan = "#2adede", -- liminal color - constants, booleans
 
 	col_dimblack = "#141414", -- current line highlight, scrollbar, lualine inbetween
@@ -82,7 +82,7 @@ theme.loadSyntax = function()
 		Underlined = { fg = mgz.col_teal, bg = mgz.none, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
-		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention - TODO FIXME and XXX
 		Conceal = { fg = mgz.none, bg = mgz.col_black },
 
 		htmlLink = { fg = mgz.col_teal, style = "underline" },
@@ -148,8 +148,8 @@ theme.loadEditor = function()
 		-- Pmenu is the popup menu when tabbing in command mode, for example
 		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Normal element
 		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
-		PmenuSbar = { fg = mgz.col_pink, bg = mgz.col_orange }, -- ?
-		PmenuThumb = { fg = mgz.col_pink, bg = mgz.col_dimwhite }, -- Scroll color, fg isn't applied anywhere
+		PmenuSbar = { fg = mgz.col_dimblack, bg = mgz.col_dimblack }, -- Background of the scrollbar, only bg is seen
+		PmenuThumb = { fg = mgz.col_white, bg = mgz.col_white }, -- "Thumb" (active part) of the scrollbar, only bg is seen
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
@@ -159,8 +159,8 @@ theme.loadEditor = function()
 		SpellCap = { fg = mgz.col_pink, bg = mgz.none, style = "italic,undercurl" },
 		SpellLocal = { fg = mgz.col_orange, bg = mgz.none, style = "italic,undercurl" },
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
-		-- Status line without lualine (I think?)
-		StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray },
+		-- Status line without lualine (open with nvim --noplugin)
+		StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray }, -- The [No Name] line and background
 		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
@@ -170,7 +170,7 @@ theme.loadEditor = function()
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
-		WarningMsg = { fg = mgz.col_yellow },
+		WarningMsg = { fg = mgz.col_red }, -- TODO: Overrides FIXME and XXX fg?
 		WildMenu = { fg = mgz.col_stronggreen, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
