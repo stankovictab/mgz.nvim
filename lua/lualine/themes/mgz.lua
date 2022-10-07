@@ -38,47 +38,49 @@ local colors = {
 local mgz = {}
 
 -- The sections go a,b,c --- x,y,z (from left to right)
--- Shift + R is replace mode
-
+-- If x,y,z are not configured, it'll just mirror the config from the other side
 -- It's gui = "bold", not style = "bold"
+-- Shift + R is replace mode
 
 mgz.normal = {
 	a = { fg = colors.col_black, bg = colors.col_teal, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_dimblack },
+	b = { fg = colors.col_white, bg = colors.col_black },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
-	z = { fg = colors.col_green }
+	-- z = { fg = colors.col_teal, bg = colors.col_black, gui = "bold" }
 }
 
 mgz.insert = {
 	a = { fg = colors.col_black, bg = colors.col_purple, gui = "bold" },
-	b = { fg = colors.col_purple, bg = colors.col_dimblack },
+	b = { fg = colors.col_purple, bg = colors.col_black },
 	y = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.visual = {
 	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold"  },
-	b = { fg = colors.col_pink, bg = colors.col_dimblack },
+	b = { fg = colors.col_pink, bg = colors.col_black },
 	y = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.replace = {
 	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold"  },
-	b = { fg = colors.col_orange, bg = colors.col_dimblack },
+	b = { fg = colors.col_orange, bg = colors.col_black },
 	y = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.command = {
 	a = { fg = colors.col_black, bg = colors.col_green, gui = "bold" },
-	b = { fg = colors.col_green, bg = colors.col_dimblack },
+	b = { fg = colors.col_green, bg = colors.col_black },
 	y = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.inactive = {
-	a = { fg = colors.mgz4_gui, bg = colors.mgz0_gui, gui = "bold" },
-	b = { fg = colors.mgz4_gui, bg = colors.mgz0_gui },
-	c = { fg = colors.mgz4_gui, bg = colors.mgz1_gui },
+	a = { fg = colors.none, bg = colors.none },
+	b = { fg = colors.none, bg = colors.none },
+	c = { fg = colors.none, bg = colors.none },
 }
 
--- mgz.terminal = {} ???
+mgz.terminal = {
+	a = { fg = colors.col_orange, bg = colors.col_black, gui = "bold" }
+}
 
 return mgz

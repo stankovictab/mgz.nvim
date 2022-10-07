@@ -493,7 +493,7 @@ theme.loadPlugins = function()
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
-		NvimTreeFolderName = { fg = mgz.col_blue, style = "bold" },
+		NvimTreeFolderName = { fg = mgz.col_lightblue, style = "bold" },
 		NvimTreeEmptyFolderName = { fg = mgz.col_bluishgray, style = "bold" },
 		NvimTreeFolderIcon = { fg = mgz.col_blue },
 		NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
