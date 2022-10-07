@@ -431,9 +431,11 @@ theme.loadPlugins = function()
 
 	local plugins = {
 
-		-- Lualine
-		lualine_a_normal = { fg = mgz.col_pink, bg = mgz.col_white },
-		lualine_a_insert = { fg = mgz.col_green, bg = mgz.col_red },
+		-- Lualine is in another file
+
+		-- BufferLine
+		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" },
+		BufferLineModified = { fg = mgz.col_orange, bg = mgz.none, gui = "bold", style = "bold" },
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
