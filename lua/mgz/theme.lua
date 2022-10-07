@@ -203,9 +203,9 @@ theme.loadEditor = function()
 
 		BufferInactive = { bg = mgz.col_black, fg = mgz.col_dimwhite },
 		BufferInactiveMod = { bg = mgz.col_black, fg = mgz.col_yellow },
-		BufferInactiveIcon = { bg = mgz.col_black , fg = mgz.col_dimwhite },
-		BufferInactiveSign = { bg = mgz.col_black , fg = mgz.col_dimwhite },
-		BufferInactiveIndex = { bg = mgz.col_black , fg = mgz.col_dimwhite },
+		BufferInactiveIcon = { bg = mgz.col_black, fg = mgz.col_dimwhite },
+		BufferInactiveSign = { bg = mgz.col_black, fg = mgz.col_dimwhite },
+		BufferInactiveIndex = { bg = mgz.col_black, fg = mgz.col_dimwhite },
 		BufferInactiveTarget = { bg = mgz.col_black, fg = mgz.col_red },
 
 		BufferVisible = { bg = mgz.col_darkgray },
@@ -233,9 +233,9 @@ theme.loadEditor = function()
 		NotifyWARNTitle = { fg = mgz.col_purple },
 
 		-- leap.nvim
-		LeapMatch = { style="underline,nocombine", fg=mgz.col_purple },
-		LeapLabelPrimary = { style="nocombine", fg=mgz.col_black, bg=mgz.col_purple },
-		LeapLabelSecondary = { style="nocombine", fg=mgz.col_black, bg=mgz.col_yellow },
+		LeapMatch = { style = "underline,nocombine", fg = mgz.col_purple },
+		LeapLabelPrimary = { style = "nocombine", fg = mgz.col_black, bg = mgz.col_purple },
+		LeapLabelSecondary = { style = "nocombine", fg = mgz.col_black, bg = mgz.col_yellow },
 	}
 
 	-- Options:
@@ -463,20 +463,20 @@ theme.loadPlugins = function()
 		NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
 		-- GitGutter
-		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line 
-		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
-		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line 
+		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line
+		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line
 
 		-- GitSigns
-		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line 
-		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line 
-		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line 
-		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
-		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
-		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line 
-		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line 
-		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line 
-		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line 
+		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line
+		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line
+		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line
+		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line
+		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line
+		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Telescope
@@ -490,13 +490,14 @@ theme.loadPlugins = function()
 
 		-- NvimTree
 		-- For NvimTreeNormal, go down to the end of this file
-		NvimTreeRootFolder = { fg = mgz.col_pink, style = "bold" },
+		NvimTreeRootFolder = { fg = mgz.col_white, style = "bold" }, -- At the top of NvimTree
 		NvimTreeGitDirty = { fg = mgz.col_yellow },
 		NvimTreeGitNew = { fg = mgz.col_teal },
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
 		NvimTreeFolderName = { fg = mgz.col_lightblue, style = "bold" },
+		NvimTreeOpenedFolderName = { fg = mgz.col_lightblue, style = "bold" },
 		NvimTreeEmptyFolderName = { fg = mgz.col_bluishgray, style = "bold" },
 		NvimTreeFolderIcon = { fg = mgz.col_lightblue },
 		NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
@@ -542,31 +543,31 @@ theme.loadPlugins = function()
 
 		-- Cmp (completion engine plugin)
 		CmpItemKind = { fg = mgz.col_gray }, -- Completion source, general color (shouldn't be seen if others done correctly)
-		CmpItemKindTypeParameter = {  },
-		CmpItemKindConstructor = {  },
-		CmpItemKindEnumMember = {  },
-		CmpItemKindReference = {  },
-		CmpItemKindInterface = {  },
+		CmpItemKindTypeParameter = {},
+		CmpItemKindConstructor = {},
+		CmpItemKindEnumMember = {},
+		CmpItemKindReference = {},
+		CmpItemKindInterface = {},
 		CmpItemKindVariable = { fg = mgz.col_blue },
 		CmpItemKindProperty = { fg = mgz.col_purple },
-		CmpItemKindOperator = {  },
+		CmpItemKindOperator = {},
 		CmpItemKindFunction = { fg = mgz.col_pink }, -- Different from method
 		CmpItemKindConstant = { fg = mgz.col_teal },
 		CmpItemKindSnippet = { fg = mgz.col_yellow },
 		CmpItemKindKeyword = { fg = mgz.col_purple },
-		CmpItemKindType = {  },
-		CmpItemKindStruct = {  },
+		CmpItemKindType = {},
+		CmpItemKindStruct = {},
 		CmpItemKindModule = { fg = mgz.col_orange },
 		CmpItemKindMethod = { fg = mgz.col_pink }, -- Different from function
-		CmpItemKindFolder = {  },
-		CmpItemKindValue = {  },
+		CmpItemKindFolder = {},
+		CmpItemKindValue = {},
 		CmpItemKindField = { fg = mgz.col_lightblue },
-		CmpItemKindEvent = {  },
-		CmpItemKindColor = {  },
+		CmpItemKindEvent = {},
+		CmpItemKindColor = {},
 		CmpItemKindClass = { fg = mgz.col_teal },
-		CmpItemKindUnit = {  },
+		CmpItemKindUnit = {},
 		CmpItemKindText = { fg = mgz.col_white },
-		CmpItemKindFile = {  },
+		CmpItemKindFile = {},
 		CmpItemKindEnum = { fg = mgz.col_orange },
 		CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" }, -- Literal match for completion item
 		CmpItemAbbrMatchFuzzy = { fg = mgz.col_orange, style = "bold" }, -- Fuzzy found match for completion item
@@ -696,62 +697,62 @@ theme.loadPlugins = function()
 		MiniTrailspace = { bg = mgz.col_red },
 
 
-        -- Aerail
-        AerialLine = {bg = mgz.col_darkgray},
-        AerialLineNC = {bg = mgz.col_darkgray},
-        AerialArrayIcon = { fg = mgz.col_purple },
-        AerialBooleanIcon = { fg = mgz.col_cyan },
-        AerialClassIcon = { fg = mgz.col_white },
-        AerialConstansIcon = { fg = mgz.col_purple },
-        AerialConstructorIcon = { fg = mgz.col_green },
-        AerialEnumIcon = { fg = mgz.col_white },
-        AerialEnumMemberIcon = { fg = mgz.col_blue },
-        AerialEventIcon = { fg = mgz.col_white },
-        AerialFieldIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic"} or {fg = mgz.col_blue },
-        AerialFileIcon = { fg = mgz.col_teal },
-        AerialFunctionIcon = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
-        AerialInterfaceIcon = { fg = mgz.col_white },
-        AerialKeyIcon = { fg = mgz.col_white },
-        AerialMethodIcon = vim.g.mgz_italic and  { fg = mgz.col_pink, style = "italic" } or {fg = mgz.col_pink },
-        AerialModuleIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialNamespaceIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialNullIcon = { fg = mgz.col_white },
-        AerialNumberIcon = { fg = mgz.col_teal },
-        AerialObjectIcon = { fg = mgz.col_white },
-        AerialOperatorIcon = { fg = mgz.col_yellow },
-        AerialPackageIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialPropertyIcon = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
-        AerialStringIcon = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
-        AerialStructIcon = { fg = mgz.col_white },
-        AerialTypeParameterIcon = { fg = mgz.col_lightblue },
-        AerialVariableIcon = {fg = mgz.col_blue, style = "bold"},
+		-- Aerail
+		AerialLine = { bg = mgz.col_darkgray },
+		AerialLineNC = { bg = mgz.col_darkgray },
+		AerialArrayIcon = { fg = mgz.col_purple },
+		AerialBooleanIcon = { fg = mgz.col_cyan },
+		AerialClassIcon = { fg = mgz.col_white },
+		AerialConstansIcon = { fg = mgz.col_purple },
+		AerialConstructorIcon = { fg = mgz.col_green },
+		AerialEnumIcon = { fg = mgz.col_white },
+		AerialEnumMemberIcon = { fg = mgz.col_blue },
+		AerialEventIcon = { fg = mgz.col_white },
+		AerialFieldIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialFileIcon = { fg = mgz.col_teal },
+		AerialFunctionIcon = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
+		AerialInterfaceIcon = { fg = mgz.col_white },
+		AerialKeyIcon = { fg = mgz.col_white },
+		AerialMethodIcon = vim.g.mgz_italic and { fg = mgz.col_pink, style = "italic" } or { fg = mgz.col_pink },
+		AerialModuleIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialNamespaceIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialNullIcon = { fg = mgz.col_white },
+		AerialNumberIcon = { fg = mgz.col_teal },
+		AerialObjectIcon = { fg = mgz.col_white },
+		AerialOperatorIcon = { fg = mgz.col_yellow },
+		AerialPackageIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialPropertyIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
+		AerialStringIcon = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
+		AerialStructIcon = { fg = mgz.col_white },
+		AerialTypeParameterIcon = { fg = mgz.col_lightblue },
+		AerialVariableIcon = { fg = mgz.col_blue, style = "bold" },
 
-        AerialArray = { fg = mgz.col_purple },
-        AerialBoolean = { fg = mgz.col_cyan },
-        AerialClass = { fg = mgz.col_white },
-        AerialConstans = { fg = mgz.col_purple },
-        AerialConstructor = { fg = mgz.col_green },
-        AerialEnum = { fg = mgz.col_white },
-        AerialEnumMember = { fg = mgz.col_blue },
-        AerialEvent = { fg = mgz.col_white },
-        AerialField = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic"} or {fg = mgz.col_blue },
-        AerialFile = { fg = mgz.col_teal },
-        AerialFunction = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
-        AerialInterface = { fg = mgz.col_white },
-        AerialKey = { fg = mgz.col_white },
-        AerialMethod = vim.g.mgz_italic and  { fg = mgz.col_pink, style = "italic" } or {fg = mgz.col_pink },
-        AerialModule = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialNamespace = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialNull = { fg = mgz.col_white },
-        AerialNumber = { fg = mgz.col_teal },
-        AerialObject = { fg = mgz.col_white },
-        AerialOperator = { fg = mgz.col_yellow },
-        AerialPackage = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-        AerialProperty = vim.g.mgz_italic and  { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
-        AerialString = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
-        AerialStruct = { fg = mgz.col_white },
-        AerialTypeParameter = { fg = mgz.col_lightblue },
-        AerialVariable = {fg = mgz.col_blue, style = "bold"},
+		AerialArray = { fg = mgz.col_purple },
+		AerialBoolean = { fg = mgz.col_cyan },
+		AerialClass = { fg = mgz.col_white },
+		AerialConstans = { fg = mgz.col_purple },
+		AerialConstructor = { fg = mgz.col_green },
+		AerialEnum = { fg = mgz.col_white },
+		AerialEnumMember = { fg = mgz.col_blue },
+		AerialEvent = { fg = mgz.col_white },
+		AerialField = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialFile = { fg = mgz.col_teal },
+		AerialFunction = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
+		AerialInterface = { fg = mgz.col_white },
+		AerialKey = { fg = mgz.col_white },
+		AerialMethod = vim.g.mgz_italic and { fg = mgz.col_pink, style = "italic" } or { fg = mgz.col_pink },
+		AerialModule = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialNamespace = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialNull = { fg = mgz.col_white },
+		AerialNumber = { fg = mgz.col_teal },
+		AerialObject = { fg = mgz.col_white },
+		AerialOperator = { fg = mgz.col_yellow },
+		AerialPackage = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
+		AerialProperty = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
+		AerialString = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
+		AerialStruct = { fg = mgz.col_white },
+		AerialTypeParameter = { fg = mgz.col_lightblue },
+		AerialVariable = { fg = mgz.col_blue, style = "bold" },
 	}
 
 	-- Options:
