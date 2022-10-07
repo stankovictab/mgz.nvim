@@ -46,31 +46,33 @@ mgz.normal = {
 	a = { fg = colors.col_black, bg = colors.col_teal, gui = "bold" },
 	b = { fg = colors.col_white, bg = colors.col_black },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
+	-- x = { fg = colors.col_white, bg = colors.col_dimblack },
+	-- y = { fg = colors.col_white, bg = colors.col_black },
 	-- z = { fg = colors.col_teal, bg = colors.col_black, gui = "bold" }
 }
 
 mgz.insert = {
 	a = { fg = colors.col_black, bg = colors.col_purple, gui = "bold" },
-	b = { fg = colors.col_purple, bg = colors.col_black },
-	y = {  fg = colors.col_white, bg = colors.col_dimblack },
+	b = { fg = colors.col_white, bg = colors.col_black },
+	c = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.visual = {
 	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold"  },
-	b = { fg = colors.col_pink, bg = colors.col_black },
-	y = {  fg = colors.col_white, bg = colors.col_dimblack },
+	b = { fg = colors.col_white, bg = colors.col_black },
+	c = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.replace = {
 	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold"  },
-	b = { fg = colors.col_orange, bg = colors.col_black },
-	y = {  fg = colors.col_white, bg = colors.col_dimblack },
+	b = { fg = colors.col_white, bg = colors.col_black },
+	c = {  fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.command = {
 	a = { fg = colors.col_black, bg = colors.col_green, gui = "bold" },
-	b = { fg = colors.col_green, bg = colors.col_black },
-	y = { fg = colors.col_white, bg = colors.col_dimblack },
+	b = { fg = colors.col_white, bg = colors.col_black },
+	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.inactive = {
