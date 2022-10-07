@@ -435,7 +435,8 @@ theme.loadPlugins = function()
 
 		-- BufferLine
 		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" },
-		BufferLineModified = { fg = mgz.col_orange, bg = mgz.none, gui = "bold", style = "bold" },
+		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
+		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
