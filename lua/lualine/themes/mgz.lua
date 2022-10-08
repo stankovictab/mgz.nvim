@@ -54,19 +54,19 @@ mgz.normal = {
 mgz.insert = {
 	a = { fg = colors.col_black, bg = colors.col_purple, gui = "bold" },
 	b = { fg = colors.col_white, bg = colors.col_black },
-	c = {  fg = colors.col_white, bg = colors.col_dimblack },
+	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.visual = {
-	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold"  },
+	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold" },
 	b = { fg = colors.col_white, bg = colors.col_black },
-	c = {  fg = colors.col_white, bg = colors.col_dimblack },
+	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.replace = {
-	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold"  },
+	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold" },
 	b = { fg = colors.col_white, bg = colors.col_black },
-	c = {  fg = colors.col_white, bg = colors.col_dimblack },
+	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.command = {
