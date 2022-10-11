@@ -33,15 +33,6 @@ local mgz = {
 	col_dimwhite = "#333333",
 }
 
--- Enable contrast sidebars, floating windows and popup menus
-if vim.g.mgz_contrast then
-	mgz.sidebar = mgz.col_dimblack
-	mgz.float = mgz.col_dimblack
-else
-	mgz.sidebar = mgz.col_dimred
-	mgz.float = mgz.col_dimred
-end
-
 -- Toggle for transparent cursorline (the background of the line the cursor is on)
 if vim.g.mgz_cursorline_transparent then
 	mgz.cursorlinefg = mgz.col_black
@@ -120,8 +111,8 @@ theme.loadEditor = function()
 
 	local editor = {
 		-- These are the colors for popup windows like :LspInfo and :Mason
-		NormalFloat = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
-		FloatBorder = { fg = mgz.col_white, bg = mgz.float }, -- normal text and background color
+		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover
+		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- TODO: ???
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
@@ -129,12 +120,14 @@ theme.loadEditor = function()
 		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.none },
+		VertSplit = { fg = mgz.col_cyan, bg = mgz.col_dimcyan }, -- Color of bar between vertically split panes (like [] | [])
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
-		MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
+		-- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
+		MatchParen = { fg = mgz.none, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
@@ -154,7 +147,6 @@ theme.loadEditor = function()
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
 		-- Status line without lualine (open with nvim --noplugin)
 		StatusLine = { fg = mgz.col_pink, bg = mgz.col_dimblue }, -- The [No Name] line and background
-		-- StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray }, -- The [No Name] line and background
 		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
@@ -243,13 +235,6 @@ theme.loadEditor = function()
 	else
 		editor.Normal = { fg = mgz.col_white, bg = mgz.col_black } -- normal text and background color
 		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.col_black }
-	end
-
-	-- Remove window split borders
-	if vim.g.mgz_borders then
-		editor.VertSplit = { fg = mgz.col_darkgray }
-	else
-		editor.VertSplit = { fg = mgz.col_black }
 	end
 
 	if vim.g.mgz_uniform_diff_background then
@@ -507,8 +492,8 @@ theme.loadPlugins = function()
 		WhichKeyGroup = { fg = mgz.col_blue },
 		WhichKeyDesc = { fg = mgz.col_pink, style = "italic" },
 		WhichKeySeperator = { fg = mgz.col_blue },
-		WhichKeyFloating = { bg = mgz.float },
-		WhichKeyFloat = { bg = mgz.float },
+		WhichKeyFloating = { bg = mgz.col_dimblack },
+		WhichKeyFloat = { bg = mgz.col_dimblack },
 
 		-- LspSaga
 		DiagnosticError = { fg = mgz.col_red },
