@@ -81,7 +81,8 @@ theme.loadSyntax = function()
 		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
 		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention - TODO FIXME and XXX
-		Conceal = { fg = mgz.none, bg = mgz.col_black },
+		-- Conceal is the stupid ass tab in LSP hover popup that for some reason has a seperate color
+		-- Conceal = { fg = mgz.none, bg = mgz.col_black },
 
 		htmlLink = { fg = mgz.col_teal, style = "underline" },
 		htmlH1 = { fg = mgz.col_lightblue, style = "bold" },
@@ -111,9 +112,9 @@ theme.loadEditor = function()
 
 	local editor = {
 		-- These are the colors for popup windows like :LspInfo and :Mason
-		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover
-		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- TODO: ???
-		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, --  used for the columns set with 'colorcolumn'
+		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover or Packer's popup
+		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- The border of the popup, seen on Packer's popup for example, around the border
+		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, -- Used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
@@ -127,7 +128,7 @@ theme.loadEditor = function()
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
 		-- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
-		MatchParen = { fg = mgz.none, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
+		MatchParen = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
@@ -146,6 +147,7 @@ theme.loadEditor = function()
 		SpellLocal = { fg = mgz.col_orange, bg = mgz.none, style = "italic,undercurl" },
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
 		-- Status line without lualine (open with nvim --noplugin)
+		-- But also the "status line" or really horizontal border when executing a command
 		StatusLine = { fg = mgz.col_pink, bg = mgz.col_dimblue }, -- The [No Name] line and background
 		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
@@ -154,7 +156,7 @@ theme.loadEditor = function()
 		TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
 		Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
-		Visual = { fg = mgz.none, bg = mgz.col_darkgray },
+		Visual = { fg = mgz.none, bg = mgz.col_dimred }, -- ?
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
 		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg for some reason
 		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
@@ -226,15 +228,15 @@ theme.loadEditor = function()
 		LeapLabelSecondary = { style = "nocombine", fg = mgz.col_black, bg = mgz.col_yellow },
 	}
 
-	-- Options:
+	-- Options :
 
-	--Set transparent background
+	-- Set transparent background
 	if vim.g.mgz_disable_background then
-		editor.Normal = { fg = mgz.col_white, bg = mgz.none } -- normal text and background color
-		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.none }
+		editor.Normal = { fg = mgz.col_white, bg = mgz.none } -- Normal text and background color
+		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none } -- Column left of the line number column
 	else
-		editor.Normal = { fg = mgz.col_white, bg = mgz.col_black } -- normal text and background color
-		editor.SignColumn = { fg = mgz.col_blue, bg = mgz.col_black }
+		editor.Normal = { fg = mgz.col_white, bg = mgz.col_black }
+		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_black }
 	end
 
 	if vim.g.mgz_uniform_diff_background then
