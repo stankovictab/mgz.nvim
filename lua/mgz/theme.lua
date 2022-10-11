@@ -153,7 +153,8 @@ theme.loadEditor = function()
 		SpellLocal = { fg = mgz.col_orange, bg = mgz.none, style = "italic,undercurl" },
 		SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
 		-- Status line without lualine (open with nvim --noplugin)
-		StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray }, -- The [No Name] line and background
+		StatusLine = { fg = mgz.col_pink, bg = mgz.col_dimblue }, -- The [No Name] line and background
+		-- StatusLine = { fg = mgz.col_pink, bg = mgz.col_darkgray }, -- The [No Name] line and background
 		StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
 		StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
@@ -436,7 +437,7 @@ theme.loadPlugins = function()
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
 		LspTroubleCount = { fg = mgz.col_white, bg = mgz.col_lightblue },
-		LspTroubleNormal = { fg = mgz.col_blue, bg = mgz.sidebar },
+		LspTroubleNormal = { fg = mgz.col_blue, bg = mgz.col_pink }, -- ?
 
 		-- Diff
 		diffAdded = { fg = mgz.col_teal },
@@ -749,19 +750,6 @@ theme.loadPlugins = function()
 		AerialTypeParameter = { fg = mgz.col_lightblue },
 		AerialVariable = { fg = mgz.col_blue, style = "bold" },
 	}
-
-	-- Options:
-	if vim.g.mgz_disable_background then
-		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.none }
-	else
-		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.sidebar }
-	end
-
-	if vim.g.mgz_enable_sidebar_background then
-		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.sidebar }
-	else
-		plugins.NvimTreeNormal = { fg = mgz.col_white, bg = mgz.none }
-	end
 
 	return plugins
 end
