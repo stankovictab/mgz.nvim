@@ -38,15 +38,15 @@ if vim.g.mgz_contrast then
 	mgz.sidebar = mgz.col_dimblack
 	mgz.float = mgz.col_dimblack
 else
-	mgz.sidebar = mgz.col_black
-	mgz.float = mgz.col_black
+	mgz.sidebar = mgz.col_dimred
+	mgz.float = mgz.col_dimred
 end
 
--- TODO: Cursorline fg? It's black? Delete this?
+-- Toggle for transparent cursorline (the background of the line the cursor is on)
 if vim.g.mgz_cursorline_transparent then
-	mgz.cursorlinefg = mgz.col_white
+	mgz.cursorlinefg = mgz.col_black
 else
-	mgz.cursorlinefg = mgz.col_pink
+	mgz.cursorlinefg = mgz.col_dimblack
 end
 
 local theme = {}
