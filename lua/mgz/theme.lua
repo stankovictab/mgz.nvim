@@ -1,4 +1,4 @@
--- To see highlight groups that are missing, do :hi and tab over to see all groups
+-- To see highlight groups that are missing, do :hi and tab over, or do :Telescope highlights
 
 local mgz = {
 	-- Colors need to be in '#rrggbb', not '#rgb'
@@ -42,10 +42,11 @@ else
 	mgz.float = mgz.col_black
 end
 
+-- TODO: Cursorline fg? It's black? Delete this?
 if vim.g.mgz_cursorline_transparent then
-	mgz.cursorlinefg = mgz.col_black
+	mgz.cursorlinefg = mgz.col_white
 else
-	mgz.cursorlinefg = mgz.col_dimblack
+	mgz.cursorlinefg = mgz.col_pink
 end
 
 local theme = {}
@@ -105,15 +106,9 @@ theme.loadSyntax = function()
 		markdownH3Delimiter = { fg = mgz.col_purple },
 	}
 
-	-- Italic check
+	-- Italic check (without TreeShitter)
 	if vim.g.mgz_italic == true then
-		syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- italic comments
-		syntax.Conditional = { fg = mgz.col_purple, bg = mgz.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
-		syntax.Function = { fg = mgz.col_orange, bg = mgz.none, style = "italic" } -- italic funtion names
-		syntax.Identifier = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- any variable name
-		syntax.Keyword = { fg = mgz.col_white, bg = mgz.none, style = "italic" } -- italic for, do, while, etc.
-		syntax.Repeat = { fg = mgz.col_purple, bg = mgz.none, style = "italic" } -- italic any other keyword
-		syntax.String = { fg = mgz.col_teal, bg = mgz.none, style = "italic" } -- any string
+		syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
 	end
 
 	return syntax
@@ -350,7 +345,7 @@ theme.loadTreeSitter = function()
 	}
 
 	if vim.g.mgz_italic == true then
-		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" } -- Comments
+		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" } -- Italic comments
 	end
 
 	return treesitter
