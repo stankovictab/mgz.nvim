@@ -128,7 +128,7 @@ theme.loadEditor = function()
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
 		-- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
-		MatchParen = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
+		MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		NonText = { fg = mgz.col_dimblack },
