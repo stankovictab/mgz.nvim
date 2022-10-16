@@ -328,7 +328,7 @@ theme.loadTreeSitter = function()
 		TSRepeat = { fg = mgz.col_purple }, -- For keywords related to loops.
 		TSString = { fg = mgz.col_teal }, -- For strings.
 		TSStringRegex = { fg = mgz.col_pink }, -- For regexes.
-		TSStringEscape = { fg = mgz.col_yellow }, -- For escape characters within a string.
+		TSStringEscape = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
 		TSCharacter = { fg = mgz.col_teal } -- For characters.
 	}
 
