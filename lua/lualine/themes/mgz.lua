@@ -76,9 +76,11 @@ mgz.command = {
 }
 
 mgz.inactive = {
+	-- Styling of the inactive version, for when you're in the ignored filetype (NvimTree), or when splitting the window, the lualine of the inactive pane
+	-- See inactive_sections in lualine config
 	a = { fg = colors.col_pink, bg = colors.col_dimgreen },
-	b = { fg = colors.col_pink, bg = colors.col_dimgreen },
-	c = { fg = colors.col_pink, bg = colors.col_dimgreen },
+	b = { fg = colors.col_gray, bg = colors.col_dimblack },
+	c = { fg = colors.col_white, bg = colors.col_dimwhite },
 }
 
 mgz.terminal = {
