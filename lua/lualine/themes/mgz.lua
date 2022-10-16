@@ -6,31 +6,31 @@ local colors = {
 	-- Colors need to be in '#rrggbb', not '#rgb'
 	-- #ff765e is a nice color
 
-	col_black = "#000000", -- background
-	col_darkgray = "#1b1b1b", -- lualine inner and selection (visual mode) background
-	col_bluishgray = "#658595", -- comments, line numbers
-	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
-	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
-	col_white = "#ffffff", -- lualine file type, toggleterm block cursor
+	col_black = "#000000",
+	col_darkgray = "#1b1b1b",
+	col_bluishgray = "#658595",
+	col_blue = "#1babff",
+	col_darkblue = "#4e79f0",
+	col_white = "#ffffff",
 	col_gray = "#bbbbbb",
-	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
-	col_orange = "#ff8630", -- search
-	col_lightblue = "#8edfff", -- object fields
-	col_red = "#F44336", -- lsp errors
+	col_pink = "#ff6176",
+	col_orange = "#ff8630",
+	col_lightblue = "#8edfff",
+	col_red = "#F44336",
 	col_green = "#8DF94E",
-	col_purple = "#a25dfc", -- !DOCTYPE html, import from
-	col_teal = "#58F5AB", -- string
-	col_yellow = "#f4da58", -- numbers, builtin functions
-	col_cyan = "#2adede", -- liminal color - constants, booleans
+	col_purple = "#a25dfc",
+	col_teal = "#58F5AB",
+	col_yellow = "#f4da58",
+	col_cyan = "#2adede", -- liminal color
 
-	col_dimblack = "#141414", -- current line highlight, scrollbar, lualine inbetween
+	col_dimblack = "#141414",
 	col_dimred = "#31100D",
 	col_dimgreen = "#11230E",
 	col_dimyellow = "#1E1200",
 	col_dimblue = "#041824",
 	col_dimmagenta = "#281641",
 	col_dimcyan = "#0A3535",
-	col_dimwhite = "#333333", -- vertical lines on tabs
+	col_dimwhite = "#333333",
 
 	none = "NONE",
 }

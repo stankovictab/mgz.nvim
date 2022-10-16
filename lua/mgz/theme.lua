@@ -7,23 +7,23 @@ local mgz = {
 	none = "NONE",
 
 	col_black = "#000000",
-	col_darkgray = "#1b1b1b", -- selection (visual mode) background
-	col_bluishgray = "#658595", -- comments, line numbers
-	col_blue = "#1babff", -- console in console.log(), lualine outer (insert mode), commands, text in middle of lualine, types
-	col_darkblue = "#4e79f0", -- storage, keywords (like let, const, interface)
-	col_white = "#ffffff", -- lualine file type, toggleterm block cursor
+	col_darkgray = "#1b1b1b",
+	col_bluishgray = "#658595",
+	col_blue = "#1babff",
+	col_darkblue = "#4e79f0",
+	col_white = "#ffffff",
 	col_gray = "#bbbbbb",
-	col_pink = "#ff6176", -- methods of objects, lualine outer (visual mode)
-	col_orange = "#ff8630", -- search
-	col_lightblue = "#8edfff", -- object fields
-	col_red = "#F44336", -- lsp errors
+	col_pink = "#ff6176",
+	col_orange = "#ff8630",
+	col_lightblue = "#8edfff",
+	col_red = "#F44336",
 	col_green = "#8DF94E",
-	col_purple = "#a25dfc", -- !DOCTYPE html, import from
-	col_teal = "#58F5AB", -- string
-	col_yellow = "#f4da58", -- numbers, builtin functions
-	col_cyan = "#2adede", -- liminal color - constants, booleans
+	col_purple = "#a25dfc",
+	col_teal = "#58F5AB",
+	col_yellow = "#f4da58",
+	col_cyan = "#2adede", -- liminal color
 
-	col_dimblack = "#141414", -- current line highlight, scrollbar, lualine inbetween
+	col_dimblack = "#141414",
 	col_dimred = "#31100D",
 	col_dimgreen = "#11230E",
 	col_dimyellow = "#1E1200",
@@ -484,6 +484,7 @@ theme.loadPlugins = function()
 		NvimTreeEmptyFolderName = { fg = mgz.col_bluishgray, style = "bold" },
 		NvimTreeFolderIcon = { fg = mgz.col_lightblue },
 		NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
+		NvimTreeWindowPicker = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Color of status line of window that you pick when opening a file from NvimTree when you have multiple windows (panes) open in nvim
 		LspDiagnosticsError = { fg = mgz.col_red },
 		LspDiagnosticsWarning = { fg = mgz.col_yellow },
 		LspDiagnosticsInformation = { fg = mgz.col_lightblue },
