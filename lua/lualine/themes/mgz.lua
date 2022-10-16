@@ -77,8 +77,8 @@ mgz.command = {
 
 mgz.inactive = {
 	a = { fg = colors.col_pink, bg = colors.col_dimgreen },
-	b = { fg = colors.none, bg = colors.none },
-	c = { fg = colors.none, bg = colors.none },
+	b = { fg = colors.col_pink, bg = colors.col_dimgreen },
+	c = { fg = colors.col_pink, bg = colors.col_dimgreen },
 }
 
 mgz.terminal = {
