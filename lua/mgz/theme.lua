@@ -121,7 +121,7 @@ theme.loadEditor = function()
 		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.none },
-		VertSplit = { fg = mgz.col_cyan, bg = mgz.col_dimcyan }, -- Color of bar between vertically split panes (like [] | [])
+		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
