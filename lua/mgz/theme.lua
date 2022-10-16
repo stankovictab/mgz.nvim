@@ -299,7 +299,7 @@ theme.loadTreeSitter = function()
 		TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function.
 		TSPunctDelimiter = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
 		TSPunctBracket = { fg = mgz.col_white }, -- For brackets and parens.
-		TSPunctSpecial = { fg = mgz.col_purple }, -- For special punctutation that does not fall in the catagories before. Example is # in # H1 in .md
+		TSPunctSpecial = { fg = mgz.col_purple }, -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
 		TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms.
 		TSType = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
 		TSTypeBuiltin = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
