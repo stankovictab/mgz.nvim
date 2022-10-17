@@ -62,9 +62,9 @@ theme.loadSyntax = function()
 		Boolean = { fg = mgz.col_cyan }, -- a boolean constant: TRUE, false
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
 		Statement = { fg = mgz.col_white }, -- any statement
-		Label = { fg = mgz.col_white }, -- case, default, etc.
+		Label = { fg = mgz.col_lightblue }, -- case, default, etc.
 		Operator = { fg = mgz.col_yellow }, -- sizeof", "+", "*", etc.
-		Exception = { fg = mgz.col_white }, -- try, catch, throw
+		Exception = { fg = mgz.col_yellow }, -- try, catch, throw
 		PreProc = { fg = mgz.col_white }, -- generic Preprocessor
 		Include = { fg = mgz.col_purple }, -- preprocessor #include, also import and from
 		Define = { fg = mgz.col_white }, -- preprocessor #define
@@ -283,56 +283,59 @@ theme.loadTreeSitter = function()
 		["@constant"] = { fg = mgz.col_purple }, -- For constants
 		["@float"] = { fg = mgz.col_yellow }, -- For floats, eg 2.3e10
 		["@number"] = { fg = mgz.col_teal }, -- For all number
-		-- TSAttribute = { fg = mgz.col_yellow }, -- ?
+		-- TSAttribute = { fg = mgz.col_yellow }, -- TODO: ?
 		["@variable"] = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
 		["@variable.builtin"] = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
-		TSBoolean = { fg = mgz.col_cyan }, -- For booleans.
-		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
-		TSConstMacro = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
-		TSError = { fg = mgz.col_red }, -- For syntax/parser errors.
-		TSException = { fg = mgz.col_yellow }, -- For exception related keywords.
-		TSFuncMacro = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSLabel = { fg = mgz.col_lightblue }, -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
-		TSOperator = { fg = mgz.col_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = mgz.col_lightblue }, -- For parameters of a function.
-		TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function.
-		TSPunctDelimiter = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
-		TSPunctBracket = { fg = mgz.col_white }, -- For brackets and parens.
-		TSPunctSpecial = { fg = mgz.col_purple }, -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
-		TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms.
-		TSType = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
-		TSTypeBuiltin = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
-		TSTag = { fg = mgz.col_blue }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = mgz.col_white }, -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
-		TSText = { fg = mgz.col_white }, -- For strings considered text in a markup language. Example is normal text in HTML
-		TSTextReference = { fg = mgz.col_green }, -- References like image alt names in markdown (text inside of [])
-		TSEmphasis = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis.
-		TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline.
-		TSTitle = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		TSLiteral = { fg = mgz.col_white }, -- Literal text.
-		TSURI = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
-		TSComment = { fg = mgz.col_bluishgray }, -- Comments
-		TSConditional = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
-		TSFunction = { fg = mgz.col_pink }, -- For fuction calls and definitions
-		TSFunctionCall = { fg = mgz.col_pink }, -- There is a difference
-		TSMethod = { fg = mgz.col_pink }, -- For method calls and definitions
-		TSFuncBuiltin = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
-		TSNamespace = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
-		TSField = { fg = mgz.col_lightblue }, -- For fields in literals
-		TSProperty = { fg = mgz.col_lightblue }, -- Same as `TSField`
-		TSKeyword = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
-		TSKeywordFunction = { fg = mgz.col_darkblue }, -- def in Python
-		TSKeywordReturn = { fg = mgz.col_purple }, -- return in Python
-		TSKeywordOperator = { fg = mgz.col_green }, -- A keyword operator is like new in new Object()
-		TSRepeat = { fg = mgz.col_purple }, -- For keywords related to loops.
-		TSString = { fg = mgz.col_teal }, -- For strings.
-		TSStringRegex = { fg = mgz.col_pink }, -- For regexes.
-		TSStringEscape = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
-		TSCharacter = { fg = mgz.col_teal } -- For characters.
+		["@boolean"] = { fg = mgz.col_cyan }, -- For booleans.
+		["@constant.builtin"] = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+		["@constant.macro"] = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
+		-- TSError = { fg = mgz.col_red }, -- For syntax/parser errors. -- TODO: ?
+		["@exception"] = { fg = mgz.col_yellow }, -- For exception related keywords.
+		["@function.macro"] = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		["@include"] = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@label"] = { fg = mgz.col_lightblue }, -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
+		["@operator"] = { fg = mgz.col_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"] = { fg = mgz.col_lightblue }, -- For parameters of a function.
+		-- TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function. -- TODO: ?
+		["@punctuation.delimiter"] = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
+		["@punctuation.bracket"] = { fg = mgz.col_white }, -- For brackets and parens.
+		["@punctuation.special"] = { fg = mgz.col_purple }, -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
+
+		-- TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms. -- TODO: ?
+		["@type"] = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
+		["@type.builtin"] = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
+		["@tag"] = { fg = mgz.col_blue }, -- Tags like html tag names.
+		["@tag.delimiter"] = { fg = mgz.col_white }, -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
+		["@text"] = { fg = mgz.col_white }, -- For strings considered text in a markup language. Example is normal text in HTML
+		["@text.reference"] = { fg = mgz.col_green }, -- References like image alt names in markdown (text inside of [])
+		["@text.emphasis"] = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis. -- TODO: ? this is italic text? what?
+		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
+		["@text.title"] = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
+		["@text.literal"] = { fg = mgz.col_white }, -- Literal text.
+		["@text.uri"] = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
+		["@comment"] = { fg = mgz.col_bluishgray }, -- Comments
+		["@conditional"] = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
+		["@function"] = { fg = mgz.col_pink }, -- For fuction calls and definitions
+		["@function.call"] = { fg = mgz.col_pink }, -- There is a difference
+		["@method"] = { fg = mgz.col_pink }, -- For method calls and definitions
+		["@function.builtin"] = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
+		["@namespace"] = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
+		["@field"] = { fg = mgz.col_lightblue }, -- For fields in literals
+		["@property"] = { fg = mgz.col_lightblue }, -- Same as `TSField`
+		["@keyword"] = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
+		["@keyword.function"] = { fg = mgz.col_darkblue }, -- def in Python
+		["@keyword.return"] = { fg = mgz.col_purple }, -- return in Python
+		["@keyword.operator"] = { fg = mgz.col_green }, -- A keyword operator, like new in new Object()
+		["@repeat"] = { fg = mgz.col_purple }, -- For keywords related to loops.
+		["@string"] = { fg = mgz.col_teal }, -- For strings.
+		["@string.regex"] = { fg = mgz.col_pink }, -- For regexes.
+		["@string.escape"] = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
+		["@character"] = { fg = mgz.col_teal }, -- For characters.
+		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" } -- TODO:, FIXME:, XXX:
 	}
 
 	if vim.g.mgz_italic == true then
+		-- TODO: Change over to ["@"] syntax
 		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" } -- Italic comments
 	end
 
