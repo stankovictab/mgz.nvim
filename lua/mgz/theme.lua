@@ -284,7 +284,8 @@ theme.loadTreeSitter = function()
 		TSNumber = { fg = mgz.col_teal }, -- For all number
 
 		TSAttribute = { fg = mgz.col_yellow }, -- ?
-		TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
+		-- TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
+		["@variable"] = { fg = mgz.col_lightblue },
 		TSVariableBuiltin = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
 		TSBoolean = { fg = mgz.col_cyan }, -- For booleans.
 		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
@@ -337,23 +338,6 @@ theme.loadTreeSitter = function()
 	end
 
 	return treesitter
-end
-
-theme.loadFiletypes = function()
-	-- Filetype-specific highlight groups
-
-	local ft = {
-		-- yaml
-		yamlBlockMappingKey = { fg = mgz.col_pink },
-		yamlBool = { link = "Boolean" },
-		yamlDocumentStart = { link = "Keyword" },
-		yamlTSField = { fg = mgz.col_pink },
-		yamlTSString = { fg = mgz.col_blue },
-		yamlTSPunctSpecial = { link = "Keyword" },
-		yamlKey = { fg = mgz.col_pink }, -- stephpy/vim-yaml
-	}
-
-	return ft
 end
 
 theme.loadLSP = function()
