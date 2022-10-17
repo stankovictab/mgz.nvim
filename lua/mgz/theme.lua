@@ -46,6 +46,10 @@ theme.loadSyntax = function()
 	-- Syntax highlight groups (without TreeShitter)
 
 	local syntax = {
+		-- Special for me
+		jsonCommentError = { fg = mgz.col_comment, bg = mgz.none }, -- Am I the only one who doesn't mind comments in JSON?
+		jsonNoQuotesError = { fg = mgz.col_comment, bg = mgz.none }, -- Same issue
+
 		Comment = { fg = mgz.col_bluishgray }, -- normal comments
 		Conditional = { fg = mgz.col_purple }, -- normal if, then, else, endif, switch, etc.
 		Function = { fg = mgz.col_pink }, -- normal function names
@@ -331,7 +335,8 @@ theme.loadTreeSitter = function()
 		["@string.regex"] = { fg = mgz.col_pink }, -- For regexes.
 		["@string.escape"] = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
 		["@character"] = { fg = mgz.col_teal }, -- For characters.
-		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" } -- TODO:, FIXME:, XXX:
+		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is just TODO
+		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" } -- This is just FIXME and XXX
 	}
 
 	if vim.g.mgz_italic == true then
