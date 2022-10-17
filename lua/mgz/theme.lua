@@ -312,10 +312,11 @@ theme.loadTreeSitter = function()
 		["@tag.delimiter"] = { fg = mgz.col_white }, -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
 		["@text"] = { fg = mgz.col_white }, -- For strings considered text in a markup language. Example is normal text in HTML
 		["@text.reference"] = { fg = mgz.col_green }, -- References like image alt names in markdown (text inside of [])
-		["@text.emphasis"] = { fg = mgz.col_lightblue }, -- For text to be represented with emphasis. -- TODO: ? this is italic text? what?
+		["@text.emphasis"] = { fg = mgz.col_pink, style = "italic" }, -- Italic text in markdown (*text*)
+		["@text.strong"] = { fg = mgz.col_pink, style = "bold" }, -- Bold text in markdown (**text**)
 		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
 		["@text.title"] = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		["@text.literal"] = { fg = mgz.col_white }, -- Literal text.
+		["@text.literal"] = { fg = mgz.col_darkblue }, -- Code in markdown (in `` and ``````)
 		["@text.uri"] = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
 		["@comment"] = { fg = mgz.col_bluishgray }, -- Comments
 		["@conditional"] = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
