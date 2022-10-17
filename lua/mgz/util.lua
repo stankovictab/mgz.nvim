@@ -67,7 +67,7 @@ function util.load()
 	util.loadColorSet(treesitter)
 
 	-- load filetype-specific highlights
-	util.loadColorSet(filetypes)
+	-- util.loadColorSet(filetypes)
 
 	mgz.loadTerminal()
 
