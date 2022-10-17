@@ -48,15 +48,15 @@ theme.loadSyntax = function()
 	local syntax = {
 		Comment = { fg = mgz.col_bluishgray }, -- normal comments
 		Conditional = { fg = mgz.col_purple }, -- normal if, then, else, endif, switch, etc.
-		Function = { fg = mgz.col_orange }, -- normal function names
-		Identifier = { fg = mgz.col_white }, -- any variable name
+		Function = { fg = mgz.col_pink }, -- normal function names
+		Identifier = { fg = mgz.col_lightblue }, -- any variable name
 		Keyword = { fg = mgz.col_darkblue }, -- normal for, do, while, etc.
 		Repeat = { fg = mgz.col_purple }, -- normal any other keyword
 		String = { fg = mgz.col_teal }, -- any string
 		Type = { fg = mgz.col_blue }, -- int, long, char, etc.
 		StorageClass = { fg = mgz.col_white }, -- static, register, volatile, etc.
 		Structure = { fg = mgz.col_white }, -- struct, union, enum, etc.
-		Constant = { fg = mgz.col_blue }, -- any constant
+		Constant = { fg = mgz.col_purple }, -- any constant
 		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
 		Number = { fg = mgz.col_teal }, -- a number constant: 5
 		Boolean = { fg = mgz.col_cyan }, -- a boolean constant: TRUE, false
@@ -277,16 +277,15 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		TSConstructor = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		TSConstant = { fg = mgz.col_purple }, -- For constants
-		TSFloat = { fg = mgz.col_yellow }, -- For floats
-		TSNumber = { fg = mgz.col_teal }, -- For all number
-
-		TSAttribute = { fg = mgz.col_yellow }, -- ?
-		-- TSVariable = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
-		["@variable"] = { fg = mgz.col_lightblue },
-		TSVariableBuiltin = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
+		-- TODO: This might be for Java annotations, but there's no @group?
+		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information. 
+		["@constructor"] = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constant"] = { fg = mgz.col_purple }, -- For constants
+		["@float"] = { fg = mgz.col_yellow }, -- For floats, eg 2.3e10
+		["@number"] = { fg = mgz.col_teal }, -- For all number
+		-- TSAttribute = { fg = mgz.col_yellow }, -- ?
+		["@variable"] = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
+		["@variable.builtin"] = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
 		TSBoolean = { fg = mgz.col_cyan }, -- For booleans.
 		TSConstBuiltin = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.

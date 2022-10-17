@@ -55,7 +55,7 @@ function util.load()
 	local editor = mgz.loadEditor()
 	local syntax = mgz.loadSyntax()
 	local treesitter = mgz.loadTreeSitter()
-	-- local filetypes = mgz.loadFiletypes()
+	-- local filetypes = mgz.loadFiletypes() -- Deleted this, was only used for YAML
 
 	-- load editor highlights
 	util.loadColorSet(editor)
