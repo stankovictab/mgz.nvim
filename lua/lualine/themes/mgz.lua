@@ -1,11 +1,10 @@
 -- Special file for Lualine plugin
 -- The plugin somehow just reads this file in this filepath, I don't know how, and I don't care
 -- It needs to be named mgz.lua in order for Lualine to recognize it via the 'auto' setting
+-- Colors need to be in '#rrggbb', not '#rgb'
 
 local colors = {
-	-- Colors need to be in '#rrggbb', not '#rgb'
-	-- #ff765e is a nice color
-
+	none = "NONE",
 	col_black = "#000000",
 	col_darkgray = "#1b1b1b",
 	col_bluishgray = "#658595",
@@ -31,8 +30,6 @@ local colors = {
 	col_dimmagenta = "#281641",
 	col_dimcyan = "#0A3535",
 	col_dimwhite = "#333333",
-
-	none = "NONE",
 }
 
 local mgz = {}

@@ -1,11 +1,8 @@
+-- Colors need to be in '#rrggbb', not '#rgb'
 -- To see highlight groups that are missing, do :hi and tab over, or do :Telescope highlights
 
 local mgz = {
-	-- Colors need to be in '#rrggbb', not '#rgb'
-	-- #ff765e is a nice color
-
 	none = "NONE",
-
 	col_black = "#000000",
 	col_darkgray = "#1b1b1b",
 	col_bluishgray = "#658595",
