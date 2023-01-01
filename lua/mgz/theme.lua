@@ -132,7 +132,8 @@ theme.loadEditor = function()
 		MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
-		NonText = { fg = mgz.col_dimblack },
+		-- TODO: What's this?
+		NonText = { fg = mgz.col_pink, bg = mgz.col_orange },
 		-- Pmenu is the popup menu when tabbing in command mode, for example
 		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Normal element
 		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
@@ -159,7 +160,9 @@ theme.loadEditor = function()
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray }, -- Color of highlight in Visual Mode
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
-		WarningMsg = { fg = mgz.col_black }, -- Overrides FIXME and XXX fg for some reason
+		-- This overrides FIXME and XXX fg for some reason
+		-- TODO: Black message in command bar when something goes wrong?
+		WarningMsg = { fg = mgz.col_orange }, -- Overrides
 		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
