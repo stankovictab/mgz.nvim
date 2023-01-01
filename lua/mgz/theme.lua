@@ -160,8 +160,7 @@ theme.loadEditor = function()
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
 		Visual = { fg = mgz.none, bg = mgz.col_darkgray }, -- Color of highlight in Visual Mode
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
-		-- This overrides FIXME and XXX fg for some reason
-		-- TODO: Black message in command bar when something goes wrong?
+		-- This is the message in command bar when something goes wrong in packer for example.
 		WarningMsg = { fg = mgz.col_orange }, -- Overrides
 		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
