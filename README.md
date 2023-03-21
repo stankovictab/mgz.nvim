@@ -21,38 +21,24 @@ colorscheme mgz
 
 ```lua
 -- Lua
-vim.cmd[[colorscheme mgz]]
+vim.cmd('colorscheme mgz')
 ```
 
 ### Configuration
 
-TODO
-
-## ⚙️ Configuration
-
-| Option                              | Default     | Description                                                                                                                                                     |
-| ----------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| nord_contrast                   | `false`      | Make sidebars and popup menus like nvim-tree and telescope have a different background                                                                                       |
-| nord_borders                    | `false`     | Enable the border between verticaly split windows visable
-| nord_disable_background         | `false`     | Disable the setting of background color so that NeoVim can use your terminal background
-| nord_cursorline_transparent     | `false`     | Set the cursorline transparent/visible
-| nord_enable_sidebar_background  | `false`     | Re-enables the background of the sidebar if you disabled the background of everything
-| nord_italic                     | `true`      | enables/disables italics
-| nord_uniform_diff_background    | `false`     | enables/disables colorful backgrounds when used in *diff* mode
+The MGZ theme allows for these options to be changed :
+- `mgz_disable_background` - Disables the setting of background color, so that NeoVim can use your terminal emulator's background color. Default is false. 
+- `mgz_cursorline_transparent` - Set the cursorline to transparent or visible. Default is false. 
+- `mgz_italic` - Whether to render text in italics or not. Default is true. 
+- `mgz_uniform_diff_background` - Enables or disables colorful backgrounds when used in diff mode. Default is false. 
 
 ```lua
 -- Example config in lua
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-vim.g.nord_uniform_diff_background = true
-
--- Load the colorscheme
-require('nord').set()
+vim.g.mgz_disable_background = true
+vim.g.mgz_cursorline_transparent = false
+vim.g.mgz_italic = false
+vim.g.mgz_uniform_diff_background = true
 ```
-
-
 ---
 
 The theme is also available for [VSCode](https://github.com/stankovictab/mgz-dark-theme).
