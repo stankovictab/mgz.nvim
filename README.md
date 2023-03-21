@@ -41,6 +41,6 @@ vim.g.mgz_uniform_diff_background = true
 ```
 ---
 
-The theme is also available for [VSCode](https://github.com/stankovictab/mgz-dark-theme).
+The structure of the theme is based off of [nord.nvim](https://github.com/shaunsingh/nord.nvim).
 
-Made by @stankovictab.
+The MGZ theme is also available for [VSCode](https://github.com/stankovictab/mgz-dark-theme).
