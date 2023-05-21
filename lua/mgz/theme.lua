@@ -613,7 +613,9 @@ theme.loadPlugins = function()
 		LightspeedOneCharMatch = { fg = mgz.col_orange, style = "bold,reverse" },
 		LightspeedUniqueChar = { style = "bold,underline" },
 
-		-- copilot
+		-- Copilot
+		CopilotSuggestion = { fg = mgz.col_dimwhite, bg = mgz.none },
+		CopilotAnnotation = { fg = mgz.col_dimwhite, bg = mgz.none },
 		CopilotLabel = { fg = mgz.col_dimwhite, bg = mgz.none },
 
 		-- Statusline

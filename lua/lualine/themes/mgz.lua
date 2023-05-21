@@ -30,6 +30,8 @@ local colors = {
 	col_dimmagenta = "#281641",
 	col_dimcyan = "#0A3535",
 	col_dimwhite = "#333333",
+
+	col_diminbetween = "#262626"
 }
 
 local mgz = {}
@@ -37,11 +39,11 @@ local mgz = {}
 -- The sections go a,b,c --- x,y,z (from left to right)
 -- If x,y,z are not configured, it'll just mirror the config from the other side
 -- It's gui = "bold", not style = "bold"
--- Shift + R is replace mode
+-- Shift + r is replace mode
 
 mgz.normal = {
 	a = { fg = colors.col_black, bg = colors.col_teal, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_black },
+	b = { fg = colors.col_white, bg = colors.col_diminbetween },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
 	-- x = { fg = colors.col_white, bg = colors.col_dimblack },
 	-- y = { fg = colors.col_white, bg = colors.col_black },
@@ -50,25 +52,25 @@ mgz.normal = {
 
 mgz.insert = {
 	a = { fg = colors.col_black, bg = colors.col_purple, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_black },
+	b = { fg = colors.col_white, bg = colors.col_diminbetween },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.visual = {
 	a = { fg = colors.col_black, bg = colors.col_pink, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_black },
+	b = { fg = colors.col_white, bg = colors.col_diminbetween },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.replace = {
 	a = { fg = colors.col_black, bg = colors.col_orange, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_black },
+	b = { fg = colors.col_white, bg = colors.col_diminbetween },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
 mgz.command = {
 	a = { fg = colors.col_black, bg = colors.col_green, gui = "bold" },
-	b = { fg = colors.col_white, bg = colors.col_black },
+	b = { fg = colors.col_white, bg = colors.col_diminbetween },
 	c = { fg = colors.col_white, bg = colors.col_dimblack },
 }
 
