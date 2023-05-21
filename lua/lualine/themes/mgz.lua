@@ -31,7 +31,8 @@ local colors = {
 	col_dimcyan = "#0A3535",
 	col_dimwhite = "#333333",
 
-	col_diminbetween = "#262626"
+	col_diminbetween = "#262626",
+	col_fours = "#444444"
 }
 
 local mgz = {}

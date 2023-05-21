@@ -28,6 +28,9 @@ local mgz = {
 	col_dimmagenta = "#281641",
 	col_dimcyan = "#0A3535",
 	col_dimwhite = "#333333",
+
+	col_diminbetween = "#262626",
+	col_fours = "#444444"
 }
 
 -- Toggle for transparent cursorline (the background of the line the cursor is on)
@@ -614,9 +617,9 @@ theme.loadPlugins = function()
 		LightspeedUniqueChar = { style = "bold,underline" },
 
 		-- Copilot
-		CopilotSuggestion = { fg = mgz.col_dimwhite, bg = mgz.none },
-		CopilotAnnotation = { fg = mgz.col_dimwhite, bg = mgz.none },
-		CopilotLabel = { fg = mgz.col_dimwhite, bg = mgz.none },
+		CopilotSuggestion = { fg = mgz.col_fours, bg = mgz.none },
+		CopilotAnnotation = { fg = mgz.col_fours, bg = mgz.none },
+		CopilotLabel = { fg = mgz.col_fours, bg = mgz.none },
 
 		-- Statusline
 		StatusLineDull = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack },
