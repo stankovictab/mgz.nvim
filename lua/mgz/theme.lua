@@ -18,7 +18,7 @@ local mgz = {
 	col_purple = "#a25dfc",
 	col_teal = "#58F5AB",
 	col_yellow = "#f4da58",
-	col_cyan = "#2adede", -- liminal color
+	col_cyan = "#2adede",
 
 	col_dimblack = "#141414",
 	col_dimred = "#31100D",
@@ -414,6 +414,7 @@ theme.loadPlugins = function()
 		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" },
 		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
 		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
+		-- TODO: There's more BufferLine groups
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
@@ -485,12 +486,14 @@ theme.loadPlugins = function()
 		LspDiagnosticsHint = { fg = mgz.col_white },
 
 		-- WhichKey
-		WhichKey = { fg = mgz.col_blue, style = "bold" },
-		WhichKeyGroup = { fg = mgz.col_blue },
-		WhichKeyDesc = { fg = mgz.col_pink, style = "italic" },
-		WhichKeySeperator = { fg = mgz.col_blue },
-		WhichKeyFloating = { bg = mgz.col_dimblack },
+		WhichKey = { fg = mgz.col_blue, style = "bold" }, -- The key on the left
+		WhichKeyDesc = { fg = mgz.col_white, style = "italic" }, -- Description of shortcut
+		WhichKeySeparator = { fg = mgz.col_purple }, -- The arrow. And it's not sepErator.
 		WhichKeyFloat = { bg = mgz.col_dimblack },
+		WhichKeyFloating = { bg = mgz.col_dimblack },
+		WhichKeyGroup = { fg = mgz.col_teal },
+		-- WhichKeyBorder = ?
+		-- WhichKeyValue = ?
 
 		-- LspSaga
 		DiagnosticError = { fg = mgz.col_red },
