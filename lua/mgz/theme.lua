@@ -418,8 +418,8 @@ theme.loadPlugins = function()
 		-- TODO: There's more BufferLine groups
 
 		-- NvimScrollbar
-		ScrollbarHandle = { bg = mgz.col_dimwhite },
-		ScrollbarCursorHandle = { bg = mgz.col_dimwhite }, -- The little dot in the scrollbar
+		ScrollbarHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite },
+		ScrollbarCursorHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite }, -- The little dot in the scrollbar
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
