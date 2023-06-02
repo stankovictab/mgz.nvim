@@ -408,13 +408,18 @@ theme.loadPlugins = function()
 
 	local plugins = {
 
-		-- Lualine is in another file
+		-- LuaLine is in another file
 
 		-- BufferLine
-		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" },
-		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
-		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },
+		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" }, -- Selected buffer text
+		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator that the buffer has been modified (little dot)
+		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Same, but for selected buffer
+		-- BufferLineFill = { fg = mgz.col_dimblack, bg = mgz.none }, -- BufferLine background, for the BufferLine itself, not counting the tabs
 		-- TODO: There's more BufferLine groups
+
+		-- NvimScrollbar
+		ScrollbarHandle = { bg = mgz.col_dimwhite },
+		ScrollbarCursorHandle = { bg = mgz.col_dimwhite }, -- The little dot in the scrollbar
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
