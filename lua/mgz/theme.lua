@@ -403,9 +403,7 @@ theme.loadLSP = function()
 	return lsp
 end
 
-theme.loadPlugins = function()
-	-- Plugins highlight groups
-
+theme.loadPlugins = function() -- Plugins highlight groups
 	local plugins = {
 
 		-- LuaLine is in another file
@@ -417,7 +415,7 @@ theme.loadPlugins = function()
 		-- BufferLineFill = { fg = mgz.col_dimblack, bg = mgz.none }, -- BufferLine background, for the BufferLine itself, not counting the tabs
 		-- TODO: There's more BufferLine groups
 
-		-- NvimScrollbar
+		-- NvimScrollbar -- TODO: This doesn't work???
 		ScrollbarHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite },
 		ScrollbarCursorHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite }, -- The little dot in the scrollbar
 
