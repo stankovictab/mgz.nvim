@@ -39,8 +39,17 @@ vim.g.mgz_cursorline_transparent = false
 vim.g.mgz_italic = false
 vim.g.mgz_uniform_diff_background = true
 ```
+
+### Notices
+
+I usually make changes to this theme depending on the plugins I'm using in my NeoVim config, 
+so because that is my priority, I wouldn't theme some of the more obscure plugins that I don't use.\
+However, if you want to you can always open an issue or a pull request and I'll try to add support for it.
+
+If you're using an LSP plugin, it might interfere with the colorscheme by applying different syntax highlighting that overrides the theme. You can see [this](https://www.reddit.com/r/neovim/comments/109vgtl/how_to_disable_highlight_from_lsp/) for more info.
+
 ---
 
-The structure of the theme is based off of [nord.nvim](https://github.com/shaunsingh/nord.nvim).
+The structure of the theme is based off of [nord.nvim](https://github.com/shaunsingh/nord.nvim), so there might still be some old code and styling in there.
 
 The MGZ theme is also available for [VSCode](https://github.com/stankovictab/mgz-dark-theme).

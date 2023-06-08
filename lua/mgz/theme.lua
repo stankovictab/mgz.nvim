@@ -283,7 +283,6 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		-- TODO: This might be for Java annotations, but there's no @group?
 		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information. 
 		["@constructor"] = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
 		["@constant"] = { fg = mgz.col_purple }, -- For constants
@@ -327,7 +326,7 @@ theme.loadTreeSitter = function()
 		["@method"] = { fg = mgz.col_pink }, -- For method calls and definitions
 		["@function.builtin"] = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
 		["@namespace"] = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
-		["@field"] = { fg = mgz.col_lightblue }, -- For fields in literals
+		["@field"] = { fg = mgz.col_lightblue }, -- For fields in literals, for example this fg and mgz in this lua table here
 		["@property"] = { fg = mgz.col_lightblue }, -- Same as `TSField`
 		["@keyword"] = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
 		["@keyword.function"] = { fg = mgz.col_darkblue }, -- def in Python
@@ -338,8 +337,10 @@ theme.loadTreeSitter = function()
 		["@string.regex"] = { fg = mgz.col_pink }, -- For regexes.
 		["@string.escape"] = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
 		["@character"] = { fg = mgz.col_teal }, -- For characters.
-		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is just TODO
-		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" } -- This is just FIXME and XXX
+		["@text.todo"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is just TODO
+		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is just WARNING
+		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is just FIXME and BUG
+		["@text.note"] = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is just NOTE and XXX
 	}
 
 	if vim.g.mgz_italic == true then
