@@ -30,7 +30,8 @@ local mgz = {
 	col_dimwhite = "#333333",
 
 	col_diminbetween = "#262626",
-	col_fours = "#444444"
+	col_fours = "#444444",
+	col_offblue = "#61b3ff"
 }
 
 -- Toggle for transparent cursorline (the background of the line the cursor is on)
@@ -317,7 +318,7 @@ theme.loadTreeSitter = function()
 		["@text.strong"] = { fg = mgz.col_pink, style = "bold" }, -- Bold text in markdown (**text**)
 		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
 		["@text.title"] = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		["@text.literal"] = { fg = mgz.col_darkblue }, -- Code in markdown (in `` and ``````)
+		["@text.literal"] = { fg = mgz.col_darkblue }, -- Code in markdown (in `...` and ```...```)
 		["@text.uri"] = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
 		["@comment"] = { fg = mgz.col_bluishgray }, -- Comments
 		["@conditional"] = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
@@ -326,7 +327,7 @@ theme.loadTreeSitter = function()
 		["@method"] = { fg = mgz.col_pink }, -- For method calls and definitions
 		["@function.builtin"] = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
 		["@namespace"] = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
-		["@field"] = { fg = mgz.col_lightblue }, -- For fields in literals, for example this fg and mgz in this lua table here
+		["@field"] = { fg = mgz.col_offblue }, -- For fields in literals, for example this fg and col_... in this lua table here
 		["@property"] = { fg = mgz.col_lightblue }, -- Same as `TSField`
 		["@keyword"] = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
 		["@keyword.function"] = { fg = mgz.col_darkblue }, -- def in Python
@@ -337,10 +338,10 @@ theme.loadTreeSitter = function()
 		["@string.regex"] = { fg = mgz.col_pink }, -- For regexes.
 		["@string.escape"] = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
 		["@character"] = { fg = mgz.col_teal }, -- For characters.
-		["@text.todo"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is just TODO
-		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is just WARNING
-		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is just FIXME and BUG
-		["@text.note"] = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is just NOTE and XXX
+		["@text.todo"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is TODO 
+		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is WARNING
+		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is FIXME and BUG
+		["@text.note"] = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is NOTE and XXX
 	}
 
 	if vim.g.mgz_italic == true then
@@ -476,8 +477,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- NvimTree
 		-- For NvimTreeNormal, go down to the end of this file
 		NvimTreeRootFolder = { fg = mgz.col_white, style = "bold" }, -- At the top of NvimTree
-		NvimTreeGitDirty = { fg = mgz.col_yellow },
-		NvimTreeGitNew = { fg = mgz.col_teal },
+		NvimTreeGitDirty = { fg = mgz.col_lightblue }, -- A git file with changes
+		NvimTreeGitNew = { fg = mgz.col_teal }, -- A new git file, not yet tracked
+		NvimTreeGitStaged = { fg = mgz.col_teal }, -- A git file that has been staged
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
@@ -487,6 +489,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		NvimTreeFolderIcon = { fg = mgz.col_lightblue },
 		NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
 		NvimTreeWindowPicker = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Color of status line of window that you pick when opening a file from NvimTree when you have multiple windows (panes) open in nvim
+
 		LspDiagnosticsError = { fg = mgz.col_red },
 		LspDiagnosticsWarning = { fg = mgz.col_yellow },
 		LspDiagnosticsInformation = { fg = mgz.col_lightblue },
