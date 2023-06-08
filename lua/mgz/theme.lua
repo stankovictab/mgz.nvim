@@ -409,15 +409,14 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- LuaLine is in another file
 
 		-- BufferLine
-		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.none, gui = "bold", style = "bold", italic = "false" }, -- Selected buffer text
-		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator that the buffer has been modified (little dot)
+		BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.col_fours, gui = "bold", style = "bold", italic = "false" }, -- Selected buffer text and bg
+		BufferLineBackground = { fg = mgz.col_gray, bg = mgz.col_diminbetween }, -- Unselected buffer text and bg
+		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer has been modified
 		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Same, but for selected buffer
-		-- BufferLineFill = { fg = mgz.col_dimblack, bg = mgz.none }, -- BufferLine background, for the BufferLine itself, not counting the tabs
-		-- TODO: There's more BufferLine groups
+		BufferLineFill = { fg = mgz.none, bg = mgz.col_dimblack }, -- BufferLine background, for the BufferLine itself, not counting the tabs
+		BufferLineSeparator = { fg = mgz.col_dimblack, bg = mgz.col_dimblack }, -- Separator between tabs, fg is the tiny line, bg is the background
 
-		-- NvimScrollbar -- TODO: This doesn't work???
-		ScrollbarHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite },
-		ScrollbarCursorHandle = { fg = mgz.col_dimwhite, bg = mgz.col_dimwhite }, -- The little dot in the scrollbar
+		-- NvimScrollbar -- For some reason it can't be set here, so it's set in the lua config file of the plugin
 
 		-- LspTrouble
 		LspTroubleText = { fg = mgz.col_blue },
