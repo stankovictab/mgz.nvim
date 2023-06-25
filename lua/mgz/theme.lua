@@ -117,7 +117,7 @@ theme.loadEditor = function()
 
 	local editor = {
 		-- These are the colors for popup windows like :LspInfo and :Mason
-		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover or Packer's popup
+		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover, or Packer's popup
 		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- The border of the popup, seen on Packer's popup for example, around the border
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, -- Used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -464,6 +464,12 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line
 		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
+
+		-- Folke's Flash.nvim
+		FlashBackdrop = { bg = mgz.col_dimblue }, -- Color of text that is search-able with a jump
+		FlashMatch = { fg = mgz.col_red, style = "bold" }, -- ?
+		FlashCurrent = { fg = mgz.col_green, style = "bold" }, -- ?
+		FlashLabel = { fg = mgz.col_pink, style = "bold" }, -- ?
 
 		-- Telescope
 		TelescopePromptBorder = { fg = mgz.col_teal },
