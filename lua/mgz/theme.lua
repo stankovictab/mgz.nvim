@@ -31,6 +31,17 @@ local mgz = {
 
 	col_diminbetween = "#262626",
 	col_fours = "#444444",
+	col_fives = "#555555",
+	col_sixes = "#666666",
+	col_sevens = "#777777",
+	col_eights = "#888888",
+	col_nines = "#999999",
+	col_tens = "#aaaaaa",
+	col_elevens = "#bbbbbb",
+	col_twelves = "#cccccc",
+	col_thirteens = "#dddddd",
+	col_fourteens = "#eeeeee",
+
 	col_offblue = "#61b3ff"
 }
 
@@ -70,7 +81,7 @@ theme.loadSyntax = function()
 		Label = { fg = mgz.col_lightblue }, -- case, default, etc.
 		Operator = { fg = mgz.col_yellow }, -- sizeof", "+", "*", etc.
 		Exception = { fg = mgz.col_yellow }, -- try, catch, throw
-		PreProc = { fg = mgz.col_white }, -- generic Preprocessor
+		PreProc = { fg = mgz.col_darkblue }, -- generic Preprocessor, like the headings in :checkhealth, or ...?
 		Include = { fg = mgz.col_purple }, -- preprocessor #include, also import and from
 		Define = { fg = mgz.col_white }, -- preprocessor #define
 		Macro = { fg = mgz.col_white }, -- same as Define
@@ -86,8 +97,6 @@ theme.loadSyntax = function()
 		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
 		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention - TODO FIXME and XXX
-		-- Conceal is the stupid ass tab in LSP hover popup that for some reason has a seperate color
-		-- Conceal = { fg = mgz.none, bg = mgz.col_black },
 
 		htmlLink = { fg = mgz.col_teal, style = "underline" },
 		htmlH1 = { fg = mgz.col_lightblue, style = "bold" },
@@ -120,7 +129,7 @@ theme.loadEditor = function()
 		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover, or Packer's popup
 		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- The border of the popup, seen on Packer's popup for example, around the border
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, -- Used for the columns set with 'colorcolumn'
-		Conceal = { fg = mgz.col_dimblack }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Conceal = { fg = mgz.col_fours }, -- placeholder characters substituted for concealed text (see 'conceallevel'), an example is dir, url, branch, etc in Lazy's panel when you expand a plugin
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
@@ -188,30 +197,6 @@ theme.loadEditor = function()
 		DashboardCenter = { fg = mgz.col_orange },
 		DashboardFooter = { fg = mgz.col_teal, style = "italic" },
 
-		-- Barbar
-		BufferTabpageFill = { bg = mgz.col_black },
-
-		BufferCurrent = { bg = mgz.col_dimblack },
-		BufferCurrentMod = { bg = mgz.col_dimblack, fg = mgz.col_yellow },
-		BufferCurrentIcon = { bg = mgz.col_dimblack },
-		BufferCurrentSign = { bg = mgz.col_dimblack },
-		BufferCurrentIndex = { bg = mgz.col_dimblack },
-		BufferCurrentTarget = { bg = mgz.col_dimblack, fg = mgz.col_red },
-
-		BufferInactive = { bg = mgz.col_black, fg = mgz.col_dimwhite },
-		BufferInactiveMod = { bg = mgz.col_black, fg = mgz.col_yellow },
-		BufferInactiveIcon = { bg = mgz.col_black, fg = mgz.col_dimwhite },
-		BufferInactiveSign = { bg = mgz.col_black, fg = mgz.col_dimwhite },
-		BufferInactiveIndex = { bg = mgz.col_black, fg = mgz.col_dimwhite },
-		BufferInactiveTarget = { bg = mgz.col_black, fg = mgz.col_red },
-
-		BufferVisible = { bg = mgz.col_darkgray },
-		BufferVisibleMod = { bg = mgz.col_darkgray, fg = mgz.col_yellow },
-		BufferVisibleIcon = { bg = mgz.col_darkgray },
-		BufferVisibleSign = { bg = mgz.col_darkgray },
-		BufferVisibleIndex = { bg = mgz.col_darkgray },
-		BufferVisibleTarget = { bg = mgz.col_darkgray, fg = mgz.col_red },
-
 		-- nvim-notify
 		NotifyDEBUGBorder = { fg = mgz.col_dimwhite },
 		NotifyDEBUGIcon = { fg = mgz.col_dimwhite },
@@ -228,11 +213,6 @@ theme.loadEditor = function()
 		NotifyWARNBorder = { fg = mgz.col_purple },
 		NotifyWARNIcon = { fg = mgz.col_purple },
 		NotifyWARNTitle = { fg = mgz.col_purple },
-
-		-- leap.nvim
-		LeapMatch = { style = "underline,nocombine", fg = mgz.col_purple },
-		LeapLabelPrimary = { style = "nocombine", fg = mgz.col_black, bg = mgz.col_purple },
-		LeapLabelSecondary = { style = "nocombine", fg = mgz.col_black, bg = mgz.col_yellow },
 	}
 
 	-- Options :
@@ -412,7 +392,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 
 		-- BufferLine - TODO: Can't change the background of the dev icon for the life of me. 
 		-- See this https://github.com/akinsho/bufferline.nvim/issues/627 but I didn't get how this would work. 
-		-- For now I'll stick to CokeLine.
+		-- For now I'll stick to CokeLine (which is themed and configured in the plugin config).
 		--
 		-- BufferLineBackground = { fg = mgz.col_gray, bg = mgz.col_diminbetween }, -- Unselected buffer text and bg
 		-- BufferLineBufferSelected = { fg = mgz.col_white, bg = mgz.col_dimwhite, gui = "bold", style = "bold", italic = "false" }, -- Selected buffer text and bg
@@ -461,7 +441,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Folke's Flash.nvim
-		FlashBackdrop = { fg = mgz.col_gray }, -- Color of text that is search-able with a jump (default is gray-ish)
+		FlashBackdrop = { fg = mgz.col_fives }, -- Color of text that is search-able with a jump (default is gray-ish)
 		FlashMatch = { fg = mgz.col_black, bg = mgz.col_lightblue, style = "bold" }, -- On a standalone .jump(), the color of the other matches
 		FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" }, -- On a standalone .jump(), the color of the current match
 		FlashLabel = { fg = mgz.col_lightblue, bg = mgz.col_dimmagenta, style = "bold" }, -- Jump label color
