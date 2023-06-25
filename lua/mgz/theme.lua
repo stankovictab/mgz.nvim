@@ -61,12 +61,12 @@ theme.loadSyntax = function()
 		Type = { fg = mgz.col_blue }, -- int, long, char, etc.
 		StorageClass = { fg = mgz.col_white }, -- static, register, volatile, etc.
 		Structure = { fg = mgz.col_white }, -- struct, union, enum, etc.
-		Constant = { fg = mgz.col_purple }, -- any constant
+		Constant = { fg = mgz.col_cyan }, -- constants are true and false, for example
 		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
 		Number = { fg = mgz.col_teal }, -- a number constant: 5
 		Boolean = { fg = mgz.col_cyan }, -- a boolean constant: TRUE, false
 		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
-		Statement = { fg = mgz.col_white }, -- any statement
+		Statement = { fg = mgz.col_darkblue }, -- like local in lua
 		Label = { fg = mgz.col_lightblue }, -- case, default, etc.
 		Operator = { fg = mgz.col_yellow }, -- sizeof", "+", "*", etc.
 		Exception = { fg = mgz.col_yellow }, -- try, catch, throw
@@ -424,11 +424,6 @@ theme.loadPlugins = function() -- Plugins highlight groups
 
 		-- NvimScrollbar -- For some reason it can't be set here, so it's set in the lua config file of the plugin
 
-		-- LspTrouble
-		LspTroubleText = { fg = mgz.col_blue },
-		LspTroubleCount = { fg = mgz.col_white, bg = mgz.col_lightblue },
-		LspTroubleNormal = { fg = mgz.col_blue, bg = mgz.col_pink }, -- ?
-
 		-- Diff
 		diffAdded = { fg = mgz.col_teal },
 		diffRemoved = { fg = mgz.col_red },
@@ -572,8 +567,10 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		CmpItemMenu = { fg = mgz.col_teal }, -- ???
 
 		-- Indent Blankline
-		IndentBlanklineChar = { fg = mgz.col_dimwhite },
-		IndentBlanklineContextChar = { fg = mgz.col_gray },
+		IndentBlanklineChar = { fg = mgz.col_dimwhite }, -- The | character on the unfocused segment
+		IndentBlanklineContextChar = { fg = mgz.col_gray }, -- The | character on the focused segment
+		IndentBlanklineSpaceChar = { fg = mgz.col_dimwhite }, -- Basically the cursor color when on tabbed whitespace, it was an ugly pink before I added this
+		IndentBlanklineSpaceCharBlankline = { fg = mgz.col_dimwhite }, -- ? Same thing ?
 
 		-- Illuminate
 		illuminatedWord = { bg = mgz.col_dimwhite },
@@ -603,12 +600,6 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		DapUIBreakpointsInfo = { fg = mgz.col_orange },
 		DapUIBreakpointsCurrentLine = { fg = mgz.col_orange },
 		DapUIBreakpointsLine = { fg = mgz.col_orange },
-
-		-- Hop
-		HopNextKey = { fg = mgz.col_blue, style = "bold" },
-		HopNextKey1 = { fg = mgz.col_orange, style = "bold" },
-		HopNextKey2 = { fg = mgz.col_blue },
-		HopUnmatched = { fg = mgz.col_dimwhite },
 
 		-- Fern
 		FernBranchText = { fg = mgz.col_bluishgray },
@@ -643,115 +634,6 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- Statusline
 		StatusLineDull = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack },
 		StatusLineAccent = { fg = mgz.col_black, bg = mgz.col_purple },
-
-		-- mini.nvim
-		MiniCompletionActiveParameter = { style = "underline" },
-
-		MiniCursorword = { bg = mgz.col_dimwhite },
-		MiniCursorwordCurrent = { bg = mgz.col_dimwhite },
-
-		MiniIndentscopeSymbol = { fg = mgz.col_lightblue },
-		MiniIndentscopePrefix = { style = "nocombine" }, -- Make it invisible
-
-		MiniJump = { fg = mgz.col_black, bg = mgz.col_blue },
-
-		MiniJump2dSpot = { fg = mgz.col_green, style = "bold,nocombine" },
-
-		MiniStarterCurrent = { style = "nocombine" },
-		MiniStarterFooter = { fg = mgz.col_teal, style = "italic" },
-		MiniStarterHeader = { fg = mgz.col_white },
-		MiniStarterInactive = { link = "Comment" },
-		MiniStarterItem = { link = "Normal" },
-		MiniStarterItemBullet = { fg = mgz.col_blue },
-		MiniStarterItemPrefix = { fg = mgz.col_yellow },
-		MiniStarterSection = { fg = mgz.col_blue },
-		MiniStarterQuery = { fg = mgz.col_lightblue },
-
-		MiniStatuslineDevinfo = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		MiniStatuslineFileinfo = { fg = mgz.col_blue, bg = mgz.col_darkgray },
-		MiniStatuslineFilename = { fg = mgz.col_blue, bg = mgz.col_dimblack },
-		MiniStatuslineInactive = { fg = mgz.col_blue, bg = mgz.col_black, style = "bold" },
-		MiniStatuslineModeCommand = { fg = mgz.col_black, bg = mgz.col_yellow, style = "bold" },
-		MiniStatuslineModeInsert = { fg = mgz.col_dimblack, bg = mgz.col_blue, style = "bold" },
-		MiniStatuslineModeNormal = { fg = mgz.col_dimblack, bg = mgz.col_white, style = "bold" },
-		MiniStatuslineModeOther = { fg = mgz.col_black, bg = mgz.col_purple, style = "bold" },
-		MiniStatuslineModeReplace = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" },
-		MiniStatuslineModeVisual = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" },
-
-		MiniSurround = { link = "IncSearch" },
-
-		MiniTablineCurrent = { bg = mgz.col_dimblack },
-		MiniTablineFill = { link = "TabLineFill" },
-		MiniTablineHidden = { bg = mgz.col_black, fg = mgz.col_dimwhite },
-		MiniTablineModifiedCurrent = { bg = mgz.col_dimblack, fg = mgz.col_yellow },
-		MiniTablineModifiedHidden = { bg = mgz.col_black, fg = mgz.col_yellow },
-		MiniTablineModifiedVisible = { bg = mgz.col_darkgray, fg = mgz.col_yellow },
-		MiniTablineTabpagesection = { fg = mgz.col_lightblue, bg = mgz.col_white, style = "reverse,bold" },
-		MiniTablineVisible = { bg = mgz.col_darkgray },
-
-		MiniTestEmphasis = { style = "bold" },
-		MiniTestFail = { fg = mgz.col_red, style = "bold" },
-		MiniTestPass = { fg = mgz.col_teal, style = "bold" },
-
-		MiniTrailspace = { bg = mgz.col_red },
-
-
-		-- Aerail
-		AerialLine = { bg = mgz.col_darkgray },
-		AerialLineNC = { bg = mgz.col_darkgray },
-		AerialArrayIcon = { fg = mgz.col_purple },
-		AerialBooleanIcon = { fg = mgz.col_cyan },
-		AerialClassIcon = { fg = mgz.col_white },
-		AerialConstansIcon = { fg = mgz.col_purple },
-		AerialConstructorIcon = { fg = mgz.col_green },
-		AerialEnumIcon = { fg = mgz.col_white },
-		AerialEnumMemberIcon = { fg = mgz.col_blue },
-		AerialEventIcon = { fg = mgz.col_white },
-		AerialFieldIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialFileIcon = { fg = mgz.col_teal },
-		AerialFunctionIcon = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
-		AerialInterfaceIcon = { fg = mgz.col_white },
-		AerialKeyIcon = { fg = mgz.col_white },
-		AerialMethodIcon = vim.g.mgz_italic and { fg = mgz.col_pink, style = "italic" } or { fg = mgz.col_pink },
-		AerialModuleIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialNamespaceIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialNullIcon = { fg = mgz.col_white },
-		AerialNumberIcon = { fg = mgz.col_teal },
-		AerialObjectIcon = { fg = mgz.col_white },
-		AerialOperatorIcon = { fg = mgz.col_yellow },
-		AerialPackageIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialPropertyIcon = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
-		AerialStringIcon = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
-		AerialStructIcon = { fg = mgz.col_white },
-		AerialTypeParameterIcon = { fg = mgz.col_lightblue },
-		AerialVariableIcon = { fg = mgz.col_blue, style = "bold" },
-
-		AerialArray = { fg = mgz.col_purple },
-		AerialBoolean = { fg = mgz.col_cyan },
-		AerialClass = { fg = mgz.col_white },
-		AerialConstans = { fg = mgz.col_purple },
-		AerialConstructor = { fg = mgz.col_green },
-		AerialEnum = { fg = mgz.col_white },
-		AerialEnumMember = { fg = mgz.col_blue },
-		AerialEvent = { fg = mgz.col_white },
-		AerialField = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialFile = { fg = mgz.col_teal },
-		AerialFunction = vim.g.mgz_italic and { fg = mgz.col_orange, style = "italic" } or { fg = mgz.col_orange },
-		AerialInterface = { fg = mgz.col_white },
-		AerialKey = { fg = mgz.col_white },
-		AerialMethod = vim.g.mgz_italic and { fg = mgz.col_pink, style = "italic" } or { fg = mgz.col_pink },
-		AerialModule = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialNamespace = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialNull = { fg = mgz.col_white },
-		AerialNumber = { fg = mgz.col_teal },
-		AerialObject = { fg = mgz.col_white },
-		AerialOperator = { fg = mgz.col_yellow },
-		AerialPackage = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_blue },
-		AerialProperty = vim.g.mgz_italic and { fg = mgz.col_blue, style = "italic" } or { fg = mgz.col_lightblue },
-		AerialString = vim.g.mgz_italic and { fg = mgz.col_teal, style = "italic" } or { fg = mgz.col_teal },
-		AerialStruct = { fg = mgz.col_white },
-		AerialTypeParameter = { fg = mgz.col_lightblue },
-		AerialVariable = { fg = mgz.col_blue, style = "bold" },
 	}
 
 	return plugins
