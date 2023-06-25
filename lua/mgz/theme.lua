@@ -466,10 +466,10 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Folke's Flash.nvim
-		FlashBackdrop = { bg = mgz.col_dimblue }, -- Color of text that is search-able with a jump
-		FlashMatch = { fg = mgz.col_red, style = "bold" }, -- ?
+		FlashBackdrop = { fg = mgz.col_gray }, -- Color of text that is search-able with a jump
+		FlashMatch = { fg = mgz.col_blue, style = "bold" }, -- ?
 		FlashCurrent = { fg = mgz.col_green, style = "bold" }, -- ?
-		FlashLabel = { fg = mgz.col_pink, style = "bold" }, -- ?
+		FlashLabel = { fg = mgz.col_pink, style = "bold" }, -- Jump label color
 
 		-- Telescope
 		TelescopePromptBorder = { fg = mgz.col_teal },
