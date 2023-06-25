@@ -469,7 +469,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		FlashBackdrop = { fg = mgz.col_gray }, -- Color of text that is search-able with a jump (default is gray-ish)
 		FlashMatch = { fg = mgz.col_black, bg = mgz.col_lightblue, style = "bold" }, -- On a standalone .jump(), the color of the other matches
 		FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" }, -- On a standalone .jump(), the color of the current match
-		FlashLabel = { fg = mgz.col_pink, bg = mgz.col_white, style = "bold" }, -- Jump label color
+		FlashLabel = { fg = mgz.col_lightblue, bg = mgz.col_dimmagenta, style = "bold" }, -- Jump label color
 
 		-- Telescope
 		TelescopePromptBorder = { fg = mgz.col_teal },
