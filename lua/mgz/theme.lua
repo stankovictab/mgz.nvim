@@ -138,7 +138,9 @@ theme.loadEditor = function()
 		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
-		IncSearch = { fg = mgz.col_black, bg = mgz.col_orange }, -- Search with /
+		IncSearch = { fg = mgz.col_orange, bg = mgz.col_black, style = "bold" }, -- Current search result while typing with /
+		CurSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" }, -- Current selected search result after / by pressing n or N
+		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Search results after /
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
 		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
 		-- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
@@ -155,7 +157,6 @@ theme.loadEditor = function()
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
-		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "reverse" }, -- Search with ???
 		SpecialKey = { fg = mgz.col_white },
 		SpellBad = { fg = mgz.col_red, bg = mgz.none, style = "italic,undercurl" },
 		SpellCap = { fg = mgz.col_pink, bg = mgz.none, style = "italic,undercurl" },
@@ -549,11 +550,8 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- Indent Blankline (see :help ibl.highlights)
 		-- TODO: v3 is released, and this needs an update
 		-- Look at tags with 'ibl' in the name, by default they take the NonText highlight group (the @@@, see above)
-		-- FIXME: These 4 highlights aren't used anymore, I don't think
-		-- IndentBlanklineChar = { fg = mgz.col_dimwhite }, -- The | character on the unfocused segment
-		-- IndentBlanklineContextChar = { fg = mgz.col_gray }, -- The | character on the focused segment
-		-- IndentBlanklineSpaceChar = { fg = mgz.col_dimwhite }, -- Basically the cursor color when on tabbed whitespace, it was an ugly pink before I added this
-		-- IndentBlanklineSpaceCharBlankline = { fg = mgz.col_dimwhite }, -- ? Same thing ?
+		-- Those are hl-IblIndent, hl-IblWhitespace, hl-IblScope, and 4 more that start with @, and changing those 4 actually does make a difference
+
 
 		-- Illuminate
 		illuminatedWord = { bg = mgz.col_dimwhite },
