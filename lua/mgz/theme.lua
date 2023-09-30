@@ -546,14 +546,14 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		CmpItemAbbr = { fg = mgz.col_gray }, -- Text of completion item
 		CmpItemMenu = { fg = mgz.col_teal }, -- ???
 
-		-- Indent Blankline
+		-- Indent Blankline (see :help ibl.highlights)
 		-- TODO: v3 is released, and this needs an update
 		-- Look at tags with 'ibl' in the name, by default they take the NonText highlight group (the @@@, see above)
 		-- FIXME: These 4 highlights aren't used anymore, I don't think
-		IndentBlanklineChar = { fg = mgz.col_dimwhite }, -- The | character on the unfocused segment
-		IndentBlanklineContextChar = { fg = mgz.col_gray }, -- The | character on the focused segment
-		IndentBlanklineSpaceChar = { fg = mgz.col_dimwhite }, -- Basically the cursor color when on tabbed whitespace, it was an ugly pink before I added this
-		IndentBlanklineSpaceCharBlankline = { fg = mgz.col_dimwhite }, -- ? Same thing ?
+		-- IndentBlanklineChar = { fg = mgz.col_dimwhite }, -- The | character on the unfocused segment
+		-- IndentBlanklineContextChar = { fg = mgz.col_gray }, -- The | character on the focused segment
+		-- IndentBlanklineSpaceChar = { fg = mgz.col_dimwhite }, -- Basically the cursor color when on tabbed whitespace, it was an ugly pink before I added this
+		-- IndentBlanklineSpaceCharBlankline = { fg = mgz.col_dimwhite }, -- ? Same thing ?
 
 		-- Illuminate
 		illuminatedWord = { bg = mgz.col_dimwhite },
