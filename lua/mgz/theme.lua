@@ -145,8 +145,8 @@ theme.loadEditor = function()
 		MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
-		-- TODO: What's this?
-		NonText = { fg = mgz.col_pink, bg = mgz.col_orange },
+		-- The NonText highlight group gets applied to the little @@@ on the bottom right when you're on a line that is wrapping into a new line, indicating that there's more text (see :h hl-NonText)
+		NonText = { fg = mgz.col_darkgray, bg = mgz.none},
 		-- Pmenu is the popup menu when tabbing in command mode, for example
 		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Normal element
 		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
@@ -547,6 +547,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		CmpItemMenu = { fg = mgz.col_teal }, -- ???
 
 		-- Indent Blankline
+		-- TODO: v3 is released, and this needs an update
+		-- Look at tags with 'ibl' in the name, by default they take the NonText highlight group (the @@@, see above)
+		-- FIXME: These 4 highlights aren't used anymore, I don't think
 		IndentBlanklineChar = { fg = mgz.col_dimwhite }, -- The | character on the unfocused segment
 		IndentBlanklineContextChar = { fg = mgz.col_gray }, -- The | character on the focused segment
 		IndentBlanklineSpaceChar = { fg = mgz.col_dimwhite }, -- Basically the cursor color when on tabbed whitespace, it was an ugly pink before I added this
