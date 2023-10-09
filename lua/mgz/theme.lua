@@ -138,7 +138,7 @@ theme.loadEditor = function()
 		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
-		IncSearch = { fg = mgz.col_orange, bg = mgz.col_black, style = "bold" }, -- Current search result while typing with /
+		IncSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" }, -- Current search result while typing with /
 		CurSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" }, -- Current selected search result after / by pressing n or N
 		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Search results after /
 		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
@@ -442,10 +442,12 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Folke's Flash.nvim
-		FlashBackdrop = { fg = mgz.col_fives }, -- Color of text that is search-able with a jump (default is gray-ish)
+		FlashBackdrop = { fg = mgz.col_fives }, -- Color of text that is search-able with a jump (default is gray-ish) (when pressing just 'f')
 		FlashMatch = { fg = mgz.col_black, bg = mgz.col_lightblue, style = "bold" }, -- On a standalone .jump(), the color of the other matches
 		FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" }, -- On a standalone .jump(), the color of the current match
 		FlashLabel = { fg = mgz.col_lightblue, bg = mgz.col_dimmagenta, style = "bold" }, -- Jump label color
+		-- TODO: 
+		-- FlashPrompt, FlashPromptIcon, FlashCursor
 
 		-- Telescope
 		TelescopePromptBorder = { fg = mgz.col_teal },
