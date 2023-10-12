@@ -172,8 +172,8 @@ theme.loadEditor = function()
 		TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
 		Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
-		Visual = { fg = mgz.none, bg = mgz.col_darkgray }, -- Color of highlight in Visual Mode
-		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },
+		Visual = { fg = mgz.white, bg = mgz.col_dimwhite}, -- Color of highlight in Visual Mode
+		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray }, -- This is depricated
 		-- This is the message in command bar when something goes wrong in packer for example.
 		WarningMsg = { fg = mgz.col_orange }, -- Overrides
 		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
