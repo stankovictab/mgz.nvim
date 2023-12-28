@@ -6,12 +6,7 @@ A really dark NeoVim theme.
 
 ### Installation
 
-Install (and update) it through your favourite package manager.\
-For example, [packer](https://github.com/wbthomason/packer.nvim).
-
-```lua
-use 'stankovictab/mgz.nvim'
-```
+Install (and update) it through your favourite package manager as `'stankovictab/mgz.nvim'`.
 
 To enable the colorscheme, you can use the following.\
 ```vim

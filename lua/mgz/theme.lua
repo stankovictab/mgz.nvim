@@ -405,6 +405,12 @@ theme.loadPlugins = function() -- Plugins highlight groups
 
 		-- NvimScrollbar -- For some reason it can't be set here, so it's set in the lua config file of the plugin
 
+		-- TODO: Lazy Plugin Manager
+		-- LazyButton = { fg = mgz., bg = mgz., gui = "bold", style = "bold" }, -- Install, Update, Sync buttons
+		-- LazyButtonActive = { fg = mgz., bg = mgz., gui = "bold", style = "bold" }, -- Install, Update, Sync buttons when active
+		-- LazySpecial = { fg = mgz., bg = mgz., gui = "bold", style = "bold" }, -- Dots next to loaded plugins and button shortcuts
+		-- etc
+
 		-- Diff
 		diffAdded = { fg = mgz.col_teal },
 		diffRemoved = { fg = mgz.col_red },
