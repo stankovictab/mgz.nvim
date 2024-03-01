@@ -338,18 +338,23 @@ theme.loadTreeSitter = function()
 		["@markup.strikethrough"]             = { strikethrough = true },
 		["@markup.title"]                     = { fg = mgz.cyan, bold = true },
 		["@markup.literal"]                   = { fg = mgz.green },
-		["@markup.link"]                      = { link = "Tag" }, -- text references, footnotes, citations, etc.
-		["@markup.link.url"]                  = { fg = mgz.link }, -- urls, links and emails
-		["@markup.math"]                      = { fg = mgz.blue }, -- e.g. LaTeX math
+		-- URL links (like [something](https://www.google.com))
+		["@markup.link"]                      = { fg = mgz.col_blue },    -- Links, text references, footnotes, citations, etc.
+		["@markup.link.url"]                  = { style = "underline" },  -- Only links are underlined
+		["@markup.link.label"]                = { fg = mgz.col_purple },  -- The color of "something" in [something](www.google.com)
+		["@markup.link.label.symbol"]         = { link = "Identifier" },  -- TODO ???
+		["@markup.link.unchecked"]            = { fg = mgz.col_pink },    -- TODO ???
+
+		["@markup.math"]                      = { fg = mgz.blue },        -- e.g. LaTeX math
 		["@markup.list"]                      = { link = "Special" },
-		["@markup.list.checked"]              = { fg = mgz.green }, -- checkboxes
+		["@markup.list.checked"]              = { fg = mgz.green },       -- checkboxes
 		["@markup.list.unchecked"]            = { fg = mgz.text },
 		["@markup.environment"]               = { fg = mgz.red },
 		["@markup.environment.name"]          = { fg = mgz.red },
 		["@markup.warning"]                   = { fg = mgz.warning },
 		["@markup.danger"]                    = { fg = mgz.error },
-		["@markup.raw"]                       = { fg = mgz.col_purple },                       -- e.g. inline `code` in Markdown
-		["@markup.raw.markdown_inline"]       = { fg = mgz.col_darkblue, bg = mgz.col_dimblue }, -- inline code in markdown
+		["@markup.raw"]                       = { fg = mgz.col_purple },                   -- ``` ``` and ` ` in markdown code (as far as I can tell)
+		["@markup.raw.markdown_inline"]       = { fg = mgz.col_darkblue, bg = mgz.col_dimblue }, -- Actual inline code in markdown
 		-- Headings text
 		["@markup.heading.1.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
 		["@markup.heading.2.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
@@ -358,19 +363,12 @@ theme.loadTreeSitter = function()
 		["@markup.heading.5.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
 		["@markup.heading.6.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
 		-- Headings markers (###)
-		["@markup.heading.1.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.2.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.3.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.4.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.5.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.6.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
-
-		-- markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
-		-- markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
-		-- markdownH3 = { fg = mgz.col_lightblue, style = "bold" },
-		-- markdownH1Delimiter = { fg = mgz.col_purple },
-		-- markdownH2Delimiter = { fg = mgz.col_purple },
-		-- markdownH3Delimiter = { fg = mgz.col_purple },
+		["@markup.heading.1.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.2.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.3.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.4.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.5.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.6.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
 	}
 
 	if vim.g.mgz_italic == true then
