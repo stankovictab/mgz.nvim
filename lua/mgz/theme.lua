@@ -104,12 +104,6 @@ theme.loadSyntax = function()
 		htmlH3 = { fg = mgz.col_lightblue, style = "bold" },
 		htmlH4 = { fg = mgz.col_lightblue, style = "bold" },
 		htmlH5 = { fg = mgz.col_lightblue, style = "bold" },
-		markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
-		markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
-		markdownH3 = { fg = mgz.col_lightblue, style = "bold" },
-		markdownH1Delimiter = { fg = mgz.col_purple },
-		markdownH2Delimiter = { fg = mgz.col_purple },
-		markdownH3Delimiter = { fg = mgz.col_purple },
 	}
 
 	-- Italic check (without TreeShitter)
@@ -343,7 +337,6 @@ theme.loadTreeSitter = function()
 		["@markup.strong"]              = { bold = true },
 		["@markup.strikethrough"]       = { strikethrough = true },
 		["@markup.title"]               = { fg = mgz.cyan, bold = true },
-		["@markup.heading"]             = { fg = mgz.cyan, bold = true },
 		["@markup.literal"]             = { fg = mgz.green },
 		["@markup.link"]                = { link = "Tag" }, -- text references, footnotes, citations, etc.
 		["@markup.link.url"]            = { fg = mgz.link }, -- urls, links and emails
@@ -357,6 +350,15 @@ theme.loadTreeSitter = function()
 		["@markup.danger"]              = { fg = mgz.error },
 		["@markup.raw"]                 = { fg = mgz.purple }, -- e.g. inline `code` in Markdown
 		["@markup.raw.markdown_inline"] = { fg = mgz.warning }, -- inline code in markdown
+		-- ["@markup.heading"]             = { fg = mgz.cyan, bold = true },
+		["@markup.heading"]             = { fg = mgz.col_lightblue, style = "bold" },
+
+		-- markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
+		-- markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
+		-- markdownH3 = { fg = mgz.col_lightblue, style = "bold" },
+		-- markdownH1Delimiter = { fg = mgz.col_purple },
+		-- markdownH2Delimiter = { fg = mgz.col_purple },
+		-- markdownH3Delimiter = { fg = mgz.col_purple },
 	}
 
 	if vim.g.mgz_italic == true then
