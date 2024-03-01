@@ -109,12 +109,12 @@ theme.loadSyntax = function()
 		markdownH4 = { fg = mgz.col_lightblue, style = "bold" },
 		markdownH5 = { fg = mgz.col_lightblue, style = "bold" },
 		markdownH6 = { fg = mgz.col_lightblue, style = "bold" },
-		markdownH1Delimiter = { fg = mgz.col_purple, style = "bold"},
-		markdownH2Delimiter = { fg = mgz.col_purple, style = "bold"},
-		markdownH3Delimiter = { fg = mgz.col_purple, style = "bold"},
-		markdownH4Delimiter = { fg = mgz.col_purple, style = "bold"},
-		markdownH5Delimiter = { fg = mgz.col_purple, style = "bold"},
-		markdownH6Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH1Delimiter = { fg = mgz.col_purple, style = "bold" },
+		markdownH2Delimiter = { fg = mgz.col_purple, style = "bold" },
+		markdownH3Delimiter = { fg = mgz.col_purple, style = "bold" },
+		markdownH4Delimiter = { fg = mgz.col_purple, style = "bold" },
+		markdownH5Delimiter = { fg = mgz.col_purple, style = "bold" },
+		markdownH6Delimiter = { fg = mgz.col_purple, style = "bold" },
 		markdownCodeDelimiter = { fg = mgz.col_blue },
 		markdownCode = { fg = mgz.col_darkblue, bg = mgz.col_dimblue },
 		markdownUrl = { fg = mgz.col_blue, style = "underline" },
@@ -311,7 +311,11 @@ theme.loadTreeSitter = function()
 		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
 		["@text.title"]                       = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
 		["@text.literal"]                     = { fg = mgz.col_darkblue },                           -- Code in markdown (in `...` and ```...```)
-		["@text.uri"]                         = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
+
+		["@string.special.url"]               = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
+		-- TODO: remove this text.uri
+		-- ["@text.uri"]                         = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
+
 		["@conditional"]                      = { fg = mgz.col_purple },                             -- For keywords related to conditionnals.
 		["@function"]                         = { fg = mgz.col_pink },                               -- For fuction calls and definitions
 		["@function.call"]                    = { fg = mgz.col_pink },                               -- There is a difference
@@ -347,20 +351,20 @@ theme.loadTreeSitter = function()
 		["@markup.title"]                     = { fg = mgz.cyan, bold = true },
 		["@markup.literal"]                   = { fg = mgz.green },
 		-- URL links (like [something](https://www.google.com))
-		["@markup.link"]                      = { fg = mgz.col_blue }, -- Links, text references, footnotes, citations, etc.
-		["@markup.link.url"]                  = { style = "underline" }, -- Only links are underlined
-		["@markup.link.label"]                = { fg = mgz.col_teal }, -- The color of "something" in [something](www.google.com)
-		["@markup.link.label.symbol"]         = { link = "Identifier" }, -- TODO ???
-		["@markup.link.unchecked"]            = { fg = mgz.col_pink }, -- TODO ???
-		["@markup.math"]                      = { fg = mgz.blue }, -- e.g. LaTeX math
+		["@markup.link"]                      = { fg = mgz.col_blue },     -- Links, text references, footnotes, citations, etc.
+		["@markup.link.url"]                  = { style = "underline" },   -- Only links are underlined
+		["@markup.link.label"]                = { fg = mgz.col_teal },     -- The color of "something" in [something](www.google.com)
+		["@markup.link.label.symbol"]         = { link = "Identifier" },   -- TODO ???
+		["@markup.link.unchecked"]            = { fg = mgz.col_pink },     -- TODO ???
+		["@markup.math"]                      = { fg = mgz.blue },         -- e.g. LaTeX math
 		["@markup.list"]                      = { link = "markdownListMarker" }, -- The color of bullets in lists
-		["@markup.list.checked"]              = { fg = mgz.green }, -- checkboxes
+		["@markup.list.checked"]              = { fg = mgz.green },        -- checkboxes
 		["@markup.list.unchecked"]            = { fg = mgz.text },
 		["@markup.environment"]               = { fg = mgz.red },
 		["@markup.environment.name"]          = { fg = mgz.red },
 		["@markup.warning"]                   = { fg = mgz.warning },
 		["@markup.danger"]                    = { fg = mgz.error },
-		["@markup.raw"]                       = { fg = mgz.col_purple },                   -- ``` ``` and ` ` in markdown code (as far as I can tell)
+		["@markup.raw"]                       = { fg = mgz.col_purple }, -- ``` ``` and ` ` in markdown code (as far as I can tell)
 		["@markup.raw.markdown_inline"]       = { link = "markdownCode" }, -- Actual inline code in markdown
 		-- Headings text
 		["@markup.heading.1.markdown"]        = { link = "markdownH1" },
