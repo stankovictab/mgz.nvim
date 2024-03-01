@@ -59,42 +59,42 @@ theme.loadSyntax = function()
 
 	local syntax = {
 		-- Special for me
-		jsonCommentError = { fg = mgz.col_comment, bg = mgz.none }, -- Am I the only one who doesn't mind comments in JSON?
-		jsonNoQuotesError = { fg = mgz.col_comment, bg = mgz.none }, -- Same issue
+		jsonCommentError = { fg = mgz.col_comment, bg = mgz.none },       -- Am I the only one who doesn't mind comments in JSON?
+		jsonNoQuotesError = { fg = mgz.col_comment, bg = mgz.none },      -- Same issue
 
-		Comment = { fg = mgz.col_bluishgray }, -- normal comments
-		Conditional = { fg = mgz.col_purple }, -- normal if, then, else, endif, switch, etc.
-		Function = { fg = mgz.col_pink }, -- normal function names
-		Identifier = { fg = mgz.col_lightblue }, -- any variable name
-		Keyword = { fg = mgz.col_darkblue }, -- normal for, do, while, etc.
-		Repeat = { fg = mgz.col_purple }, -- normal any other keyword
-		String = { fg = mgz.col_teal }, -- any string
-		Type = { fg = mgz.col_blue }, -- int, long, char, etc.
-		StorageClass = { fg = mgz.col_white }, -- static, register, volatile, etc.
-		Structure = { fg = mgz.col_white }, -- struct, union, enum, etc.
-		Constant = { fg = mgz.col_cyan }, -- constants are true and false, for example
-		Character = { fg = mgz.col_teal }, -- any character constant: 'c', '\n'
-		Number = { fg = mgz.col_teal }, -- a number constant: 5
-		Boolean = { fg = mgz.col_cyan }, -- a boolean constant: TRUE, false
-		Float = { fg = mgz.col_yellow }, -- a floating point constant: 2.3e10
-		Statement = { fg = mgz.col_darkblue }, -- like local in lua
-		Label = { fg = mgz.col_lightblue }, -- case, default, etc.
-		Operator = { fg = mgz.col_yellow }, -- sizeof", "+", "*", etc.
-		Exception = { fg = mgz.col_yellow }, -- try, catch, throw
-		PreProc = { fg = mgz.col_darkblue }, -- generic Preprocessor, like the headings in :checkhealth, or ...?
-		Include = { fg = mgz.col_purple }, -- preprocessor #include, also import and from
-		Define = { fg = mgz.col_white }, -- preprocessor #define
-		Macro = { fg = mgz.col_white }, -- same as Define
-		Typedef = { fg = mgz.col_white }, -- A typedef
-		PreCondit = { fg = mgz.col_purple }, -- preprocessor #if, #else, #endif, etc.
-		Special = { fg = mgz.col_blue }, -- any special symbol
-		SpecialChar = { fg = mgz.col_purple }, -- special character in a constant
-		Tag = { fg = mgz.col_blue }, -- you can use CTRL-] on this
-		Delimiter = { fg = mgz.col_white }, -- character that needs attention like , or .
-		SpecialComment = { fg = mgz.col_orange }, -- special things inside a comment
-		Debug = { fg = mgz.col_red }, -- debugging statements
+		Comment = { fg = mgz.col_bluishgray },                            -- normal comments
+		Conditional = { fg = mgz.col_purple },                            -- normal if, then, else, endif, switch, etc.
+		Function = { fg = mgz.col_pink },                                 -- normal function names
+		Identifier = { fg = mgz.col_lightblue },                          -- any variable name
+		Keyword = { fg = mgz.col_darkblue },                              -- normal for, do, while, etc.
+		Repeat = { fg = mgz.col_purple },                                 -- normal any other keyword
+		String = { fg = mgz.col_teal },                                   -- any string
+		Type = { fg = mgz.col_blue },                                     -- int, long, char, etc.
+		StorageClass = { fg = mgz.col_white },                            -- static, register, volatile, etc.
+		Structure = { fg = mgz.col_white },                               -- struct, union, enum, etc.
+		Constant = { fg = mgz.col_cyan },                                 -- constants are true and false, for example
+		Character = { fg = mgz.col_teal },                                -- any character constant: 'c', '\n'
+		Number = { fg = mgz.col_teal },                                   -- a number constant: 5
+		Boolean = { fg = mgz.col_cyan },                                  -- a boolean constant: TRUE, false
+		Float = { fg = mgz.col_yellow },                                  -- a floating point constant: 2.3e10
+		Statement = { fg = mgz.col_darkblue },                            -- like local in lua
+		Label = { fg = mgz.col_lightblue },                               -- case, default, etc.
+		Operator = { fg = mgz.col_yellow },                               -- sizeof", "+", "*", etc.
+		Exception = { fg = mgz.col_yellow },                              -- try, catch, throw
+		PreProc = { fg = mgz.col_darkblue },                              -- generic Preprocessor, like the headings in :checkhealth, or ...?
+		Include = { fg = mgz.col_purple },                                -- preprocessor #include, also import and from
+		Define = { fg = mgz.col_white },                                  -- preprocessor #define
+		Macro = { fg = mgz.col_white },                                   -- same as Define
+		Typedef = { fg = mgz.col_white },                                 -- A typedef
+		PreCondit = { fg = mgz.col_purple },                              -- preprocessor #if, #else, #endif, etc.
+		Special = { fg = mgz.col_blue },                                  -- any special symbol
+		SpecialChar = { fg = mgz.col_purple },                            -- special character in a constant
+		Tag = { fg = mgz.col_blue },                                      -- you can use CTRL-] on this
+		Delimiter = { fg = mgz.col_white },                               -- character that needs attention like , or .
+		SpecialComment = { fg = mgz.col_orange },                         -- special things inside a comment
+		Debug = { fg = mgz.col_red },                                     -- debugging statements
 		Underlined = { fg = mgz.col_teal, bg = mgz.none, style = "underline" }, -- text that stands out, HTML links
-		Ignore = { fg = mgz.col_dimblack }, -- left blank, hidden
+		Ignore = { fg = mgz.col_dimblack },                               -- left blank, hidden
 		Error = { fg = mgz.col_red, bg = mgz.none, style = "bold,underline" }, -- any erroneous construct
 		Todo = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- anything that needs extra attention - TODO FIXME and XXX
 
@@ -126,13 +126,13 @@ theme.loadEditor = function()
 
 	local editor = {
 		-- These are the colors for popup windows like :LspInfo and :Mason
-		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Text and background of floating popups, for example the popup on LSP hover, or Packer's popup
-		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- The border of the popup, seen on Packer's popup for example, around the border
-		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack }, -- Used for the columns set with 'colorcolumn'
-		Conceal = { fg = mgz.col_fours }, -- placeholder characters substituted for concealed text (see 'conceallevel'), an example is dir, url, branch, etc in Lazy's panel when you expand a plugin
+		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack },   -- Text and background of floating popups, for example the popup on LSP hover, or Packer's popup
+		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack },   -- The border of the popup, seen on Packer's popup for example, around the border
+		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack },        -- Used for the columns set with 'colorcolumn'
+		Conceal = { fg = mgz.col_fours },                              -- placeholder characters substituted for concealed text (see 'conceallevel'), an example is dir, url, branch, etc in Lazy's panel when you expand a plugin
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
-		Directory = { fg = mgz.col_pink, bg = mgz.none }, -- directory names (and other special names in listings)
+		Directory = { fg = mgz.col_pink, bg = mgz.none },              -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.none },
 		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
@@ -141,19 +141,19 @@ theme.loadEditor = function()
 		IncSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" }, -- Current search result while typing with /
 		CurSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" }, -- Current selected search result after / by pressing n or N
 		Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Search results after /
-		LineNr = { fg = mgz.col_dimwhite }, -- Line numbers
-		CursorLineNr = { fg = mgz.col_blue }, -- Active line number color
+		LineNr = { fg = mgz.col_dimwhite },                               -- Line numbers
+		CursorLineNr = { fg = mgz.col_blue },                             -- Active line number color
 		-- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
 		MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
 		-- The NonText highlight group gets applied to the little @@@ on the bottom right when you're on a line that is wrapping into a new line, indicating that there's more text (see :h hl-NonText)
-		NonText = { fg = mgz.col_darkgray, bg = mgz.none},
+		NonText = { fg = mgz.col_darkgray, bg = mgz.none },
 		-- Pmenu is the popup menu when tabbing in command mode, for example
-		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack }, -- Normal element
+		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack },              -- Normal element
 		PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
-		PmenuSbar = { fg = mgz.col_dimblack, bg = mgz.col_dimblack }, -- Background of the scrollbar, only bg is seen
-		PmenuThumb = { fg = mgz.col_white, bg = mgz.col_white }, -- "Thumb" (active part) of the scrollbar, only bg is seen
+		PmenuSbar = { fg = mgz.col_dimblack, bg = mgz.col_dimblack },       -- Background of the scrollbar, only bg is seen
+		PmenuThumb = { fg = mgz.col_white, bg = mgz.col_white },            -- "Thumb" (active part) of the scrollbar, only bg is seen
 		Question = { fg = mgz.col_teal },
 		QuickFixLine = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
 		qfLineNr = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
@@ -172,10 +172,10 @@ theme.loadEditor = function()
 		TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
 		Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
 		Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
-		Visual = { fg = mgz.white, bg = mgz.col_dimwhite}, -- Color of highlight in Visual Mode
+		Visual = { fg = mgz.white, bg = mgz.col_dimwhite }, -- Color of highlight in Visual Mode
 		VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray }, -- This is depricated
 		-- This is the message in command bar when something goes wrong in packer for example.
-		WarningMsg = { fg = mgz.col_orange }, -- Overrides
+		WarningMsg = { fg = mgz.col_orange },           -- Overrides
 		WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
 		CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
 		CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
@@ -228,10 +228,10 @@ theme.loadEditor = function()
 	end
 
 	if vim.g.mgz_uniform_diff_background then
-		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack } -- diff mode: Added line
-		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack } --  diff mode: Changed line
-		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack } -- diff mode: Deleted line
-		editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack } -- diff mode: Changed text within a changed line
+		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack }            -- diff mode: Added line
+		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack }       --  diff mode: Changed line
+		editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack }          -- diff mode: Deleted line
+		editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack }      -- diff mode: Changed text within a changed line
 	else
 		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.none, style = "reverse" } -- diff mode: Added line
 		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.none, style = "reverse" } --  diff mode: Changed line
@@ -265,64 +265,98 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information. 
-		["@constructor"] = { fg = mgz.col_white }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@constant"] = { fg = mgz.col_purple }, -- For constants
-		["@float"] = { fg = mgz.col_yellow }, -- For floats, eg 2.3e10
-		["@number"] = { fg = mgz.col_teal }, -- For all number
+		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
+		["@constructor"]                = { fg = mgz.col_white },          -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constant"]                   = { fg = mgz.col_purple },         -- For constants
+		["@float"]                      = { fg = mgz.col_yellow },         -- For floats, eg 2.3e10
+		["@number"]                     = { fg = mgz.col_teal },           -- For all number
 		-- TSAttribute = { fg = mgz.col_yellow }, -- TODO: ?
-		["@variable"] = { fg = mgz.col_lightblue }, -- Any user-defined variable's name that does not have another highlight.
-		["@variable.builtin"] = { fg = mgz.col_blue }, -- Like console in console.log(), builtin to the language
-		["@boolean"] = { fg = mgz.col_cyan }, -- For booleans.
-		["@constant.builtin"] = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
-		["@constant.macro"] = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
+		["@variable"]                   = { fg = mgz.col_lightblue },      -- Any user-defined variable's name that does not have another highlight.
+		["@variable.builtin"]           = { fg = mgz.col_blue },           -- Like console in console.log(), builtin to the language
+		["@boolean"]                    = { fg = mgz.col_cyan },           -- For booleans.
+		["@constant.builtin"]           = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+		["@constant.macro"]             = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
 		-- TSError = { fg = mgz.col_red }, -- For syntax/parser errors. -- TODO: ?
-		["@exception"] = { fg = mgz.col_yellow }, -- For exception related keywords.
-		["@function.macro"] = { fg = mgz.col_pink }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		["@include"] = { fg = mgz.col_purple }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@label"] = { fg = mgz.col_lightblue }, -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
-		["@operator"] = { fg = mgz.col_yellow }, -- For any operator: `+`, but also `->` and `*` in C.
-		["@parameter"] = { fg = mgz.col_lightblue }, -- For parameters of a function.
+		["@exception"]                  = { fg = mgz.col_yellow },         -- For exception related keywords.
+		["@function.macro"]             = { fg = mgz.col_pink },           -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		["@include"]                    = { fg = mgz.col_purple },         -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@label"]                      = { fg = mgz.col_lightblue },      -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
+		["@operator"]                   = { fg = mgz.col_yellow },         -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"]                  = { fg = mgz.col_lightblue },      -- For parameters of a function.
 		-- TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function. -- TODO: ?
-		["@punctuation.delimiter"] = { fg = mgz.col_white }, -- For delimiters ie: `.`, `?`, `;`, `:`
-		["@punctuation.bracket"] = { fg = mgz.col_white }, -- For brackets and parens.
-		["@punctuation.special"] = { fg = mgz.col_purple }, -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
+		["@punctuation.delimiter"]      = { fg = mgz.col_white },          -- For delimiters ie: `.`, `?`, `;`, `:`
+		["@punctuation.bracket"]        = { fg = mgz.col_white },          -- For brackets and parens.
+		["@punctuation.special"]        = { fg = mgz.col_purple },         -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
 
 		-- TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms. -- TODO: ?
-		["@type"] = { fg = mgz.col_blue }, -- For types (user defined types, like type Person).
-		["@type.builtin"] = { fg = mgz.col_blue }, -- For builtin types (like number and string in typescript).
-		["@tag"] = { fg = mgz.col_blue }, -- Tags like html tag names.
-		["@tag.delimiter"] = { fg = mgz.col_white }, -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
-		["@text"] = { fg = mgz.col_white }, -- For strings considered text in a markup language. Example is normal text in HTML
-		["@text.reference"] = { fg = mgz.col_green }, -- References like image alt names in markdown (text inside of [])
-		["@text.emphasis"] = { fg = mgz.col_pink, style = "italic" }, -- Italic text in markdown (*text*)
-		["@text.strong"] = { fg = mgz.col_pink, style = "bold" }, -- Bold text in markdown (**text**)
+		["@type"]                       = { fg = mgz.col_blue },                               -- For types (user defined types, like type Person).
+		["@type.builtin"]               = { fg = mgz.col_blue },                               -- For builtin types (like number and string in typescript).
+		["@tag"]                        = { fg = mgz.col_blue },                               -- Tags like html tag names.
+		["@tag.delimiter"]              = { fg = mgz.col_white },                              -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
+		["@text"]                       = { fg = mgz.col_white },                              -- For strings considered text in a markup language. Example is normal text in HTML
+		["@text.reference"]             = { fg = mgz.col_green },                              -- References like image alt names in markdown (text inside of [])
+		["@text.emphasis"]              = { fg = mgz.col_pink, style = "italic" },             -- Italic text in markdown (*text*)
+		["@text.strong"]                = { fg = mgz.col_pink, style = "bold" },               -- Bold text in markdown (**text**)
 		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
-		["@text.title"] = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		["@text.literal"] = { fg = mgz.col_darkblue }, -- Code in markdown (in `...` and ```...```)
-		["@text.uri"] = { fg = mgz.col_darkblue, style = "underline" }, -- Any URI like a link or email.
-		["@comment"] = { fg = mgz.col_bluishgray }, -- Comments
-		["@conditional"] = { fg = mgz.col_purple }, -- For keywords related to conditionnals.
-		["@function"] = { fg = mgz.col_pink }, -- For fuction calls and definitions
-		["@function.call"] = { fg = mgz.col_pink }, -- There is a difference
-		["@method"] = { fg = mgz.col_pink }, -- For method calls and definitions
-		["@function.builtin"] = { fg = mgz.col_pink }, -- Builtin functions, like print() in Python
-		["@namespace"] = { fg = mgz.col_blue }, -- For identifiers referring to modules and namespaces.
-		["@field"] = { fg = mgz.col_offblue }, -- For fields in literals, for example this fg and col_... in this lua table here
-		["@property"] = { fg = mgz.col_lightblue }, -- Same as `TSField`
-		["@keyword"] = { fg = mgz.col_darkblue }, -- For keywords that don't fall in other categories.
-		["@keyword.function"] = { fg = mgz.col_darkblue }, -- def in Python
-		["@keyword.return"] = { fg = mgz.col_purple }, -- return in Python
-		["@keyword.operator"] = { fg = mgz.col_green }, -- A keyword operator, like new in new Object()
-		["@repeat"] = { fg = mgz.col_purple }, -- For keywords related to loops.
-		["@string"] = { fg = mgz.col_teal }, -- For strings.
-		["@string.regex"] = { fg = mgz.col_pink }, -- For regexes.
-		["@string.escape"] = { fg = mgz.col_purple }, -- For escape characters within a string, also the \ character in Markdown
-		["@character"] = { fg = mgz.col_teal }, -- For characters.
-		["@text.todo"] = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is TODO 
-		["@text.warning"] = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is WARNING
-		["@text.danger"] = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is FIXME and BUG
-		["@text.note"] = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is NOTE and XXX
+		["@text.title"]                 = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
+		["@text.literal"]               = { fg = mgz.col_darkblue },                           -- Code in markdown (in `...` and ```...```)
+		["@text.uri"]                   = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
+		["@conditional"]                = { fg = mgz.col_purple },                             -- For keywords related to conditionnals.
+		["@function"]                   = { fg = mgz.col_pink },                               -- For fuction calls and definitions
+		["@function.call"]              = { fg = mgz.col_pink },                               -- There is a difference
+		["@method"]                     = { fg = mgz.col_pink },                               -- For method calls and definitions
+		["@function.builtin"]           = { fg = mgz.col_pink },                               -- Builtin functions, like print() in Python
+		["@namespace"]                  = { fg = mgz.col_blue },                               -- For identifiers referring to modules and namespaces.
+		["@field"]                      = { fg = mgz.col_offblue },                            -- For fields in literals, for example this fg and col_... in this lua table here
+		["@property"]                   = { fg = mgz.col_lightblue },                          -- Same as `TSField`
+		["@keyword"]                    = { fg = mgz.col_darkblue },                           -- For keywords that don't fall in other categories.
+		["@keyword.function"]           = { fg = mgz.col_darkblue },                           -- def in Python
+		["@keyword.return"]             = { fg = mgz.col_purple },                             -- return in Python
+		["@keyword.operator"]           = { fg = mgz.col_green },                              -- A keyword operator, like new in new Object()
+		["@repeat"]                     = { fg = mgz.col_purple },                             -- For keywords related to loops.
+		["@string"]                     = { fg = mgz.col_teal },                               -- For strings.
+		["@string.regex"]               = { fg = mgz.col_pink },                               -- For regexes.
+		["@string.escape"]              = { fg = mgz.col_purple },                             -- For escape characters within a string, also the \ character in Markdown
+		["@character"]                  = { fg = mgz.col_teal },                               -- For characters.
+
+		-- TreeShitter introduced new groups for highlighting in comments.. yay..
+		-- https://www.reddit.com/r/neovim/comments/19aratu/psa_nvimtreesitter_breaking_changes_on_highlight/
+		-- Don't you just love breaking changes? Don't you love it when devs plan things ahead?
+		["@comment"]                    = { fg = mgz.col_bluishgray },                         -- Comments
+		["@comment.todo"]               = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- New TODO highlight
+		-- ["@text.todo"]                  = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is TODO
+		-- ["@text.todo.checked"]          = { fg = "#00ff00", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
+		-- ["@text.todo.unchecked"]        = { fg = "#0000ff", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
+		["@comment.hint"]               = { fg = "#ff00ff", bg = "#00ff00" },                    -- New ???
+		-- TODO: text.hint doesn't exist, I don't know what hint is
+		["@comment.note"]               = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- New NOTE and XXX highlight
+		-- ["@text.note"]                  = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is NOTE and XXX
+		["@comment.error"]              = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- New FIXME and BUG highlight
+		-- ["@text.danger"]                = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is FIXME and BUG
+		["@comment.warning"]            = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- New WARN and WARNING highlight
+		-- ["@text.warning"]               = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is WARN and WARNING
+
+		-- Markdown (Markup) Specific (Copied over from material.nvim and tokyonight.nvim (TODO: Remove this comment))
+		-- Comment out if you stop working on this
+		["@markup.underline"]           = { underline = true },
+		["@markup.emphasis"]            = { italic = true },
+		["@markup.strong"]              = { bold = true },
+		["@markup.strikethrough"]       = { style = { "strikethrough" } },
+		["@markup.title"]               = { fg = mgz.cyan, bold = true },
+		["@markup.heading"]             = { fg = mgz.cyan, bold = true },
+		["@markup.literal"]             = { fg = mgz.green },
+		["@markup.link"]                = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup.link.url"]            = { fg = mgz.link }, -- urls, links and emails
+		["@markup.math"]                = { fg = mgz.blue }, -- e.g. LaTeX math
+		["@markup.raw"]                 = { fg = mgz.purple }, -- e.g. inline `code` in Markdown
+		["@markup.list"]                = { link = "Special" },
+		["@markup.list.checked"]        = { fg = mgz.green }, -- checkboxes
+		["@markup.list.unchecked"]      = { fg = mgz.text },
+		["@markup.environment"]         = { fg = mgz.red },
+		["@markup.environment.name"]    = { fg = mgz.red },
+		["@markup.warning"]             = { fg = mgz.warning },
+		["@markup.danger"]              = { fg = mgz.error },
+		["@markup.raw.markdown_inline"] = { fg = mgz.warning }, -- inline code in markdown
 	}
 
 	if vim.g.mgz_italic == true then
@@ -337,29 +371,29 @@ theme.loadLSP = function()
 	-- Lsp highlight groups
 
 	local lsp = {
-		LspDiagnosticsDefaultError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- used for "Error" diagnostic virtual text
-		LspDiagnosticsSignError = { fg = mgz.col_red }, -- used for "Error" diagnostic signs in sign column
-		LspDiagnosticsFloatingError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- used for "Error" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" }, -- Virtual text "Error"
-		LspDiagnosticsUnderlineError = { style = "undercurl", sp = mgz.col_red }, -- used to underline "Error" diagnostics.
-		LspDiagnosticsDefaultWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsSignWarning = { fg = mgz.col_yellow }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsFloatingWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- used for "Warning" diagnostic messages in the diagnostics float
+		LspDiagnosticsDefaultError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" },            -- used for "Error" diagnostic virtual text
+		LspDiagnosticsSignError = { fg = mgz.col_red },                                                      -- used for "Error" diagnostic signs in sign column
+		LspDiagnosticsFloatingError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" },           -- used for "Error" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextError = { fg = mgz.col_red, bg = mgz.col_dimred, style = "italic" },        -- Virtual text "Error"
+		LspDiagnosticsUnderlineError = { style = "undercurl", sp = mgz.col_red },                            -- used to underline "Error" diagnostics.
+		LspDiagnosticsDefaultWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" },    -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsSignWarning = { fg = mgz.col_yellow },                                                 -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsFloatingWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" },   -- used for "Warning" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextWarning = { fg = mgz.col_yellow, bg = mgz.col_dimyellow, style = "italic" }, -- Virtual text "Warning"
-		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = mgz.col_yellow }, -- used to underline "Warning" diagnostics.
+		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = mgz.col_yellow },                       -- used to underline "Warning" diagnostics.
 		LspDiagnosticsDefaultInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- used for "Information" diagnostic virtual text
-		LspDiagnosticsSignInformation = { fg = mgz.col_lightblue }, -- used for "Information" diagnostic signs in sign column
+		LspDiagnosticsSignInformation = { fg = mgz.col_lightblue },                                          -- used for "Information" diagnostic signs in sign column
 		LspDiagnosticsFloatingInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- used for "Information" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextInformation = { fg = mgz.col_lightblue, bg = mgz.col_dimblue, style = "italic" }, -- Virtual text "Information"
-		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Information" diagnostics.
-		LspDiagnosticsDefaultHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- used for "Hint" diagnostic virtual text
-		LspDiagnosticsSignHint = { fg = mgz.col_cyan }, -- used for "Hint" diagnostic signs in sign column
-		LspDiagnosticsFloatingHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" }, -- Virtual text "Hint"
-		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = mgz.col_lightblue }, -- used to underline "Hint" diagnostics.
-		LspReferenceText = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "text" references
-		LspReferenceRead = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "read" references
-		LspReferenceWrite = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- used for highlighting "write" references
+		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = mgz.col_lightblue },                -- used to underline "Information" diagnostics.
+		LspDiagnosticsDefaultHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" },           -- used for "Hint" diagnostic virtual text
+		LspDiagnosticsSignHint = { fg = mgz.col_cyan },                                                      -- used for "Hint" diagnostic signs in sign column
+		LspDiagnosticsFloatingHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" },          -- used for "Hint" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextHint = { fg = mgz.col_cyan, bg = mgz.col_dimcyan, style = "italic" },       -- Virtual text "Hint"
+		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = mgz.col_lightblue },                       -- used to underline "Hint" diagnostics.
+		LspReferenceText = { fg = mgz.col_blue, bg = mgz.col_dimblack },                                     -- used for highlighting "text" references
+		LspReferenceRead = { fg = mgz.col_blue, bg = mgz.col_dimblack },                                     -- used for highlighting "read" references
+		LspReferenceWrite = { fg = mgz.col_blue, bg = mgz.col_dimblack },                                    -- used for highlighting "write" references
 
 		DiagnosticError = { link = "LspDiagnosticsDefaultError" },
 		DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
@@ -392,8 +426,8 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- LuaLine is in another file
 
 		-- BufferLine -- CokeLine is an alternative, but badly configured in terms of theming.
-		BufferLineBufferSelected = { fg = mgz.col_cyan, bg = mgz.none, italic = "false" }, -- Selected buffer text and bg
-		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer has been modified
+		BufferLineBufferSelected = { fg = mgz.col_cyan, bg = mgz.none, italic = "false" },           -- Selected buffer text and bg
+		BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" },   -- Indicator (dot) that the buffer has been modified
 		BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Same, but for selected buffer
 		-- BufferLineBackground = { fg = mgz.col_gray, bg = mgz.col_diminbetween }, -- Unselected buffer text and bg
 		-- BufferLineIndicatorSelected = { fg = mgz.col_white, bg = mgz.col_dimwhite }, -- The indicator (leftmost) for the selected buffer
@@ -429,28 +463,28 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
 		-- GitGutter
-		GitGutterAdd = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitGutterAdd = { fg = mgz.col_teal },   -- diff mode: Added line
 		GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line
 		GitGutterDelete = { fg = mgz.col_red }, -- diff mode: Deleted line
 
 		-- GitSigns
-		GitSignsAdd = { fg = mgz.col_teal }, -- diff mode: Added line
-		GitSignsAddNr = { fg = mgz.col_teal }, -- diff mode: Added line
-		GitSignsAddLn = { fg = mgz.col_teal }, -- diff mode: Added line
+		GitSignsAdd = { fg = mgz.col_teal },     -- diff mode: Added line
+		GitSignsAddNr = { fg = mgz.col_teal },   -- diff mode: Added line
+		GitSignsAddLn = { fg = mgz.col_teal },   -- diff mode: Added line
 		GitSignsChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line
 		GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line
 		GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line
-		GitSignsDelete = { fg = mgz.col_red }, -- diff mode: Deleted line
+		GitSignsDelete = { fg = mgz.col_red },   -- diff mode: Deleted line
 		GitSignsDeleteNr = { fg = mgz.col_red }, -- diff mode: Deleted line
 		GitSignsDeleteLn = { fg = mgz.col_red }, -- diff mode: Deleted line
 		GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
 
 		-- Folke's Flash.nvim
-		FlashBackdrop = { fg = mgz.col_fives }, -- Color of text that is search-able with a jump (default is gray-ish) (when pressing just 'f')
+		FlashBackdrop = { fg = mgz.col_fives },                                     -- Color of text that is search-able with a jump (default is gray-ish) (when pressing just 'f')
 		FlashMatch = { fg = mgz.col_black, bg = mgz.col_lightblue, style = "bold" }, -- On a standalone .jump(), the color of the other matches
-		FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" }, -- On a standalone .jump(), the color of the current match
+		FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" },  -- On a standalone .jump(), the color of the current match
 		FlashLabel = { fg = mgz.col_lightblue, bg = mgz.col_dimmagenta, style = "bold" }, -- Jump label color
-		-- TODO: 
+		-- TODO:
 		-- FlashPrompt, FlashPromptIcon, FlashCursor
 
 		-- Telescope
@@ -465,9 +499,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- NvimTree
 		-- For NvimTreeNormal, go down to the end of this file
 		NvimTreeRootFolder = { fg = mgz.col_white, style = "bold" }, -- At the top of NvimTree
-		NvimTreeGitDirty = { fg = mgz.col_lightblue }, -- A git file with changes
-		NvimTreeGitNew = { fg = mgz.col_teal }, -- A new git file, not yet tracked
-		NvimTreeGitStaged = { fg = mgz.col_teal }, -- A git file that has been staged
+		NvimTreeGitDirty = { fg = mgz.col_lightblue },         -- A git file with changes
+		NvimTreeGitNew = { fg = mgz.col_teal },                -- A new git file, not yet tracked
+		NvimTreeGitStaged = { fg = mgz.col_teal },             -- A git file that has been staged
 		NvimTreeImageFile = { fg = mgz.col_yellow },
 		NvimTreeExecFile = { fg = mgz.col_teal },
 		NvimTreeSpecialFile = { fg = mgz.col_orange },
@@ -484,9 +518,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		LspDiagnosticsHint = { fg = mgz.col_white },
 
 		-- WhichKey
-		WhichKey = { fg = mgz.col_blue, style = "bold" }, -- The key on the left
+		WhichKey = { fg = mgz.col_blue, style = "bold" },  -- The key on the left
 		WhichKeyDesc = { fg = mgz.col_white, style = "italic" }, -- Description of shortcut
-		WhichKeySeparator = { fg = mgz.col_purple }, -- The arrow. And it's not sepErator.
+		WhichKeySeparator = { fg = mgz.col_purple },       -- The arrow. And it's not sepErator.
 		WhichKeyFloat = { bg = mgz.col_dimblack },
 		WhichKeyFloating = { bg = mgz.col_dimblack },
 		WhichKeyGroup = { fg = mgz.col_teal },
@@ -548,10 +582,10 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		CmpItemKindText = { fg = mgz.col_white },
 		CmpItemKindFile = {},
 		CmpItemKindEnum = { fg = mgz.col_orange },
-		CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" }, -- Literal match for completion item
+		CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" },  -- Literal match for completion item
 		CmpItemAbbrMatchFuzzy = { fg = mgz.col_orange, style = "bold" }, -- Fuzzy found match for completion item
-		CmpItemAbbr = { fg = mgz.col_gray }, -- Text of completion item
-		CmpItemMenu = { fg = mgz.col_teal }, -- ???
+		CmpItemAbbr = { fg = mgz.col_gray },                       -- Text of completion item
+		CmpItemMenu = { fg = mgz.col_teal },                       -- ???
 
 		-- Indent Blankline (see :help ibl.highlights)
 		-- TODO: v3 is released, and this needs an update
@@ -627,3 +661,5 @@ theme.loadPlugins = function() -- Plugins highlight groups
 end
 
 return theme
+
+-- I hate treeshitter so much
