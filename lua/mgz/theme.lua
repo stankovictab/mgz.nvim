@@ -56,7 +56,6 @@ local theme = {}
 
 theme.loadSyntax = function()
 	-- Syntax highlight groups (without TreeShitter)
-
 	local syntax = {
 		-- Special for me
 		jsonCommentError = { fg = mgz.col_comment, bg = mgz.none },       -- Am I the only one who doesn't mind comments in JSON?
@@ -104,6 +103,18 @@ theme.loadSyntax = function()
 		htmlH3 = { fg = mgz.col_lightblue, style = "bold" },
 		htmlH4 = { fg = mgz.col_lightblue, style = "bold" },
 		htmlH5 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH3 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH4 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH5 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH6 = { fg = mgz.col_lightblue, style = "bold" },
+		markdownH1Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH2Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH3Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH4Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH5Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownH6Delimiter = { fg = mgz.col_purple, style = "bold"},
 	}
 
 	-- Italic check (without TreeShitter)
@@ -316,20 +327,11 @@ theme.loadTreeSitter = function()
 		-- TreeShitter introduced new groups for highlighting in comments.. yay..
 		-- https://www.reddit.com/r/neovim/comments/19aratu/psa_nvimtreesitter_breaking_changes_on_highlight/
 		-- Don't you just love breaking changes? Don't you love it when devs plan things ahead?
-		["@comment"]                          = { fg = mgz.col_bluishgray },                         -- Comments
-		["@comment.todo"]                     = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- New TODO highlight
-		-- ["@text.todo"]                  = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is TODO
-		-- ["@text.todo.checked"]          = { fg = "#00ff00", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
-		-- ["@text.todo.unchecked"]        = { fg = "#0000ff", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
-		["@comment.hint"]                     = { fg = "#ff00ff", bg = "#00ff00" },                    -- New ???
-		-- TODO: text.hint doesn't exist, I don't know what hint is
-		["@comment.note"]                     = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- New NOTE and XXX highlight
-		-- ["@text.note"]                  = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is NOTE and XXX
-		["@comment.error"]                    = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- New FIXME and BUG highlight
-		-- ["@text.danger"]                = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is FIXME and BUG
-		["@comment.warning"]                  = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- New WARN and WARNING highlight
-		-- ["@text.warning"]               = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is WARN and WARNING
-
+		["@comment"]                          = { fg = mgz.col_bluishgray },                           -- Comments
+		["@comment.todo"]                     = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- TODO
+		["@comment.note"]                     = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- NOTE, INFO and XXX
+		["@comment.error"]                    = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- FIXME and BUG
+		["@comment.warning"]                  = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- WARN and WARNING
 		-- Markdown (Markup) Specific (Copied over from material.nvim and tokyonight.nvim (TODO: Remove this comment))
 		-- Comment out if you stop working on this
 		["@markup.underline"]                 = { underline = true },
@@ -339,15 +341,14 @@ theme.loadTreeSitter = function()
 		["@markup.title"]                     = { fg = mgz.cyan, bold = true },
 		["@markup.literal"]                   = { fg = mgz.green },
 		-- URL links (like [something](https://www.google.com))
-		["@markup.link"]                      = { fg = mgz.col_blue },    -- Links, text references, footnotes, citations, etc.
-		["@markup.link.url"]                  = { style = "underline" },  -- Only links are underlined
-		["@markup.link.label"]                = { fg = mgz.col_purple },  -- The color of "something" in [something](www.google.com)
-		["@markup.link.label.symbol"]         = { link = "Identifier" },  -- TODO ???
-		["@markup.link.unchecked"]            = { fg = mgz.col_pink },    -- TODO ???
-
-		["@markup.math"]                      = { fg = mgz.blue },        -- e.g. LaTeX math
+		["@markup.link"]                      = { fg = mgz.col_blue }, -- Links, text references, footnotes, citations, etc.
+		["@markup.link.url"]                  = { style = "underline" }, -- Only links are underlined
+		["@markup.link.label"]                = { fg = mgz.col_teal }, -- The color of "something" in [something](www.google.com)
+		["@markup.link.label.symbol"]         = { link = "Identifier" }, -- TODO ???
+		["@markup.link.unchecked"]            = { fg = mgz.col_pink }, -- TODO ???
+		["@markup.math"]                      = { fg = mgz.blue }, -- e.g. LaTeX math
 		["@markup.list"]                      = { link = "Special" },
-		["@markup.list.checked"]              = { fg = mgz.green },       -- checkboxes
+		["@markup.list.checked"]              = { fg = mgz.green }, -- checkboxes
 		["@markup.list.unchecked"]            = { fg = mgz.text },
 		["@markup.environment"]               = { fg = mgz.red },
 		["@markup.environment.name"]          = { fg = mgz.red },
@@ -356,19 +357,19 @@ theme.loadTreeSitter = function()
 		["@markup.raw"]                       = { fg = mgz.col_purple },                   -- ``` ``` and ` ` in markdown code (as far as I can tell)
 		["@markup.raw.markdown_inline"]       = { fg = mgz.col_darkblue, bg = mgz.col_dimblue }, -- Actual inline code in markdown
 		-- Headings text
-		["@markup.heading.1.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.2.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.3.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.4.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.5.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
-		["@markup.heading.6.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.1.markdown"]        = { link = "markdownH1" },
+		["@markup.heading.2.markdown"]        = { link = "markdownH2" },
+		["@markup.heading.3.markdown"]        = { link = "markdownH3" },
+		["@markup.heading.4.markdown"]        = { link = "markdownH4" },
+		["@markup.heading.5.markdown"]        = { link = "markdownH5" },
+		["@markup.heading.6.markdown"]        = { link = "markdownH6" },
 		-- Headings markers (###)
-		["@markup.heading.1.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
-		["@markup.heading.2.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
-		["@markup.heading.3.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
-		["@markup.heading.4.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
-		["@markup.heading.5.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
-		["@markup.heading.6.marker.markdown"] = { fg = mgz.col_purple, style = "bold" },
+		["@markup.heading.1.marker.markdown"] = { link = "markdownH1Delimiter" },
+		["@markup.heading.2.marker.markdown"] = { link = "markdownH2Delimiter" },
+		["@markup.heading.3.marker.markdown"] = { link = "markdownH3Delimiter" },
+		["@markup.heading.4.marker.markdown"] = { link = "markdownH4Delimiter" },
+		["@markup.heading.5.marker.markdown"] = { link = "markdownH5Delimiter" },
+		["@markup.heading.6.marker.markdown"] = { link = "markdownH6Delimiter" },
 	}
 
 	if vim.g.mgz_italic == true then
