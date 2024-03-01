@@ -276,30 +276,24 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		["@constructor"]                      = { fg = mgz.col_white },          -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@constant"]                         = { fg = mgz.col_purple },         -- For constants
-		["@float"]                            = { fg = mgz.col_yellow },         -- For floats, eg 2.3e10
-		["@number"]                           = { fg = mgz.col_teal },           -- For all number
-		-- TSAttribute = { fg = mgz.col_yellow }, -- TODO: ?
-		["@variable"]                         = { fg = mgz.col_lightblue },      -- Any user-defined variable's name that does not have another highlight.
-		["@variable.builtin"]                 = { fg = mgz.col_blue },           -- Like console in console.log(), builtin to the language
-		["@boolean"]                          = { fg = mgz.col_cyan },           -- For booleans.
-		["@constant.builtin"]                 = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
-		["@constant.macro"]                   = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
-		-- TSError = { fg = mgz.col_red }, -- For syntax/parser errors. -- TODO: ?
-		["@exception"]                        = { fg = mgz.col_yellow },         -- For exception related keywords.
-		["@function.macro"]                   = { fg = mgz.col_pink },           -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		["@include"]                          = { fg = mgz.col_purple },         -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@label"]                            = { fg = mgz.col_lightblue },      -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
-		["@operator"]                         = { fg = mgz.col_yellow },         -- For any operator: `+`, but also `->` and `*` in C.
-		["@parameter"]                        = { fg = mgz.col_lightblue },      -- For parameters of a function.
-		-- TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function. -- TODO: ?
-		["@punctuation.delimiter"]            = { fg = mgz.col_white },          -- For delimiters ie: `.`, `?`, `;`, `:`
-		["@punctuation.bracket"]              = { fg = mgz.col_white },          -- For brackets and parens.
-		["@punctuation.special"]              = { fg = mgz.col_purple },         -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
-
-		-- TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms. -- TODO: ?
+		["@constructor"]                      = { fg = mgz.col_white },                              -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constant"]                         = { fg = mgz.col_purple },                             -- For constants
+		["@float"]                            = { fg = mgz.col_yellow },                             -- For floats, eg 2.3e10
+		["@number"]                           = { fg = mgz.col_teal },                               -- For all number
+		["@variable"]                         = { fg = mgz.col_lightblue },                          -- Any user-defined variable's name that does not have another highlight.
+		["@variable.builtin"]                 = { fg = mgz.col_blue },                               -- Like console in console.log(), builtin to the language
+		["@boolean"]                          = { fg = mgz.col_cyan },                               -- For booleans.
+		["@constant.builtin"]                 = { fg = mgz.col_pink, style = "bold" },               -- For constant that are built in the language: `nil` in Lua.
+		["@constant.macro"]                   = { fg = mgz.col_pink, style = "bold" },               -- For constants that are defined by macros: `NULL` in C.
+		["@exception"]                        = { fg = mgz.col_yellow },                             -- For exception related keywords.
+		["@function.macro"]                   = { fg = mgz.col_pink },                               -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		["@include"]                          = { fg = mgz.col_purple },                             -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@label"]                            = { fg = mgz.col_lightblue },                          -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
+		["@operator"]                         = { fg = mgz.col_yellow },                             -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"]                        = { fg = mgz.col_lightblue },                          -- For parameters of a function.
+		["@punctuation.delimiter"]            = { fg = mgz.col_white },                              -- For delimiters ie: `.`, `?`, `;`, `:`
+		["@punctuation.bracket"]              = { fg = mgz.col_white },                              -- For brackets and parens.
+		["@punctuation.special"]              = { fg = mgz.col_purple },                             -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
 		["@type"]                             = { fg = mgz.col_blue },                               -- For types (user defined types, like type Person).
 		["@type.builtin"]                     = { fg = mgz.col_blue },                               -- For builtin types (like number and string in typescript).
 		["@tag"]                              = { fg = mgz.col_blue },                               -- Tags like html tag names.
@@ -308,14 +302,9 @@ theme.loadTreeSitter = function()
 		["@text.reference"]                   = { fg = mgz.col_green },                              -- References like image alt names in markdown (text inside of [])
 		["@text.emphasis"]                    = { fg = mgz.col_pink, style = "italic" },             -- Italic text in markdown (*text*)
 		["@text.strong"]                      = { fg = mgz.col_pink, style = "bold" },               -- Bold text in markdown (**text**)
-		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
 		["@text.title"]                       = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		["@text.literal"]                     = { fg = mgz.col_darkblue },                           -- Code in markdown (in `...` and ```...```)
-
 		["@string.special.url"]               = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
-		-- TODO: remove this text.uri
-		-- ["@text.uri"]                         = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
-
+		-- TODO: ["@string.special.symbol"] -- ??? -- For identifiers referring to symbols or atoms.
 		["@conditional"]                      = { fg = mgz.col_purple },                             -- For keywords related to conditionnals.
 		["@function"]                         = { fg = mgz.col_pink },                               -- For fuction calls and definitions
 		["@function.call"]                    = { fg = mgz.col_pink },                               -- There is a difference
@@ -383,8 +372,7 @@ theme.loadTreeSitter = function()
 	}
 
 	if vim.g.mgz_italic == true then
-		-- TODO: Change over to ["@"] syntax
-		treesitter.TSComment = { fg = mgz.col_bluishgray, style = "italic" } -- Italic comments
+		treesitter["@comment"] = { fg = mgz.col_bluishgray, style = "italic" } -- Italic comments
 	end
 
 	return treesitter
