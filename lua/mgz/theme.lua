@@ -117,6 +117,9 @@ theme.loadSyntax = function()
 		markdownH6Delimiter = { fg = mgz.col_purple, style = "bold"},
 		markdownCodeDelimiter = { fg = mgz.col_blue },
 		markdownCode = { fg = mgz.col_darkblue, bg = mgz.col_dimblue },
+		markdownUrl = { fg = mgz.col_blue, style = "underline" },
+		markdownLinkTextDelimiter = { fg = mgz.col_lightblue },
+		markdownLinkDelimiter = { fg = mgz.col_lightblue },
 	}
 
 	-- Italic check (without TreeShitter)
