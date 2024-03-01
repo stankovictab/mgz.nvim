@@ -260,98 +260,110 @@ theme.loadTreeSitter = function()
 
 	local treesitter = {
 		-- TSAnnotation = { fg = mgz.col_green }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		["@constructor"]                = { fg = mgz.col_white },          -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@constant"]                   = { fg = mgz.col_purple },         -- For constants
-		["@float"]                      = { fg = mgz.col_yellow },         -- For floats, eg 2.3e10
-		["@number"]                     = { fg = mgz.col_teal },           -- For all number
+		["@constructor"]                      = { fg = mgz.col_white },          -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@constant"]                         = { fg = mgz.col_purple },         -- For constants
+		["@float"]                            = { fg = mgz.col_yellow },         -- For floats, eg 2.3e10
+		["@number"]                           = { fg = mgz.col_teal },           -- For all number
 		-- TSAttribute = { fg = mgz.col_yellow }, -- TODO: ?
-		["@variable"]                   = { fg = mgz.col_lightblue },      -- Any user-defined variable's name that does not have another highlight.
-		["@variable.builtin"]           = { fg = mgz.col_blue },           -- Like console in console.log(), builtin to the language
-		["@boolean"]                    = { fg = mgz.col_cyan },           -- For booleans.
-		["@constant.builtin"]           = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
-		["@constant.macro"]             = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
+		["@variable"]                         = { fg = mgz.col_lightblue },      -- Any user-defined variable's name that does not have another highlight.
+		["@variable.builtin"]                 = { fg = mgz.col_blue },           -- Like console in console.log(), builtin to the language
+		["@boolean"]                          = { fg = mgz.col_cyan },           -- For booleans.
+		["@constant.builtin"]                 = { fg = mgz.col_pink, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+		["@constant.macro"]                   = { fg = mgz.col_pink, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
 		-- TSError = { fg = mgz.col_red }, -- For syntax/parser errors. -- TODO: ?
-		["@exception"]                  = { fg = mgz.col_yellow },         -- For exception related keywords.
-		["@function.macro"]             = { fg = mgz.col_pink },           -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		["@include"]                    = { fg = mgz.col_purple },         -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		["@label"]                      = { fg = mgz.col_lightblue },      -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
-		["@operator"]                   = { fg = mgz.col_yellow },         -- For any operator: `+`, but also `->` and `*` in C.
-		["@parameter"]                  = { fg = mgz.col_lightblue },      -- For parameters of a function.
+		["@exception"]                        = { fg = mgz.col_yellow },         -- For exception related keywords.
+		["@function.macro"]                   = { fg = mgz.col_pink },           -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+		["@include"]                          = { fg = mgz.col_purple },         -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		["@label"]                            = { fg = mgz.col_lightblue },      -- For labels: `label:` in C and `:label:` in Lua. Example is also a key in JSON
+		["@operator"]                         = { fg = mgz.col_yellow },         -- For any operator: `+`, but also `->` and `*` in C.
+		["@parameter"]                        = { fg = mgz.col_lightblue },      -- For parameters of a function.
 		-- TSParameterReference = { fg = mgz.col_lightblue }, -- For references to parameters of a function. -- TODO: ?
-		["@punctuation.delimiter"]      = { fg = mgz.col_white },          -- For delimiters ie: `.`, `?`, `;`, `:`
-		["@punctuation.bracket"]        = { fg = mgz.col_white },          -- For brackets and parens.
-		["@punctuation.special"]        = { fg = mgz.col_purple },         -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
+		["@punctuation.delimiter"]            = { fg = mgz.col_white },          -- For delimiters ie: `.`, `?`, `;`, `:`
+		["@punctuation.bracket"]              = { fg = mgz.col_white },          -- For brackets and parens.
+		["@punctuation.special"]              = { fg = mgz.col_purple },         -- For special punctuation that does not fall in the catagories before. Example is # in # H1 in .md
 
 		-- TSSymbol = { fg = mgz.col_yellow }, -- For identifiers referring to symbols or atoms. -- TODO: ?
-		["@type"]                       = { fg = mgz.col_blue },                               -- For types (user defined types, like type Person).
-		["@type.builtin"]               = { fg = mgz.col_blue },                               -- For builtin types (like number and string in typescript).
-		["@tag"]                        = { fg = mgz.col_blue },                               -- Tags like html tag names.
-		["@tag.delimiter"]              = { fg = mgz.col_white },                              -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
-		["@text"]                       = { fg = mgz.col_white },                              -- For strings considered text in a markup language. Example is normal text in HTML
-		["@text.reference"]             = { fg = mgz.col_green },                              -- References like image alt names in markdown (text inside of [])
-		["@text.emphasis"]              = { fg = mgz.col_pink, style = "italic" },             -- Italic text in markdown (*text*)
-		["@text.strong"]                = { fg = mgz.col_pink, style = "bold" },               -- Bold text in markdown (**text**)
+		["@type"]                             = { fg = mgz.col_blue },                               -- For types (user defined types, like type Person).
+		["@type.builtin"]                     = { fg = mgz.col_blue },                               -- For builtin types (like number and string in typescript).
+		["@tag"]                              = { fg = mgz.col_blue },                               -- Tags like html tag names.
+		["@tag.delimiter"]                    = { fg = mgz.col_white },                              -- Tag delimiter like `<` `>` `/`. Example is <> in HTML tag.
+		["@text"]                             = { fg = mgz.col_white },                              -- For strings considered text in a markup language. Example is normal text in HTML
+		["@text.reference"]                   = { fg = mgz.col_green },                              -- References like image alt names in markdown (text inside of [])
+		["@text.emphasis"]                    = { fg = mgz.col_pink, style = "italic" },             -- Italic text in markdown (*text*)
+		["@text.strong"]                      = { fg = mgz.col_pink, style = "bold" },               -- Bold text in markdown (**text**)
 		-- TSUnderline = { fg = mgz.col_blue, bg = mgz.none, style = "underline" }, -- For text to be represented with an underline. -- TODO: ?
-		["@text.title"]                 = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
-		["@text.literal"]               = { fg = mgz.col_darkblue },                           -- Code in markdown (in `...` and ```...```)
-		["@text.uri"]                   = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
-		["@conditional"]                = { fg = mgz.col_purple },                             -- For keywords related to conditionnals.
-		["@function"]                   = { fg = mgz.col_pink },                               -- For fuction calls and definitions
-		["@function.call"]              = { fg = mgz.col_pink },                               -- There is a difference
-		["@method"]                     = { fg = mgz.col_pink },                               -- For method calls and definitions
-		["@function.builtin"]           = { fg = mgz.col_pink },                               -- Builtin functions, like print() in Python
-		["@namespace"]                  = { fg = mgz.col_blue },                               -- For identifiers referring to modules and namespaces.
-		["@field"]                      = { fg = mgz.col_offblue },                            -- For fields in literals, for example this fg and col_... in this lua table here
-		["@property"]                   = { fg = mgz.col_lightblue },                          -- Same as `TSField`
-		["@keyword"]                    = { fg = mgz.col_darkblue },                           -- For keywords that don't fall in other categories.
-		["@keyword.function"]           = { fg = mgz.col_darkblue },                           -- def in Python
-		["@keyword.return"]             = { fg = mgz.col_purple },                             -- return in Python
-		["@keyword.operator"]           = { fg = mgz.col_green },                              -- A keyword operator, like new in new Object()
-		["@repeat"]                     = { fg = mgz.col_purple },                             -- For keywords related to loops.
-		["@string"]                     = { fg = mgz.col_teal },                               -- For strings.
-		["@string.regex"]               = { fg = mgz.col_pink },                               -- For regexes.
-		["@string.escape"]              = { fg = mgz.col_purple },                             -- For escape characters within a string, also the \ character in Markdown
-		["@character"]                  = { fg = mgz.col_teal },                               -- For characters.
+		["@text.title"]                       = { fg = mgz.col_lightblue, bg = mgz.none, style = "bold" }, -- Text that is part of a title.
+		["@text.literal"]                     = { fg = mgz.col_darkblue },                           -- Code in markdown (in `...` and ```...```)
+		["@text.uri"]                         = { fg = mgz.col_darkblue, style = "underline" },      -- Any URI like a link or email.
+		["@conditional"]                      = { fg = mgz.col_purple },                             -- For keywords related to conditionnals.
+		["@function"]                         = { fg = mgz.col_pink },                               -- For fuction calls and definitions
+		["@function.call"]                    = { fg = mgz.col_pink },                               -- There is a difference
+		["@method"]                           = { fg = mgz.col_pink },                               -- For method calls and definitions
+		["@function.builtin"]                 = { fg = mgz.col_pink },                               -- Builtin functions, like print() in Python
+		["@namespace"]                        = { fg = mgz.col_blue },                               -- For identifiers referring to modules and namespaces.
+		["@field"]                            = { fg = mgz.col_offblue },                            -- For fields in literals, for example this fg and col_... in this lua table here
+		["@property"]                         = { fg = mgz.col_lightblue },                          -- Same as `TSField`
+		["@keyword"]                          = { fg = mgz.col_darkblue },                           -- For keywords that don't fall in other categories.
+		["@keyword.function"]                 = { fg = mgz.col_darkblue },                           -- def in Python
+		["@keyword.return"]                   = { fg = mgz.col_purple },                             -- return in Python
+		["@keyword.operator"]                 = { fg = mgz.col_green },                              -- A keyword operator, like new in new Object()
+		["@repeat"]                           = { fg = mgz.col_purple },                             -- For keywords related to loops.
+		["@string"]                           = { fg = mgz.col_teal },                               -- For strings.
+		["@string.regex"]                     = { fg = mgz.col_pink },                               -- For regexes.
+		["@string.escape"]                    = { fg = mgz.col_purple },                             -- For escape characters within a string, also the \ character in Markdown
+		["@character"]                        = { fg = mgz.col_teal },                               -- For characters.
 
 		-- TreeShitter introduced new groups for highlighting in comments.. yay..
 		-- https://www.reddit.com/r/neovim/comments/19aratu/psa_nvimtreesitter_breaking_changes_on_highlight/
 		-- Don't you just love breaking changes? Don't you love it when devs plan things ahead?
-		["@comment"]                    = { fg = mgz.col_bluishgray },                         -- Comments
-		["@comment.todo"]               = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- New TODO highlight
+		["@comment"]                          = { fg = mgz.col_bluishgray },                         -- Comments
+		["@comment.todo"]                     = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- New TODO highlight
 		-- ["@text.todo"]                  = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" }, -- This is TODO
 		-- ["@text.todo.checked"]          = { fg = "#00ff00", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
 		-- ["@text.todo.unchecked"]        = { fg = "#0000ff", bg = mgz.col_pink, style = "bold" }, -- TODO: ???
-		["@comment.hint"]               = { fg = "#ff00ff", bg = "#00ff00" },                    -- New ???
+		["@comment.hint"]                     = { fg = "#ff00ff", bg = "#00ff00" },                    -- New ???
 		-- TODO: text.hint doesn't exist, I don't know what hint is
-		["@comment.note"]               = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- New NOTE and XXX highlight
+		["@comment.note"]                     = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- New NOTE and XXX highlight
 		-- ["@text.note"]                  = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" }, -- This is NOTE and XXX
-		["@comment.error"]              = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- New FIXME and BUG highlight
+		["@comment.error"]                    = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- New FIXME and BUG highlight
 		-- ["@text.danger"]                = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" }, -- This is FIXME and BUG
-		["@comment.warning"]            = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- New WARN and WARNING highlight
+		["@comment.warning"]                  = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- New WARN and WARNING highlight
 		-- ["@text.warning"]               = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- This is WARN and WARNING
 
 		-- Markdown (Markup) Specific (Copied over from material.nvim and tokyonight.nvim (TODO: Remove this comment))
 		-- Comment out if you stop working on this
-		["@markup.underline"]           = { underline = true },
-		["@markup.emphasis"]            = { italic = true },
-		["@markup.strong"]              = { bold = true },
-		["@markup.strikethrough"]       = { strikethrough = true },
-		["@markup.title"]               = { fg = mgz.cyan, bold = true },
-		["@markup.literal"]             = { fg = mgz.green },
-		["@markup.link"]                = { link = "Tag" }, -- text references, footnotes, citations, etc.
-		["@markup.link.url"]            = { fg = mgz.link }, -- urls, links and emails
-		["@markup.math"]                = { fg = mgz.blue }, -- e.g. LaTeX math
-		["@markup.list"]                = { link = "Special" },
-		["@markup.list.checked"]        = { fg = mgz.green }, -- checkboxes
-		["@markup.list.unchecked"]      = { fg = mgz.text },
-		["@markup.environment"]         = { fg = mgz.red },
-		["@markup.environment.name"]    = { fg = mgz.red },
-		["@markup.warning"]             = { fg = mgz.warning },
-		["@markup.danger"]              = { fg = mgz.error },
-		["@markup.raw"]                 = { fg = mgz.purple }, -- e.g. inline `code` in Markdown
-		["@markup.raw.markdown_inline"] = { fg = mgz.warning }, -- inline code in markdown
-		-- ["@markup.heading"]             = { fg = mgz.cyan, bold = true },
-		["@markup.heading"]             = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.underline"]                 = { underline = true },
+		["@markup.emphasis"]                  = { italic = true },
+		["@markup.strong"]                    = { bold = true },
+		["@markup.strikethrough"]             = { strikethrough = true },
+		["@markup.title"]                     = { fg = mgz.cyan, bold = true },
+		["@markup.literal"]                   = { fg = mgz.green },
+		["@markup.link"]                      = { link = "Tag" }, -- text references, footnotes, citations, etc.
+		["@markup.link.url"]                  = { fg = mgz.link }, -- urls, links and emails
+		["@markup.math"]                      = { fg = mgz.blue }, -- e.g. LaTeX math
+		["@markup.list"]                      = { link = "Special" },
+		["@markup.list.checked"]              = { fg = mgz.green }, -- checkboxes
+		["@markup.list.unchecked"]            = { fg = mgz.text },
+		["@markup.environment"]               = { fg = mgz.red },
+		["@markup.environment.name"]          = { fg = mgz.red },
+		["@markup.warning"]                   = { fg = mgz.warning },
+		["@markup.danger"]                    = { fg = mgz.error },
+		["@markup.raw"]                       = { fg = mgz.col_purple },                       -- e.g. inline `code` in Markdown
+		["@markup.raw.markdown_inline"]       = { fg = mgz.col_darkblue, bg = mgz.col_dimblue }, -- inline code in markdown
+		-- Headings text
+		["@markup.heading.1.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.2.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.3.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.4.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.5.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.6.markdown"]        = { fg = mgz.col_lightblue, style = "bold" },
+		-- Headings markers (###)
+		["@markup.heading.1.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.2.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.3.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.4.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.5.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
+		["@markup.heading.6.marker.markdown"] = { fg = mgz.col_lightblue, style = "bold" },
 
 		-- markdownH1 = { fg = mgz.col_lightblue, style = "bold" },
 		-- markdownH2 = { fg = mgz.col_lightblue, style = "bold" },
