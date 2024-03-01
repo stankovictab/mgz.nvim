@@ -115,6 +115,8 @@ theme.loadSyntax = function()
 		markdownH4Delimiter = { fg = mgz.col_purple, style = "bold"},
 		markdownH5Delimiter = { fg = mgz.col_purple, style = "bold"},
 		markdownH6Delimiter = { fg = mgz.col_purple, style = "bold"},
+		markdownCodeDelimiter = { fg = mgz.col_blue },
+		markdownCode = { fg = mgz.col_darkblue, bg = mgz.col_dimblue },
 	}
 
 	-- Italic check (without TreeShitter)
@@ -355,7 +357,7 @@ theme.loadTreeSitter = function()
 		["@markup.warning"]                   = { fg = mgz.warning },
 		["@markup.danger"]                    = { fg = mgz.error },
 		["@markup.raw"]                       = { fg = mgz.col_purple },                   -- ``` ``` and ` ` in markdown code (as far as I can tell)
-		["@markup.raw.markdown_inline"]       = { fg = mgz.col_darkblue, bg = mgz.col_dimblue }, -- Actual inline code in markdown
+		["@markup.raw.markdown_inline"]       = { link = "markdownCode" }, -- Actual inline code in markdown
 		-- Headings text
 		["@markup.heading.1.markdown"]        = { link = "markdownH1" },
 		["@markup.heading.2.markdown"]        = { link = "markdownH2" },
