@@ -120,6 +120,7 @@ theme.loadSyntax = function()
 		markdownUrl = { fg = mgz.col_blue, style = "underline" },
 		markdownLinkTextDelimiter = { fg = mgz.col_lightblue },
 		markdownLinkDelimiter = { fg = mgz.col_lightblue },
+		markdownListMarker = { fg = mgz.col_teal },
 	}
 
 	-- Italic check (without TreeShitter)
@@ -352,7 +353,7 @@ theme.loadTreeSitter = function()
 		["@markup.link.label.symbol"]         = { link = "Identifier" }, -- TODO ???
 		["@markup.link.unchecked"]            = { fg = mgz.col_pink }, -- TODO ???
 		["@markup.math"]                      = { fg = mgz.blue }, -- e.g. LaTeX math
-		["@markup.list"]                      = { link = "Special" },
+		["@markup.list"]                      = { link = "markdownListMarker" }, -- The color of bullets in lists
 		["@markup.list.checked"]              = { fg = mgz.green }, -- checkboxes
 		["@markup.list.unchecked"]            = { fg = mgz.text },
 		["@markup.environment"]               = { fg = mgz.red },
