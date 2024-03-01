@@ -341,14 +341,13 @@ theme.loadTreeSitter = function()
 		["@markup.underline"]           = { underline = true },
 		["@markup.emphasis"]            = { italic = true },
 		["@markup.strong"]              = { bold = true },
-		["@markup.strikethrough"]       = { style = { "strikethrough" } },
+		["@markup.strikethrough"]       = { strikethrough = true },
 		["@markup.title"]               = { fg = mgz.cyan, bold = true },
 		["@markup.heading"]             = { fg = mgz.cyan, bold = true },
 		["@markup.literal"]             = { fg = mgz.green },
 		["@markup.link"]                = { link = "Tag" }, -- text references, footnotes, citations, etc.
 		["@markup.link.url"]            = { fg = mgz.link }, -- urls, links and emails
 		["@markup.math"]                = { fg = mgz.blue }, -- e.g. LaTeX math
-		["@markup.raw"]                 = { fg = mgz.purple }, -- e.g. inline `code` in Markdown
 		["@markup.list"]                = { link = "Special" },
 		["@markup.list.checked"]        = { fg = mgz.green }, -- checkboxes
 		["@markup.list.unchecked"]      = { fg = mgz.text },
@@ -356,6 +355,7 @@ theme.loadTreeSitter = function()
 		["@markup.environment.name"]    = { fg = mgz.red },
 		["@markup.warning"]             = { fg = mgz.warning },
 		["@markup.danger"]              = { fg = mgz.error },
+		["@markup.raw"]                 = { fg = mgz.purple }, -- e.g. inline `code` in Markdown
 		["@markup.raw.markdown_inline"] = { fg = mgz.warning }, -- inline code in markdown
 	}
 
