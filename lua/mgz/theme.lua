@@ -158,7 +158,7 @@ theme.loadEditor = function()
 		MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
 		ModeMsg = { fg = mgz.col_blue },
 		MoreMsg = { fg = mgz.col_blue },
-		-- The NonText highlight group gets applied to the little @@@ on the bottom right when you're on a line that is wrapping into a new line, indicating that there's more text (see :h hl-NonText)
+		-- The NonText highlight group gets applied to the whitespace characters when you enable them with :set list, and the little @@@ on the bottom right when you're on a line that is wrapping into a new line, indicating that there's more text (see :h hl-NonText)
 		NonText = { fg = mgz.col_darkgray, bg = mgz.none },
 		-- Pmenu is the popup menu when tabbing in command mode, for example
 		Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack },              -- Normal element
@@ -238,6 +238,7 @@ theme.loadEditor = function()
 		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_black }
 	end
 
+    -- TODO: This could be removed I think, just make sure you extract all of these highlights outside of this (and see what they actually do)
 	if vim.g.mgz_uniform_diff_background then
 		editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack }            -- diff mode: Added line
 		editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack }       --  diff mode: Changed line
@@ -666,6 +667,12 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		-- Statusline
 		StatusLineDull = { fg = mgz.col_dimwhite, bg = mgz.col_dimblack },
 		StatusLineAccent = { fg = mgz.col_black, bg = mgz.col_purple },
+
+        -- Visual Multi (multi-cursor plugin)
+        VM_Mono = { fg = mgz.col_pink, bg = mgz.col_teal, style = "bold"}, -- Highlight in cursor mode
+        VM_Extend = { fg = mgz.col_red, bg = mgz.col_white, style = "bold"}, -- Highlight in extend mode (the selections)
+        VM_Cursor = { fg = mgz.col_blue, bg = mgz.col_yellow, style = "bold"}, -- Highlight in extend mode (the cursors)
+        VM_Insert = { fg = mgz.col_green, bg = mgz.col_orange, style = "bold"}, -- Highlight in insert mode (the virtual cursors)
 	}
 
 	return plugins
