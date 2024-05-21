@@ -669,7 +669,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		StatusLineAccent = { fg = mgz.col_black, bg = mgz.col_purple },
 
         -- Visual Multi (multi-cursor plugin)
-        VM_Mono = { fg = mgz.col_pink, bg = mgz.col_teal, style = "bold"}, -- Highlight in cursor mode
+        VM_Mono = { fg = mgz.col_red, bg = mgz.col_dimcyan, style = "bold"}, -- Highlight in cursor mode (what makes you actually see you're in VM mode)
         VM_Extend = { fg = mgz.col_red, bg = mgz.col_white, style = "bold"}, -- Highlight in extend mode (the selections)
         VM_Cursor = { fg = mgz.col_blue, bg = mgz.col_yellow, style = "bold"}, -- Highlight in extend mode (the cursors)
         VM_Insert = { fg = mgz.col_green, bg = mgz.col_orange, style = "bold"}, -- Highlight in insert mode (the virtual cursors)
