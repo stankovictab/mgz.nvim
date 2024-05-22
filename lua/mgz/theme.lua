@@ -670,10 +670,12 @@ theme.loadPlugins = function() -- Plugins highlight groups
 
         -- Visual Multi (multi-cursor plugin)
         -- I'm sorry about the descriptions, this plugin makes my head hurt
-        VM_Mono = { fg = mgz.col_red, bg = mgz.col_elevens, style = "bold"}, -- Highlight in cursor mode (what makes you actually see you're in VM normal mode)
-        VM_Insert = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold"}, -- Highlight in insert mode (the virtual cursors) (showing you where you are when in VM insert mode (when you press a and the blocks after it))
-        VM_Extend = { fg = mgz.col_cyan, bg = mgz.col_diminbetween, style = "bold"}, -- Highlight in extend mode (the selections) (when you select multiple whole words, the selection on other words is this color)
-        VM_Cursor = { fg = mgz.col_red, bg = mgz.col_diminbetween, style = "bold"}, -- Highlight in extend mode (the cursors) (showing you where you are when selecting multiple words, the cursor position on those other words)
+        -- Extend mode refers to the mode you go in when pressing Tab, to "extend" the cursor selection
+        VM_Mono = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold"}, -- Cursor color in standard multi-cursor mode
+        VM_Insert = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold"}, -- Color of blocks of in-front-cursors in insert mode
+        -- Tab mode :
+        VM_Extend = { fg = mgz.col_sevens, bg = mgz.col_dimpurple, style = "bold"}, -- Color of selection in extend (tab) mode
+        VM_Cursor = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold,underline"}, -- Cursor color in extend (tab) mode, should be the same as VM_Mono
 	}
 
 	return plugins
