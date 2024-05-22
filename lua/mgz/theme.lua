@@ -669,10 +669,10 @@ theme.loadPlugins = function() -- Plugins highlight groups
 		StatusLineAccent = { fg = mgz.col_black, bg = mgz.col_purple },
 
         -- Visual Multi (multi-cursor plugin)
-        -- VM_Mono = { fg = mgz.col_red, bg = mgz.col_dimcyan, style = "bold"}, -- Highlight in cursor mode (what makes you actually see you're in VM normal mode)
-        VM_Mono = { fg = mgz.col_purple, bg = mgz.col_thirteens, style = "bold"}, -- Highlight in cursor mode (what makes you actually see you're in VM normal mode)
-        VM_Extend = { fg = mgz.col_red, bg = mgz.col_white, style = "bold"}, -- Highlight in extend mode (the selections)
-        VM_Cursor = { fg = mgz.col_blue, bg = mgz.col_yellow, style = "bold"}, -- Highlight in extend mode (the cursors)
+        -- I'm sorry about the descriptions, this plugin makes my head hurt
+        VM_Mono = { fg = mgz.col_red, bg = mgz.col_elevens, style = "bold"}, -- Highlight in cursor mode (what makes you actually see you're in VM normal mode)
+        VM_Extend = { fg = mgz.col_darkblue, bg = mgz.col_elevens, style = "bold"}, -- Highlight in extend mode (the selections) (when you select multiple whole words, the selection on other words is this color)
+        VM_Cursor = { fg = mgz.col_white, bg = mgz.col_black, style = "bold"}, -- Highlight in extend mode (the cursors) (showing you where you are when selecting multiple words, the cursor position on those other words)
         VM_Insert = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold"}, -- Highlight in insert mode (the virtual cursors) (showing you where you are when in VM insert mode)
 	}
 
