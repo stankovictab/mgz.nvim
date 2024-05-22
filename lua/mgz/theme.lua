@@ -672,10 +672,10 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- I'm sorry about the descriptions, this plugin makes my head hurt
         -- Extend mode refers to the mode you go in when pressing Tab, to "extend" the cursor selection
         VM_Mono = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold"}, -- Cursor color in standard multi-cursor mode
-        VM_Insert = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold"}, -- Color of blocks of in-front-cursors in insert mode
+        VM_Insert = { fg = mgz.col_twelves, bg = mgz.col_cyan, style = "bold"}, -- Color of blocks of in-front-cursors in insert mode
         -- Tab mode :
-        VM_Extend = { fg = mgz.col_sevens, bg = mgz.col_dimpurple, style = "bold"}, -- Color of selection in extend (tab) mode
-        VM_Cursor = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold,underline"}, -- Cursor color in extend (tab) mode, should be the same as VM_Mono
+        VM_Extend = { fg = mgz.col_sevens, bg = mgz.col_dimmagenta, style = "bold"}, -- Color of selection in extend (tab) mode
+        VM_Cursor = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold"}, -- Cursor color in extend (tab) mode, should be the same as VM_Mono
 	}
 
 	return plugins
