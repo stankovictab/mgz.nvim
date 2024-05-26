@@ -4,6 +4,7 @@
 local mgz = {
 	none = "NONE",
 	col_black = "#000000",
+    col_background = "#121212",
 	col_darkgray = "#1b1b1b",
 	col_bluishgray = "#658595",
 	col_blue = "#1babff",
@@ -137,13 +138,13 @@ theme.loadEditor = function()
 
 	local editor = {
 		-- These are the colors for popup windows like :LspInfo and :Mason
-		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack },   -- Text and background of floating popups, for example the popup on LSP hover, or Packer's popup
+		NormalFloat = { fg = mgz.col_white, bg = mgz.col_dimblack },   -- Text and background of floating popups, for example the popup on LSP hover, or Lazy's popup
 		FloatBorder = { fg = mgz.col_white, bg = mgz.col_dimblack },   -- The border of the popup, seen on Packer's popup for example, around the border
 		ColorColumn = { fg = mgz.none, bg = mgz.col_dimblack },        -- Used for the columns set with 'colorcolumn'
 		Conceal = { fg = mgz.col_fours },                              -- placeholder characters substituted for concealed text (see 'conceallevel'), an example is dir, url, branch, etc in Lazy's panel when you expand a plugin
 		Cursor = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
-		Directory = { fg = mgz.col_pink, bg = mgz.none },              -- directory names (and other special names in listings)
+		Directory = { fg = mgz.col_darkblue, bg = mgz.none, style = "bold" },              -- Useful in file explorers like NvimTree, Oil and mini.files
 		EndOfBuffer = { fg = mgz.col_dimblack },
 		ErrorMsg = { fg = mgz.col_pink, bg = mgz.none }, -- Error messages in the command line (when a plugin breaks, message that pops up at the bottom)
 		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
@@ -231,11 +232,11 @@ theme.loadEditor = function()
 
 	-- Set transparent background
 	if vim.g.mgz_disable_background then
-		editor.Normal = { fg = mgz.col_white, bg = mgz.none } -- Normal text and background color
+		editor.Normal = { fg = mgz.col_white, bg = mgz.none } -- Normal text and background color (literally the background of NeoVim)
 		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none } -- Column left of the line number column
 	else
-		editor.Normal = { fg = mgz.col_white, bg = mgz.col_black }
-		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_black }
+		editor.Normal = { fg = mgz.col_white, bg = mgz.col_background }
+		editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_background }
 	end
 
     -- TODO: This could be removed I think, just make sure you extract all of these highlights outside of this (and see what they actually do)
