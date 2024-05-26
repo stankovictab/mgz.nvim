@@ -145,7 +145,7 @@ theme.loadEditor = function()
 		CursorIM = { fg = mgz.col_white, bg = mgz.none, style = "reverse" }, -- like Cursor, but used when in IME mode
 		Directory = { fg = mgz.col_pink, bg = mgz.none },              -- directory names (and other special names in listings)
 		EndOfBuffer = { fg = mgz.col_dimblack },
-		ErrorMsg = { fg = mgz.none },
+		ErrorMsg = { fg = mgz.col_pink, bg = mgz.none }, -- Error messages in the command line (when a plugin breaks, message that pops up at the bottom)
 		VertSplit = { fg = mgz.col_cyan, bg = mgz.none }, -- Color of bar between vertically split panes (like [] | [])
 		Folded = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" },
 		FoldColumn = { fg = mgz.col_pink },
