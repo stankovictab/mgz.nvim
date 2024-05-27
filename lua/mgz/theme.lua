@@ -43,7 +43,11 @@ local mgz = {
     col_thirteens = "#dddddd",
     col_fourteens = "#eeeeee",
 
-    col_offblue = "#61b3ff"
+    col_offblue = "#61b3ff",
+
+    col_slimgreen = "#102522",
+    col_slimblue = "#102532",
+    col_slimred = "#352020",
 }
 
 -- Toggle for transparent cursorline (the background of the line the cursor is on)
@@ -476,15 +480,17 @@ theme.loadPlugins = function() -- Plugins highlight groups
         NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
         -- GitSigns
-        GitSignsAdd = { fg = mgz.col_teal },           -- diff mode: Added line
-        GitSignsAddNr = { fg = mgz.col_teal },         -- diff mode: Added line
-        GitSignsAddLn = { fg = mgz.col_teal },         -- diff mode: Added line
-        GitSignsChange = { fg = mgz.col_lightblue },   -- diff mode: Changed line
-        GitSignsChangeNr = { fg = mgz.col_lightblue }, -- diff mode: Changed line
-        GitSignsChangeLn = { fg = mgz.col_lightblue }, -- diff mode: Changed line
-        GitSignsDelete = { fg = mgz.col_red },         -- diff mode: Deleted line
-        GitSignsDeleteNr = { fg = mgz.col_red },       -- diff mode: Deleted line
-        GitSignsDeleteLn = { fg = mgz.col_red },       -- diff mode: Deleted line
+        -- Highlights with ...Ln are for highlighting line changes, so they only need the background set
+        -- The ...Nr are for highlighting the numbers in the gutter where changes occured
+        GitSignsAdd = { fg = mgz.col_teal },
+        GitSignsAddNr = { fg = mgz.col_teal },
+        GitSignsAddLn = { bg = mgz.col_slimgreen },
+        GitSignsChange = { fg = mgz.col_lightblue },
+        GitSignsChangeNr = { fg = mgz.col_lightblue },
+        GitSignsChangeLn = { bg = mgz.col_slimblue },
+        GitSignsDelete = { fg = mgz.col_red },
+        GitSignsDeleteNr = { fg = mgz.col_red },
+        GitSignsDeleteLn = { bg = mgz.col_slimred },
         GitSignsCurrentLineBlame = { fg = mgz.col_fours, style = "italic" },
 
         -- Folke's flash.nvim
