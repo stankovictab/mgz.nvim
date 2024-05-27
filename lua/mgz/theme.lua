@@ -188,7 +188,7 @@ theme.loadEditor = function()
         TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
         Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
         Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
-        Visual = { fg = mgz.white, bg = mgz.col_dimwhite },   -- Color of highlight in Visual Mode
+        Visual = { bg = mgz.col_dimwhite },                   -- Color of highlight in Visual Mode
         VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray }, -- This is depricated
         -- This is the message in command bar when something goes wrong in packer for example.
         WarningMsg = { fg = mgz.col_orange },                 -- Overrides
@@ -525,6 +525,11 @@ theme.loadPlugins = function() -- Plugins highlight groups
         NvimTreeFolderIcon = { fg = mgz.col_lightblue },
         NvimTreeIndentMarker = { fg = mgz.col_bluishgray },
         NvimTreeWindowPicker = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- Color of status line of window that you pick when opening a file from NvimTree when you have multiple windows (panes) open in nvim
+
+        -- Oil
+        OilFile = { fg = mgz.col_white },
+        OilLink = { fg = mgz.col_purple, style = "bold" },  -- Symlinked folder
+        OilLinkTarget = { fg = "#a29dff", style = "bold" }, -- Symlinked folder target
 
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
