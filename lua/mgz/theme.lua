@@ -445,14 +445,14 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- BufferLine -- CokeLine is an alternative, but badly configured in terms of theming.
         -- NOTE: I found that BufferLineBuffer, BufferLineBufferVisible have no use
         -- Selected Buffer :
-        BufferLineBufferSelected = { fg = mgz.col_cyan, bg = mgz.col_darkgray, style = "bold" },                   -- Selected buffer text and bg
-        BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.col_darkgray, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer is modified, for selected buffer
+        -- BufferLineBufferSelected = { fg = mgz.col_cyan, bg = mgz.col_darkgray, style = "bold" },                   -- Selected buffer text and bg
+        -- BufferLineModifiedSelected = { fg = mgz.col_yellow, bg = mgz.col_darkgray, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer is modified, for selected buffer
         -- BufferLineIndicatorSelected = { fg = mgz.col_white, bg = mgz.col_dimwhite }, -- The indicator (leftmost) for the selected buffer
         -- Unselected Buffers :
-        BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer is modified, for unselected buffers
+        -- BufferLineModified = { fg = mgz.col_yellow, bg = mgz.none, gui = "bold", style = "bold" }, -- Indicator (dot) that the buffer is modified, for unselected buffers
         -- BufferLineBackground = { fg = mgz.col_gray, bg = mgz.col_diminbetween }, -- Unselected buffer text and bg
         -- Misc :
-        BufferLineFill = { fg = mgz.none, bg = mgz.col_background }, -- BufferLine background, for the BufferLine itself, not counting the tabs
+        -- BufferLineFill = { fg = mgz.none, bg = mgz.col_background }, -- BufferLine background, for the BufferLine itself, not counting the tabs
         -- BufferLineSeparator = { fg = mgz.col_dimblack, bg = mgz.col_dimblack }, -- Separator between tabs, fg is the tiny line, bg is the background
         -- DevIcons seem to be styled dynamically, see this https://github.com/akinsho/bufferline.nvim/issues/627 if you're interested
 
