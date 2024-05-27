@@ -2,20 +2,20 @@
 
 A really dark NeoVim theme.
 
-![theme.png](theme.png) 
+> ***TODO*** - Add new screenshot.
+
+<details>
+<summary> Old version of the theme. </summary>
+
+![old-theme.png](old-theme.png) 
+</details>
 
 ### Installation
 
-Install (and update) it through your favourite package manager as `'stankovictab/mgz.nvim'`.
+Install it through your favourite package manager as `'stankovictab/mgz.nvim'`.
 
-To enable the colorscheme, you can use the following.\
-```vim
-" Vim-Script
-colorscheme mgz
-```
-
+To enable the colorscheme, you can use the following somewhere in your config.
 ```lua
--- Lua
 vim.cmd('colorscheme mgz')
 ```
 
@@ -23,16 +23,12 @@ vim.cmd('colorscheme mgz')
 
 The MGZ theme allows for these options to be changed :
 - `mgz_disable_background` - Disables the setting of background color, so that NeoVim can use your terminal emulator's background color. Default is false. 
-- `mgz_cursorline_transparent` - Set the cursorline to transparent or visible. Default is false. 
 - `mgz_italic` - Whether to render text in italics or not. Default is true. 
-- `mgz_uniform_diff_background` - Enables or disables colorful backgrounds when used in diff mode. Default is false. 
 
 ```lua
 -- Example config in lua
 vim.g.mgz_disable_background = true
-vim.g.mgz_cursorline_transparent = false
 vim.g.mgz_italic = false
-vim.g.mgz_uniform_diff_background = true
 ```
 
 ### Notices

@@ -50,13 +50,6 @@ local mgz = {
     col_slimred = "#352020",
 }
 
--- Toggle for transparent cursorline (the background of the line the cursor is on)
-if vim.g.mgz_cursorline_transparent then
-    mgz.cursorlinefg = mgz.col_black
-else
-    mgz.cursorlinefg = mgz.col_dimblack
-end
-
 local theme = {}
 
 theme.loadSyntax = function()
@@ -158,7 +151,6 @@ theme.loadEditor = function()
         CurSearch = { fg = mgz.col_black, bg = mgz.col_cyan, style = "bold" },  -- Current selected search result after / by pressing n or N
         Search = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" },   -- Search results after /
         LineNr = { fg = mgz.col_dimwhite },                                     -- Line numbers
-        CursorLineNr = { fg = mgz.col_blue },                                   -- Active line number color
         -- MatchParen = { fg = mgz.col_blue, bg = mgz.none, style = "bold,underline" }, -- Matched parenthesis
         MatchParen = { fg = mgz.col_white, bg = mgz.col_blue, style = "bold" }, -- Matched parenthesis
         ModeMsg = { fg = mgz.col_blue },
@@ -188,13 +180,14 @@ theme.loadEditor = function()
         TablineSel = { fg = mgz.col_dimblack, bg = mgz.col_white },
         Tabline = { fg = mgz.col_blue, bg = mgz.col_dimblack },
         Title = { fg = mgz.col_teal, bg = mgz.none, style = "bold" },
-        Visual = { bg = mgz.col_dimwhite },                   -- Color of highlight in Visual Mode
-        VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray }, -- This is depricated
+        Visual = { bg = mgz.col_dimwhite },                      -- Color of highlight in Visual Mode
+        VisualNOS = { fg = mgz.none, bg = mgz.col_darkgray },    -- This is depricated
         -- This is the message in command bar when something goes wrong in packer for example.
-        WarningMsg = { fg = mgz.col_orange },                 -- Overrides
+        WarningMsg = { fg = mgz.col_orange },                    -- Overrides
         WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
-        CursorColumn = { fg = mgz.none, bg = mgz.cursorlinefg },
-        CursorLine = { fg = mgz.none, bg = mgz.cursorlinefg },
+        CursorColumn = { fg = mgz.none, bg = mgz.col_darkgray }, -- Color of vertical line on cursor
+        CursorLine = { fg = mgz.none, bg = mgz.col_darkgray },   -- Color of horizontal line on cursor
+        CursorLineNr = { fg = mgz.col_blue, bg = mgz.none },     -- Active line number color
         ToolbarLine = { fg = mgz.col_blue, bg = mgz.col_dimblack },
         ToolbarButton = { fg = mgz.col_blue, bg = mgz.none, style = "bold" },
         NormalMode = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
@@ -203,6 +196,10 @@ theme.loadEditor = function()
         VisualMode = { fg = mgz.col_white, bg = mgz.none, style = "reverse" },
         CommandMode = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
         Warnings = { fg = mgz.col_yellow },
+        DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack },       -- diff mode: Added line
+        DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack },  --  diff mode: Changed line
+        DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack },     -- diff mode: Deleted line
+        DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack }, -- diff mode: Changed text within a changed line
 
         healthError = { fg = mgz.col_red },
         healthSuccess = { fg = mgz.col_teal },
@@ -241,19 +238,6 @@ theme.loadEditor = function()
     else
         editor.Normal = { fg = mgz.col_white, bg = mgz.col_background }
         editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_background }
-    end
-
-    -- TODO: This could be removed I think, just make sure you extract all of these highlights outside of this (and see what they actually do)
-    if vim.g.mgz_uniform_diff_background then
-        editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack }                  -- diff mode: Added line
-        editor.DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack }             --  diff mode: Changed line
-        editor.DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack }                -- diff mode: Deleted line
-        editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack }            -- diff mode: Changed text within a changed line
-    else
-        editor.DiffAdd = { fg = mgz.col_teal, bg = mgz.none, style = "reverse" }       -- diff mode: Added line
-        editor.DiffChange = { fg = mgz.col_purple, bg = mgz.none, style = "reverse" }  --  diff mode: Changed line
-        editor.DiffDelete = { fg = mgz.col_red, bg = mgz.none, style = "reverse" }     -- diff mode: Deleted line
-        editor.DiffText = { fg = mgz.col_lightblue, bg = mgz.none, style = "reverse" } -- diff mode: Changed text within a changed line
     end
 
     return editor
