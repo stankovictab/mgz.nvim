@@ -475,11 +475,6 @@ theme.loadPlugins = function() -- Plugins highlight groups
         NeogitDiffDeleteHighlight = { fg = mgz.col_red, style = "reverse" },
         NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
-        -- GitGutter
-        GitGutterAdd = { fg = mgz.col_teal },         -- diff mode: Added line
-        GitGutterChange = { fg = mgz.col_lightblue }, -- diff mode: Changed line
-        GitGutterDelete = { fg = mgz.col_red },       -- diff mode: Deleted line
-
         -- GitSigns
         GitSignsAdd = { fg = mgz.col_teal },           -- diff mode: Added line
         GitSignsAddNr = { fg = mgz.col_teal },         -- diff mode: Added line
@@ -490,9 +485,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
         GitSignsDelete = { fg = mgz.col_red },         -- diff mode: Deleted line
         GitSignsDeleteNr = { fg = mgz.col_red },       -- diff mode: Deleted line
         GitSignsDeleteLn = { fg = mgz.col_red },       -- diff mode: Deleted line
-        GitSignsCurrentLineBlame = { fg = mgz.col_bluishgray, style = "bold" },
+        GitSignsCurrentLineBlame = { fg = mgz.col_fours, style = "italic" },
 
-        -- Folke's Flash.nvim
+        -- Folke's flash.nvim
         FlashBackdrop = { fg = mgz.col_fives },                                           -- Color of text that is search-able with a jump (default is gray-ish) (when pressing just 'f')
         FlashMatch = { fg = mgz.col_black, bg = mgz.col_lightblue, style = "bold" },      -- On a standalone .jump(), the color of the other matches
         FlashCurrent = { fg = mgz.col_black, bg = mgz.col_green, style = "bold" },        -- On a standalone .jump(), the color of the current match
