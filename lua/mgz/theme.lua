@@ -122,7 +122,7 @@ theme.loadSyntax = function()
     }
 
     -- Italic check (without TreeShitter)
-    if vim.g.mgz_italic == true then
+    if vim.g.mgz_italic_comments == true then
         syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
     end
 
@@ -185,7 +185,7 @@ theme.loadEditor = function()
         -- This is the message in command bar when something goes wrong in packer for example.
         WarningMsg = { fg = mgz.col_orange },                    -- Overrides
         WildMenu = { fg = mgz.col_green, bg = mgz.none, style = "bold" },
-        CursorColumn = { fg = mgz.none, bg = mgz.col_darkgray }, -- Color of vertical line on cursor
+        CursorColumn = { fg = mgz.none, bg = mgz.col_fours }, -- Color of vertical line on cursor NOTE: I use this as the nvim-scrollbar highlight
         CursorLine = { fg = mgz.none, bg = mgz.col_darkgray },   -- Color of horizontal line on cursor
         CursorLineNr = { fg = mgz.col_blue, bg = mgz.none },     -- Active line number color
         ToolbarLine = { fg = mgz.col_blue, bg = mgz.col_dimblack },
@@ -361,8 +361,8 @@ theme.loadTreeSitter = function()
         ["@markup.heading.6.marker.markdown"] = { link = "markdownH6Delimiter" },
     }
 
-    if vim.g.mgz_italic == true then
-        treesitter["@comment"] = { fg = mgz.col_bluishgray, style = "italic" } -- Italic comments
+    if vim.g.mgz_italic_comments == true then
+        treesitter["@comment"] = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
     end
 
     return treesitter
