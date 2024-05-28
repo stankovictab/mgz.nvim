@@ -430,6 +430,50 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- NOTE: It's made so that no one should theme this plugin specifically, it takes highlights from your own theme, and does a pretty good job
 
         -- NvimScrollbar -- For some reason it can't be set here, so it's set in the lua config file of the plugin
+        -- nvim-scrollview - Better than NvimScrollbar
+        -- See :help nvim-scrollview, section scrollview-color-customization
+        ScrollView = { fg = mgz.none, bg = mgz.col_dimwhite }, -- Scrollbar (by default links to Visual)
+        -- ScrollViewConflictsTop`        top conflict signs
+        --  DiffAdd
+        -- ScrollViewConflictsMiddle`     middle conflict signs
+        --  DiffAdd
+        -- ScrollViewConflictsBottom`     bottom conflict signs
+        --  DiffAdd
+        -- ScrollViewCursor`              cursor signs
+        --  Identifier
+        -- ScrollViewDiagnosticsError`    diagnostic error signs
+        --  The sign text highlight
+        --  for DiagnosticSignError
+        --  if defined, or DiagnosticError
+        --  otherwise
+        -- ScrollViewDiagnosticsHint`     diagnostic hint signs
+        --  The sign text highlight
+        --  for DiagnosticSignHint
+        --  if defined, or DiagnosticHint
+        --  otherwise
+        -- ScrollViewDiagnosticsInfo`     diagnostic info signs
+        --  The sign text highlight
+        --  for DiagnosticSignInfo
+        --  if defined, or DiagnosticInfo
+        --  otherwise
+        -- ScrollViewDiagnosticsWarn`     diagnostic warn signs
+        --  The sign text highlight
+        --  for DiagnosticSignWarn
+        --  if defined, or DiagnosticWarn
+        --  otherwise
+        ScrollViewFolds = { fg = mgz.col_blue, bg = mgz.none, style = "bold" }, -- Fold signs (by default links to Directory)
+        -- ScrollViewHover` -- Scrollbar and signs on hover (by default links to CurSearch)
+        -- ScrollViewLocList`             loclist signs
+        --  LineNr
+        ScrollViewMarks = { fg = mgz.col_lightblue, bg=mgz.none}, -- Mark signs (by default links to Identifier)
+        -- ScrollViewQuickFix`            quickfix signs
+        --  Constant
+        -- ScrollViewRestricted`          |scrollview-restricted| scrollbar
+        --  CurSearch
+        ScrollViewSearch = { fg = mgz.col_orange, style = "bold" }, -- Search results (by default links to NonText)
+        -- ScrollViewSpell`               Spell signs (spelling mistakes) (by default links to Statement)
+        -- ScrollViewTextWidth`           textwidth signs
+        --  Question
 
         -- TODO: Lazy Plugin Manager
         -- LazyButton = { fg = mgz., bg = mgz., gui = "bold", style = "bold" }, -- Install, Update, Sync buttons
