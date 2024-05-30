@@ -172,8 +172,8 @@ theme.loadEditor = function()
         SpellRare = { fg = mgz.col_white, bg = mgz.none, style = "italic,undercurl" },
         -- Status line without lualine (open with nvim --noplugin)
         -- But also the "status line" or really horizontal border when executing a command
-        StatusLine = { fg = mgz.col_pink, bg = mgz.col_dimblue }, -- The [No Name] line and background
-        StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
+        StatusLine = { fg = mgz.col_pink, bg = mgz.col_dimblue },    -- The [No Name] line and background
+        StatusLineNC = { fg = mgz.col_blue, bg = mgz.col_dimblack }, -- Status line in a non-focused split
         StatusLineTerm = { fg = mgz.col_blue, bg = mgz.col_darkgray },
         StatusLineTermNC = { fg = mgz.col_blue, bg = mgz.col_dimblack },
         TabLineFill = { fg = mgz.col_blue, bg = mgz.none },
@@ -235,9 +235,12 @@ theme.loadEditor = function()
     if vim.g.mgz_disable_background then
         editor.Normal = { fg = mgz.col_white, bg = mgz.none }      -- Normal text and background color (literally the background of NeoVim)
         editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none } -- Column left of the line number column
+        editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray } -- Text and background of a non-focused split (NC = Non-Current window)
+        -- NOTE: There is no SignColumnNC unfortunately, so you'll get a weird look
     else
         editor.Normal = { fg = mgz.col_white, bg = mgz.col_background }
         editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_background }
+        editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray } -- Text and background of a non-focused split
     end
 
     return editor
@@ -465,7 +468,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- ScrollViewHover` -- Scrollbar and signs on hover (by default links to CurSearch)
         -- ScrollViewLocList`             loclist signs
         --  LineNr
-        ScrollViewMarks = { fg = mgz.col_lightblue, bg=mgz.none}, -- Mark signs (by default links to Identifier)
+        ScrollViewMarks = { fg = mgz.col_lightblue, bg = mgz.none }, -- Mark signs (by default links to Identifier)
         -- ScrollViewQuickFix`            quickfix signs
         --  Constant
         -- ScrollViewRestricted`          |scrollview-restricted| scrollbar
