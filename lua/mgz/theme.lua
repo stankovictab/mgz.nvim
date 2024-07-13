@@ -1,6 +1,8 @@
 -- Colors need to be in '#rrggbb', not '#rgb'
 -- To see highlight groups that are missing, do :hi and tab over, or do :Telescope highlights
 
+-- TODO: mgz.error, text, warning and comment are used but not defined
+
 local mgz = {
     none = "NONE",
     col_black = "#000000",
@@ -233,8 +235,8 @@ theme.loadEditor = function()
 
     -- Set transparent background
     if vim.g.mgz_disable_background then
-        editor.Normal = { fg = mgz.col_white, bg = mgz.none }      -- Normal text and background color (literally the background of NeoVim)
-        editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none } -- Column left of the line number column
+        editor.Normal = { fg = mgz.col_white, bg = mgz.none }           -- Normal text and background color (literally the background of NeoVim)
+        editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none }      -- Column left of the line number column
         editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray } -- Text and background of a non-focused split (NC = Non-Current window)
         -- NOTE: There is no SignColumnNC unfortunately, so you'll get a weird look
     else
@@ -321,7 +323,7 @@ theme.loadTreeSitter = function()
         -- Don't you just love breaking changes? Don't you love it when devs plan things ahead?
         ["@comment"]                          = { fg = mgz.col_bluishgray },                                 -- Comments
         ["@comment.todo"]                     = { fg = mgz.col_black, bg = mgz.col_pink, style = "bold" },   -- TODO
-        ["@comment.note"]                     = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" },   -- NOTE, INFO and XXX
+        ["@comment.note"]                     = { fg = mgz.col_black, bg = mgz.col_blue, style = "bold" },   -- NOTE, INFO, XXX and DOCS
         ["@comment.error"]                    = { fg = mgz.col_black, bg = mgz.col_red, style = "bold" },    -- FIXME and BUG
         ["@comment.warning"]                  = { fg = mgz.col_black, bg = mgz.col_orange, style = "bold" }, -- WARN and WARNING
         -- Markdown (Markup) Specific (Copied over from material.nvim and tokyonight.nvim (TODO: Remove this comment))
@@ -330,20 +332,20 @@ theme.loadTreeSitter = function()
         ["@markup.emphasis"]                  = { italic = true },
         ["@markup.strong"]                    = { bold = true },
         ["@markup.strikethrough"]             = { strikethrough = true },
-        ["@markup.title"]                     = { fg = mgz.cyan, bold = true },
-        ["@markup.literal"]                   = { fg = mgz.green },
+        ["@markup.title"]                     = { fg = mgz.col_cyan, bold = true },
+        ["@markup.literal"]                   = { fg = mgz.col_green },
         -- URL links (like [something](https://www.google.com))
         ["@markup.link"]                      = { fg = mgz.col_blue },           -- Links, text references, footnotes, citations, etc.
         ["@markup.link.url"]                  = { style = "underline" },         -- Only links are underlined
         ["@markup.link.label"]                = { fg = mgz.col_teal },           -- The color of "something" in [something](www.google.com)
         ["@markup.link.label.symbol"]         = { link = "Identifier" },         -- TODO ???
         ["@markup.link.unchecked"]            = { fg = mgz.col_pink },           -- TODO ???
-        ["@markup.math"]                      = { fg = mgz.blue },               -- e.g. LaTeX math
+        ["@markup.math"]                      = { fg = mgz.col_blue },           -- e.g. LaTeX math
         ["@markup.list"]                      = { link = "markdownListMarker" }, -- The color of bullets in lists
-        ["@markup.list.checked"]              = { fg = mgz.green },              -- checkboxes
+        ["@markup.list.checked"]              = { fg = mgz.col_green },          -- checkboxes
         ["@markup.list.unchecked"]            = { fg = mgz.text },
-        ["@markup.environment"]               = { fg = mgz.red },
-        ["@markup.environment.name"]          = { fg = mgz.red },
+        ["@markup.environment"]               = { fg = mgz.col_red },
+        ["@markup.environment.name"]          = { fg = mgz.col_red },
         ["@markup.warning"]                   = { fg = mgz.warning },
         ["@markup.danger"]                    = { fg = mgz.error },
         ["@markup.raw"]                       = { fg = mgz.col_purple },   -- ``` ``` and ` ` in markdown code (as far as I can tell)
