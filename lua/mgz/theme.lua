@@ -558,14 +558,15 @@ theme.loadPlugins = function() -- Plugins highlight groups
         OilLinkTarget = { fg = "#a29dff", style = "bold" }, -- Symlinked folder target
 
         -- mini.files
+        -- See :help mini.files for explanation on all of them
         -- MiniFilesBorder = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to FloatBorder
         -- MiniFilesBorderModified = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to DiagnosticFloatingWarn
         -- MiniFilesCursorLine = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to CursorLine
         -- MiniFilesDirectory = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to Directory
         -- MiniFilesFile = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to nothing, it's cleared (just white text, no bg)
         -- MiniFilesNormal = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to NormalFloat
-        MiniFilesTitle = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to FloatTitle
-        MiniFilesTitleFocused = { fg = mgz.col_blue, bg = mgz.col_black, style = "bold,italic" }, -- By default links to FloatTitle
+        MiniFilesTitle = { fg = mgz.col_white, bg = mgz.none, style = "bold" }, -- By default links to FloatTitle
+        MiniFilesTitleFocused = { fg = mgz.col_blue, bg = mgz.none, style = "bold,italic" }, -- By default links to FloatTitle
 
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
