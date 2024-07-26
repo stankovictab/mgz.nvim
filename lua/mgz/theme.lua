@@ -49,6 +49,7 @@ local mgz = {
 
     col_slimgreen = "#102522",
     col_slimblue = "#102532",
+    col_slimmerblue = "#203542",
     col_slimred = "#352020",
 }
 
@@ -200,10 +201,10 @@ theme.loadEditor = function()
         Warnings = { fg = mgz.col_yellow },
         -- Standard vim diff coloring - this should have a background color
         -- Try it with nvim -d <file1> <file2>
-        DiffAdd = { bg = mgz.col_slimgreen },          -- diff mode: Added line - Same as GitSignsAddLn
-        DiffChange = { bg = mgz.col_slimblue },        --  diff mode: Changed line - Same as GitSignsChangeLn
-        DiffDelete = { bg = mgz.col_slimred },         -- diff mode: Deleted line - Same as GitSignsDeleteLn
-        DiffText = { fg = "#00ff00", bg = "#ff00ff" }, -- diff mode: Changed text within a changed line
+        DiffAdd = { bg = mgz.col_slimgreen },    -- diff mode: Added line - Same as GitSignsAddLn
+        DiffChange = { bg = mgz.col_slimblue },  -- diff mode: Changed line - Same as GitSignsChangeLn
+        DiffText = { bg = mgz.col_slimmerblue }, -- diff mode: Changed text within a changed line - No equivalent for GitSigns
+        DiffDelete = { bg = mgz.col_slimred },   -- diff mode: Deleted line - Same as GitSignsDeleteLn
 
         healthError = { fg = mgz.col_red },
         healthSuccess = { fg = mgz.col_teal },
