@@ -198,10 +198,12 @@ theme.loadEditor = function()
         VisualMode = { fg = mgz.col_white, bg = mgz.none, style = "reverse" },
         CommandMode = { fg = mgz.col_blue, bg = mgz.none, style = "reverse" },
         Warnings = { fg = mgz.col_yellow },
-        DiffAdd = { fg = mgz.col_teal, bg = mgz.col_dimblack },       -- diff mode: Added line
-        DiffChange = { fg = mgz.col_purple, bg = mgz.col_dimblack },  --  diff mode: Changed line
-        DiffDelete = { fg = mgz.col_red, bg = mgz.col_dimblack },     -- diff mode: Deleted line
-        DiffText = { fg = mgz.col_lightblue, bg = mgz.col_dimblack }, -- diff mode: Changed text within a changed line
+        -- Standard vim diff coloring - this should have a background color
+        -- Try it with nvim -d <file1> <file2>
+        DiffAdd = { bg = mgz.col_slimgreen },          -- diff mode: Added line - Same as GitSignsAddLn
+        DiffChange = { bg = mgz.col_slimblue },        --  diff mode: Changed line - Same as GitSignsChangeLn
+        DiffDelete = { bg = mgz.col_slimred },         -- diff mode: Deleted line - Same as GitSignsDeleteLn
+        DiffText = { fg = "#00ff00", bg = "#ff00ff" }, -- diff mode: Changed text within a changed line
 
         healthError = { fg = mgz.col_red },
         healthSuccess = { fg = mgz.col_teal },
@@ -235,15 +237,22 @@ theme.loadEditor = function()
 
     -- Set transparent background
     if vim.g.mgz_disable_background then
-        editor.Normal = { fg = mgz.col_white, bg = mgz.none }           -- Normal text and background color (literally the background of NeoVim)
-        editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none }      -- Column left of the line number column
-        editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray } -- Text and background of a non-focused split (NC = Non-Current window)
-        -- NOTE: There is no SignColumnNC unfortunately, so you'll get a weird look
+        editor.Normal = { fg = mgz.col_white, bg = mgz.none }      -- Normal text and background color (literally the background of NeoVim)
+        editor.SignColumn = { fg = mgz.col_purple, bg = mgz.none } -- Column left of the line number column
     else
         editor.Normal = { fg = mgz.col_white, bg = mgz.col_background }
         editor.SignColumn = { fg = mgz.col_purple, bg = mgz.col_background }
-        editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray } -- Text and background of a non-focused split
     end
+
+    -- Set text and background of a non-focused split (NC = Non-Current window)
+    if vim.g.mgz_disable_nc_coloring then
+        editor.NormalNC = { fg = mgz.col_white, bg = mgz.none }
+        -- NOTE: There is no SignColumnNC
+    else
+        editor.NormalNC = { fg = mgz.col_white, bg = mgz.col_darkgray }
+        -- NOTE: There is no SignColumnNC
+    end
+
 
     return editor
 end
@@ -487,36 +496,38 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- etc
 
         -- Diff
-        diffAdded = { fg = mgz.col_teal },
-        diffRemoved = { fg = mgz.col_red },
-        diffChanged = { fg = mgz.col_lightblue },
-        diffOldFile = { fg = mgz.col_yellow },
-        diffNewFile = { fg = mgz.col_green },
-        diffFile = { fg = mgz.col_pink },
-        diffLine = { fg = mgz.col_dimwhite },
-        diffIndexLine = { fg = mgz.col_white },
+        -- TODO: What is this referring to?
+        -- diffAdded = { fg = mgz.col_teal },
+        -- diffRemoved = { fg = mgz.col_red },
+        -- diffChanged = { fg = mgz.col_lightblue },
+        -- diffOldFile = { fg = mgz.col_yellow },
+        -- diffNewFile = { fg = mgz.col_green },
+        -- diffFile = { fg = mgz.col_pink },
+        -- diffLine = { fg = mgz.col_dimwhite },
+        -- diffIndexLine = { fg = mgz.col_white },
 
         -- Neogit
-        NeogitBranch = { fg = mgz.col_lightblue },
-        NeogitRemote = { fg = mgz.col_white },
-        NeogitHunkHeader = { fg = mgz.col_orange },
-        NeogitHunkHeaderHighlight = { fg = mgz.col_orange, bg = mgz.col_dimblack },
-        NeogitDiffContextHighlight = { bg = mgz.col_dimblack },
-        NeogitDiffDeleteHighlight = { fg = mgz.col_red, style = "reverse" },
-        NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
+        -- NeogitBranch = { fg = mgz.col_lightblue },
+        -- NeogitRemote = { fg = mgz.col_white },
+        -- NeogitHunkHeader = { fg = mgz.col_orange },
+        -- NeogitHunkHeaderHighlight = { fg = mgz.col_orange, bg = mgz.col_dimblack },
+        -- NeogitDiffContextHighlight = { bg = mgz.col_dimblack },
+        -- NeogitDiffDeleteHighlight = { fg = mgz.col_red, style = "reverse" },
+        -- NeogitDiffAddHighlight = { fg = mgz.col_teal, style = "reverse" },
 
         -- GitSigns
         -- Highlights with ...Ln are for highlighting line changes, so they only need the background set
         -- The ...Nr are for highlighting the numbers in the gutter where changes occured
+        -- It's good to use these highlights for diff-ing aswell
         GitSignsAdd = { fg = mgz.col_teal },
         GitSignsAddNr = { fg = mgz.col_teal },
-        GitSignsAddLn = { bg = mgz.col_slimgreen },
+        GitSignsAddLn = { bg = mgz.col_slimgreen }, -- Like DiffAdd
         GitSignsChange = { fg = mgz.col_lightblue },
         GitSignsChangeNr = { fg = mgz.col_lightblue },
-        GitSignsChangeLn = { bg = mgz.col_slimblue },
+        GitSignsChangeLn = { bg = mgz.col_slimblue }, -- Like DiffChange
         GitSignsDelete = { fg = mgz.col_red },
         GitSignsDeleteNr = { fg = mgz.col_red },
-        GitSignsDeleteLn = { bg = mgz.col_slimred },
+        GitSignsDeleteLn = { bg = mgz.col_slimred }, -- Like DiffDelete
         GitSignsCurrentLineBlame = { fg = mgz.col_fours, style = "italic" },
 
         -- Folke's flash.nvim
@@ -565,7 +576,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- MiniFilesDirectory = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to Directory
         -- MiniFilesFile = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to nothing, it's cleared (just white text, no bg)
         -- MiniFilesNormal = { fg = mgz.col_white, bg = mgz.col_black, style = "" }, -- By default links to NormalFloat
-        MiniFilesTitle = { fg = mgz.col_white, bg = mgz.none, style = "bold" }, -- By default links to FloatTitle
+        MiniFilesTitle = { fg = mgz.col_white, bg = mgz.none, style = "bold" },              -- By default links to FloatTitle
         MiniFilesTitleFocused = { fg = mgz.col_blue, bg = mgz.none, style = "bold,italic" }, -- By default links to FloatTitle
 
         LspDiagnosticsError = { fg = mgz.col_red },
