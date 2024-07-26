@@ -49,8 +49,9 @@ local mgz = {
 
     col_slimgreen = "#102522",
     col_slimblue = "#102532",
-    col_slimmerblue = "#203542",
+    col_slimmerblue = "#203562",
     col_slimred = "#352020",
+    col_slimmerred = "#753030",
 }
 
 local theme = {}
@@ -204,7 +205,7 @@ theme.loadEditor = function()
         DiffAdd = { bg = mgz.col_slimgreen },    -- diff mode: Added line - Same as GitSignsAddLn
         DiffChange = { bg = mgz.col_slimblue },  -- diff mode: Changed line - Same as GitSignsChangeLn
         DiffText = { bg = mgz.col_slimmerblue }, -- diff mode: Changed text within a changed line - No equivalent for GitSigns
-        DiffDelete = { bg = mgz.col_slimred },   -- diff mode: Deleted line - Same as GitSignsDeleteLn
+        DiffDelete = { fg = mgz.col_slimmerred, bg = mgz.col_slimred },   -- diff mode: Deleted line - Same as GitSignsDeleteLn - The foreground is the color of the delete block's characters (see fillchars in settings)
 
         healthError = { fg = mgz.col_red },
         healthSuccess = { fg = mgz.col_teal },
