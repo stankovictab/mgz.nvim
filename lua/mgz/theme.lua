@@ -641,7 +641,8 @@ theme.loadPlugins = function() -- Plugins highlight groups
         CmpItemKindStruct = {},
         CmpItemKindModule = { fg = mgz.col_orange },
         CmpItemKindMethod = { fg = mgz.col_pink }, -- Different from function
-        CmpItemKindFolder = {},
+        CmpItemKindFolder = { fg = mgz.col_yellow }, -- Completion for folders in the path
+        CmpItemKindFile = { fg = mgz.col_orange }, -- Completion for files in the path
         CmpItemKindValue = {},
         CmpItemKindField = { fg = mgz.col_lightblue },
         CmpItemKindEvent = {},
@@ -649,7 +650,6 @@ theme.loadPlugins = function() -- Plugins highlight groups
         CmpItemKindClass = { fg = mgz.col_teal },
         CmpItemKindUnit = {},
         CmpItemKindText = { fg = mgz.col_white },
-        CmpItemKindFile = {},
         CmpItemKindEnum = { fg = mgz.col_orange },
         CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" },        -- Literal match for completion item
         CmpItemAbbrMatchFuzzy = { fg = mgz.col_orange, style = "bold" }, -- Fuzzy found match for completion item
