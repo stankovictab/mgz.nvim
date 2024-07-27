@@ -163,7 +163,7 @@ theme.loadEditor = function()
         NonText = { fg = mgz.col_darkgray, bg = mgz.none },
         -- Pmenu is the popup menu when tabbing in command mode, for example
         Pmenu = { fg = mgz.col_white, bg = mgz.col_dimblack },                    -- Normal element
-        PmenuSel = { fg = mgz.col_white, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element
+        PmenuSel = { fg = mgz.none, bg = mgz.col_dimwhite, style = "bold" }, -- Selected element, for example in nvim-cmp
         PmenuSbar = { fg = mgz.col_dimblack, bg = mgz.col_dimblack },             -- Background of the scrollbar, only bg is seen
         PmenuThumb = { fg = mgz.col_white, bg = mgz.col_white },                  -- "Thumb" (active part) of the scrollbar, only bg is seen
         Question = { fg = mgz.col_teal },
@@ -624,35 +624,38 @@ theme.loadPlugins = function() -- Plugins highlight groups
         SneakScope = { bg = mgz.col_dimblack },
 
         -- Cmp (completion engine plugin)
+        -- PMenuSel is the highlight for the highlighted selection, it's nvim native, because of the highlighting here PMenuSel shouldn't highlight the foreground
         CmpItemKind = { fg = mgz.col_gray }, -- Completion source, general color (shouldn't be seen if others done correctly)
-        CmpItemKindTypeParameter = {},
-        CmpItemKindConstructor = {},
-        CmpItemKindEnumMember = {},
-        CmpItemKindReference = {},
-        CmpItemKindInterface = {},
+        -- CmpItemKindTypeParameter = {},
+        -- CmpItemKindConstructor = {},
+        -- CmpItemKindEnumMember = {},
+        -- CmpItemKindReference = {},
+        -- CmpItemKindInterface = {},
         CmpItemKindVariable = { fg = mgz.col_blue },
         CmpItemKindProperty = { fg = mgz.col_purple },
-        CmpItemKindOperator = {},
+        -- CmpItemKindOperator = {},
         CmpItemKindFunction = { fg = mgz.col_pink }, -- Different from method
         CmpItemKindConstant = { fg = mgz.col_teal },
         CmpItemKindSnippet = { fg = mgz.col_yellow },
         CmpItemKindKeyword = { fg = mgz.col_purple },
-        CmpItemKindType = {},
-        CmpItemKindStruct = {},
+        -- CmpItemKindType = {},
+        -- CmpItemKindStruct = {},
         CmpItemKindModule = { fg = mgz.col_orange },
         CmpItemKindMethod = { fg = mgz.col_pink }, -- Different from function
         CmpItemKindFolder = { fg = mgz.col_yellow }, -- Completion for folders in the path
         CmpItemKindFile = { fg = mgz.col_orange }, -- Completion for files in the path
-        CmpItemKindValue = {},
+        -- CmpItemKindValue = {},
         CmpItemKindField = { fg = mgz.col_lightblue },
-        CmpItemKindEvent = {},
-        CmpItemKindColor = {},
+        -- CmpItemKindEvent = {},
+        -- CmpItemKindColor = {},
         CmpItemKindClass = { fg = mgz.col_teal },
-        CmpItemKindUnit = {},
+        -- CmpItemKindUnit = {},
         CmpItemKindText = { fg = mgz.col_white },
         CmpItemKindEnum = { fg = mgz.col_orange },
         CmpItemAbbrMatch = { fg = mgz.col_blue, style = "bold" },        -- Literal match for completion item
         CmpItemAbbrMatchFuzzy = { fg = mgz.col_orange, style = "bold" }, -- Fuzzy found match for completion item
+        -- CmpItemAbbrMatchDefault = {},
+        -- CmpItemAbbrMatchFuzzyDefault = {},
         CmpItemAbbr = { fg = mgz.col_gray },                             -- Text of completion item
         CmpItemMenu = { fg = mgz.col_teal },                             -- ???
 
