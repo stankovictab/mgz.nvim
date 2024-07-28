@@ -581,6 +581,14 @@ theme.loadPlugins = function() -- Plugins highlight groups
         MiniFilesTitle = { fg = mgz.col_white, bg = mgz.none, style = "bold" },              -- By default links to FloatTitle
         MiniFilesTitleFocused = { fg = mgz.col_blue, bg = mgz.none, style = "bold,italic" }, -- By default links to FloatTitle
 
+        -- mini.notify
+        -- MiniNotifyBorder = { fg = mgz.col_blue, bg = mgz.none, style = "bold" },
+        -- MiniNotifyNormal = { fg = mgz.col_blue, bg = mgz.none, style = "bold" },
+        -- MiniNotifyTitle = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
+
+        -- Noice
+        NoiceLspProgressTitle = { fg = mgz.col_slimblue, bg = mgz.none }, 
+
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
         LspDiagnosticsInformation = { fg = mgz.col_lightblue },
@@ -623,7 +631,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
         Sneak = { fg = mgz.col_black, bg = mgz.col_blue },
         SneakScope = { bg = mgz.col_dimblack },
 
-        -- Cmp (completion engine plugin)
+        -- nvim-cmp (completion engine plugin)
         -- PMenuSel is the highlight for the highlighted selection, it's nvim native, because of the highlighting here PMenuSel shouldn't highlight the foreground
         CmpItemKind = { fg = mgz.col_gray }, -- Completion source, general color (shouldn't be seen if others done correctly)
         -- CmpItemKindTypeParameter = {},
