@@ -588,6 +588,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
 
         -- Noice
         NoiceLspProgressTitle = { fg = mgz.col_dimwhite, bg = mgz.none },
+        NoiceFormatProgressDone = { fg = mgz.col_black, bg = mgz.col_blue },
 
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
