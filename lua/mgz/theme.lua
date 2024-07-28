@@ -589,6 +589,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- Noice
         NoiceLspProgressTitle = { fg = mgz.col_dimwhite, bg = mgz.none },
         NoiceFormatProgressDone = { fg = mgz.col_black, bg = mgz.col_blue },
+        -- @keyword is the cmdline lowercase input (???)
+        -- idk about the uppercase input
+        -- NoiceVirtualText is the inline search result
 
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
