@@ -587,7 +587,7 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- MiniNotifyTitle = { fg = mgz.col_yellow, bg = mgz.none, style = "bold" },
 
         -- Noice
-        NoiceLspProgressTitle = { fg = mgz.col_slimblue, bg = mgz.none }, 
+        NoiceLspProgressTitle = { fg = mgz.col_dimwhite, bg = mgz.none },
 
         LspDiagnosticsError = { fg = mgz.col_red },
         LspDiagnosticsWarning = { fg = mgz.col_yellow },
