@@ -1,6 +1,8 @@
 -- Colors need to be in '#rrggbb', not '#rgb'
 -- To see highlight groups that are missing, do :hi and tab over, or do :Telescope highlights
 
+-- TODO: comment color to 666666, make it a switch in the settings
+-- TODO: supermaven color group?
 -- TODO: mgz.error, text, warning and comment are used but not defined
 
 local mgz = {
@@ -748,6 +750,9 @@ theme.loadPlugins = function() -- Plugins highlight groups
         -- Tab mode :
         VM_Extend = { fg = mgz.col_purple, bg = mgz.col_dimmagenta, style = "bold" }, -- Color of selection in extend (tab) mode
         VM_Cursor = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold" },      -- Cursor color in extend (tab) mode, should be the same as VM_Mono
+
+        -- Supermaven (AI completion plugin)
+        SupermavenSuggestion = { fg = mgz.col_fours, bg = mgz.none },
     }
 
     return plugins
