@@ -1,10 +1,6 @@
 -- Colors need to be in '#rrggbb', not '#rgb'
 -- To see highlight groups that are missing, do :hi and tab over, or do :Telescope highlights
 
--- TODO: comment color to 666666, make it a switch in the settings
--- TODO: supermaven color group?
--- TODO: mgz.error, text, warning and comment are used but not defined
-
 local mgz = {
     none = "NONE",
     col_black = "#000000",
@@ -62,8 +58,8 @@ theme.loadSyntax = function()
     -- Syntax highlight groups (without TreeShitter)
     local syntax = {
         -- Special for me
-        jsonCommentError = { fg = mgz.col_comment, bg = mgz.none },             -- Am I the only one who doesn't mind comments in JSON?
-        jsonNoQuotesError = { fg = mgz.col_comment, bg = mgz.none },            -- Same issue
+        jsonCommentError = { fg = mgz.col_red, bg = mgz.none },             -- Am I the only one who doesn't mind comments in JSON?
+        jsonNoQuotesError = { fg = mgz.col_red, bg = mgz.none },            -- Same issue
 
         Comment = { fg = mgz.col_bluishgray },                                  -- normal comments
         Conditional = { fg = mgz.col_purple },                                  -- normal if, then, else, endif, switch, etc.
@@ -130,6 +126,14 @@ theme.loadSyntax = function()
     -- Italic check (without TreeShitter)
     if vim.g.mgz_italic_comments == true then
         syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
+    end
+
+    -- Darker comments check (without TreeShitter)
+    if vim.g.mgz_darker_comments == true then
+        -- syntax.Comment = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
+
+        -- Change only fg of syntax.Comment
+        syntax.Comment.fg = mgz.col_sevens
     end
 
     return syntax
@@ -356,11 +360,11 @@ theme.loadTreeSitter = function()
         ["@markup.math"]                      = { fg = mgz.col_blue },           -- e.g. LaTeX math
         ["@markup.list"]                      = { link = "markdownListMarker" }, -- The color of bullets in lists
         ["@markup.list.checked"]              = { fg = mgz.col_green },          -- checkboxes
-        ["@markup.list.unchecked"]            = { fg = mgz.text },
+        ["@markup.list.unchecked"]            = { fg = mgz.col_blue },
         ["@markup.environment"]               = { fg = mgz.col_red },
         ["@markup.environment.name"]          = { fg = mgz.col_red },
-        ["@markup.warning"]                   = { fg = mgz.warning },
-        ["@markup.danger"]                    = { fg = mgz.error },
+        ["@markup.warning"]                   = { fg = mgz.col_orange },
+        ["@markup.danger"]                    = { fg = mgz.col_red },
         ["@markup.raw"]                       = { fg = mgz.col_purple },   -- ``` ``` and ` ` in markdown code (as far as I can tell)
         ["@markup.raw.markdown_inline"]       = { link = "markdownCode" }, -- Actual inline code in markdown
         -- Headings text
@@ -379,8 +383,19 @@ theme.loadTreeSitter = function()
         ["@markup.heading.6.marker.markdown"] = { link = "markdownH6Delimiter" },
     }
 
+    -- Italic check (with TreeShitter)
     if vim.g.mgz_italic_comments == true then
         treesitter["@comment"] = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
+    end
+
+    -- Darker comments check (with TreeShitter)
+    if vim.g.mgz_darker_comments == true then
+        -- syntax.Comment = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
+
+        -- Change only fg of syntax.Comment
+        -- syntax.Comment.fg = mgz.col_sevens
+        -- treesitter["@comment"] = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
+        treesitter["@comment"].fg = mgz.col_sevens
     end
 
     return treesitter
@@ -752,7 +767,8 @@ theme.loadPlugins = function() -- Plugins highlight groups
         VM_Cursor = { fg = mgz.col_white, bg = mgz.col_purple, style = "bold" },      -- Cursor color in extend (tab) mode, should be the same as VM_Mono
 
         -- Supermaven (AI completion plugin)
-        SupermavenSuggestion = { fg = mgz.col_fours, bg = mgz.none },
+        -- NOTE: Doesn't work, see the supermaven-nvim plugin config
+        SupermavenSuggestion = { fg = mgz.col_fives, bg = mgz.none, style = "italic" },
     }
 
     return plugins
