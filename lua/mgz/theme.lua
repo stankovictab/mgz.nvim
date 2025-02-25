@@ -125,14 +125,11 @@ theme.loadSyntax = function()
 
     -- Italic check (without TreeShitter)
     if vim.g.mgz_italic_comments == true then
-        syntax.Comment = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
+        syntax.Comment.style = "italic"
     end
 
     -- Darker comments check (without TreeShitter)
     if vim.g.mgz_darker_comments == true then
-        -- syntax.Comment = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
-
-        -- Change only fg of syntax.Comment
         syntax.Comment.fg = mgz.col_sevens
     end
 
@@ -385,16 +382,11 @@ theme.loadTreeSitter = function()
 
     -- Italic check (with TreeShitter)
     if vim.g.mgz_italic_comments == true then
-        treesitter["@comment"] = { fg = mgz.col_bluishgray, bg = mgz.none, style = "italic" } -- Italic comments
+        treesitter["@comment"].style = "italic"
     end
 
     -- Darker comments check (with TreeShitter)
     if vim.g.mgz_darker_comments == true then
-        -- syntax.Comment = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
-
-        -- Change only fg of syntax.Comment
-        -- syntax.Comment.fg = mgz.col_sevens
-        -- treesitter["@comment"] = { fg = mgz.col_sevens, bg = mgz.none, style = "italic" } -- Darker comments
         treesitter["@comment"].fg = mgz.col_sevens
     end
 
