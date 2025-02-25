@@ -7,7 +7,7 @@ A really dark NeoVim theme.
 <details>
 <summary> Old version of the theme. </summary>
 
-![images/old-theme.png](images/old-theme.png) 
+![images/old-theme.png](images/old-theme.png)
 </details>
 
 ### Installation
@@ -22,22 +22,22 @@ vim.cmd('colorscheme mgz')
 ### Configuration
 
 The MGZ theme allows for these options to be changed :
-- `mgz_disable_background` - Disables the setting of background color, so that NeoVim can use your terminal emulator's background color. Default is false. 
-- `mgz_disable_background` - Disables the coloring of non-focused NeoVim windows. 
-- `mgz_italic_comments` - Whether to render comments in italics or not. Default is true. 
+- `mgz_disable_background` - Disables the setting of background color, so that NeoVim can use your terminal emulator's background color. Default is false.
+- `mgz_disable_background` - Disables the coloring of non-focused NeoVim windows.
+- `mgz_italic_comments` - Whether to render comments in italics or not. Default is false.
 - `mgz_darker_comments` - Whether to render comments in darker color or not. Default is false.
 
 ```lua
 -- Example config in lua
 vim.g.mgz_disable_background = true
 vim.g.mgz_disable_nc_coloring = true
-vim.g.mgz_italic_comments = false
+vim.g.mgz_italic_comments = true
 vim.g.mgz_darker_comments = true
 ```
 
 ### Notices
 
-I usually make changes to this theme depending on the plugins I'm using in my NeoVim config, 
+I usually make changes to this theme depending on the plugins I'm using in my NeoVim config,
 so because that is my priority, I wouldn't theme some of the more obscure plugins that I don't use.\
 However, if you want to you can always open an issue or a pull request and I'll try to add support for it.
 
